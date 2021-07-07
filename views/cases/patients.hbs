@@ -12,45 +12,41 @@
 </div>
 
 <div class='row justify-content-center'>
-    <p>[Family Name]</p>
+    <!-- {{familyName}} -->
+    <p>[Family Name]</p> <!-- Delete this after figuring out what it is -->
 </div>
 
 <div class="row justify-content-center">
 
     {{!-- <table class="table table-hover" style="background-color: silver; width:200%;"> --}}
-    <table class="table" style="width:70%;">
-        <tr>
-            <th>Patient Name</th>
-            <td>Age/DOB</td>
-            <td>Sex</td>
-        </tr>
-        <tr>
-            <th>Patient Name</th>
-            <td>Age/DOB</td>
-            <td>Sex</td>
-        </tr>
-        <tr>
-            <th>Patient Name</th>
-            <td>Age/DOB</td>
-            <td>Sex</td>
-        </tr>
-        <tr>
-            <th>Patient Name</th>
-            <td>Age/DOB</td>
-            <td>Sex</td>
-        </tr>
-        <tr>
-            <th>Patient Name</th>
-            <td>Age/DOB</td>
-            <td>Sex</td>
-        </tr>
-        <tr>
-            <th>Patient Name</th>
-            <td>Age/DOB</td>
-            <td>Sex</td>
-        </tr>
-    </table>
-
+    {{#if patients}}
+        <table class="table" style="width:70%;">
+            <tr>
+                <th>Patient Name</th>
+                <td>DOB</td>
+                <td>Sex</td>
+            </tr>
+            {{#each patients}}
+                {{#if this.name}}
+                    <th>{{this.name}}</th>
+                {{else}}
+                    <th>N/A</th>
+                {{/if}}
+                {{#if this.dob}}
+                    <th>{{this.dob}}</th>
+                {{else}}
+                    <th>N/A</th>
+                {{/if}}
+                {{#if this.sex}}
+                    <th>{{this.sex}}</th>
+                {{else}}
+                    <th>N/A</th>
+                {{/if}}
+            {{/each}}
+        </table>
+    {{else}}
+        <p>There are no patients recorded.</p>
+    {{/if}}
 </div>
 
 
