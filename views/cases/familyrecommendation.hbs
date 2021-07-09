@@ -25,7 +25,23 @@
     <h5>Recent Recommendations</h5>
 </div>
 
+{{#each familyRecs}}
 <div class="row">
+    <div class="col-sm-12">
+        <textarea class="form-control form-control-sm" aria-label="With textarea" placeholder="Type your message here."
+            style="height: 155px;"
+            readonly>{{this.text}}</textarea>
+    </div>
+</div>
+
+<div class="d-flex">
+  <div class="p-2">{{this.date}}</div>
+  <div class="p-2">{{this.time}}</div>
+  <div class="ml-auto p-2">{{this.poster}}</div>
+</div>
+{{/each}}
+
+<div class="row"> <!-- DELETE THIS LATER -->
     <div class="col-sm-12">
         <textarea class="form-control form-control-sm" aria-label="With textarea" placeholder="Type your message here."
             style="height: 155px;"
