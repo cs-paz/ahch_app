@@ -1,54 +1,59 @@
-<div id="wrapper">
-
-
+<div id="login-body">
     {{!-- Main Page Content, Shifts over when window is small --}}
     <div class="page-content-wrapper">
-        <div class="container">
-            <div class="row">
 
-                <div id="top" class="col-md-12 text-center">
-                    <h2>Login</h2>
-                </div>
-
-                <div class="col-md-12">
-                    <form action="/login/submitLogin" method="POST">
-
-                        {{!----------------- LOGIN INFO ------------------}}
-                        <div id="initial-info">
-
-                            <div class="form-group row">
-                                <label for="username" class="col-sm-3 col-form-label col-form-label-sm">Username</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control form-control-sm" id="username"
-                                        name="username" autocomplete="off" required>
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="password"
-                                    class="col-sm-3 col-form-label col-form-label-sm">Password</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control form-control-sm"
-                                        id="password" name="password" autocomplete="off" required>
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                {{#if error}}
-                                    {{error}}
-                                {{/if}}
-                            </div>
-                        
+        <div class="container py-xl-5 h-100" <div class="mb-md-5 mt-md-4 pb-5">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card body p-5 text-center" style="border-radius: 1rem;">
+                        <div id="top" class="col-md-12 text-center">
+                            <span class="h1 fw-bold mb-0"></span>
+                            <h1 class "fw-bold mb-2">Welcome Back</h1>
+                            <p class "fw-light"> Sign in below to open the Audrey Hepburn Children's Hospital Patient
+                                Information Management System.
+                            </p>
+                            <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
                         </div>
 
-                        <div id="btn-submit-intake" class="row justify-content-center">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                        <div class="col-md-12">
+                            <form action="/login/submitLogin" method="POST">
+
+                                {{!----------------- LOGIN INFO ------------------}}
+                                <div id="initial-info">
+
+                                    <div class="form-group row-center ">
+                                        <label for="username" class="col-lg-3 col-form-label col-form-label-lg"></label>
+                                        <div class="form-outline form-white mb-4">
+                                            <input type="text" class="form-label form-control-lg" id="username"
+                                                placeholder="Username" autocomplete="off" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row-center">
+                                        <label for="password" class="col-lg-3 col-form-label col-form-label-lg"></label>
+                                        <div class="form-outline form-white mb-4">
+                                            <input type="text" class="form-label form-control-lg" id="password"
+                                                placeholder="Password" autocomplete="off" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        {{#if error}}
+                                        {{error}}
+                                        {{/if}}
+                                    </div>
+
+                                </div>
+
+                                <div id="btn-login" class="row justify-content-center">
+                                    <button type="submit" class="btn btn-primary btn-lg">Login</button>
+                                </div>
+                            </form>
                         </div>
-
-                    </form>
-
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>

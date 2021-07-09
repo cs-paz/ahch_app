@@ -1,27 +1,52 @@
+
 body {
-    /* background-image: url(../images/background-colorful.png); */
-    /* background-repeat: repeat; */
-    /* background-color:  #cccccc; */
+    background-color: #ecf0fc;
+    height: 100%;
 }
 
 .page-title {
     margin-top: 10px;
+    margin-top: 50px;
 }
 
 .case-tab-table {
-    width: 70%;
+    width: 70%
 }
 
 #main-content-wrapper {
     margin-top: 56px;
+    margin-top: 75px;
 }
 
 #table-case-list {
-    position: relative;
+    position: relative
 }
 
 #btn-submit-intake {
     margin-top: 10px;
     margin-bottom: 10px;
-
 }
+
+#btn-login {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
+
+#login-body{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    max-width: 1170px;
+    margin: 0 auto;
+    
+    /*background: rgb(2,0,36);*/
+    /*background-image: radial-gradient(circle, #00d4ff 0%,#090979 43%, #020024 100%);*/
+  
+}
+
+#login-user{
+    text-align: left;
+    margin-bottom: 20 px;
+    position: relative;
+}
+
