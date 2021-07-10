@@ -1,10 +1,12 @@
 let mongoose = require('mongoose');
-const casenote = require('./casenote.js');
-const casePatient = require('./casePatient');
+const caseNote = require('./caseNote.js');
 const caseStatus = require('./caseStatus');
-const caseSuspect = require('./caseSuspect');
-const familyMember = require('./familyMember')
-
+const caseType = require('./caseType');
+const familyMember = require('./familyMember');
+const patient = require('./patient/patient');
+const worker = require('./worker');
+const referral = require('./referral');
+const suspect = require('./suspect');
 
 // Case Schema
 let caseSchema = mongoose.Schema({
@@ -45,11 +47,14 @@ let caseSchema = mongoose.Schema({
     caseTypeID: {
         type: Number
     },
+    caseStatus: caseStatus,
+    caseType: caseType,
+    referrals: [referral],
+    worker: worker,
     family: [familyMember],
     patients: [patient],
-    casenotes: [casenote],
-    caseSuspects: [caseSuspect],
-    caseStatus: caseStatus
+    caseNotes: [caseNote],
+    suspects: [suspect]
 });
 
 let Case = module.exports = mongoose.model('Case', caseSchema);

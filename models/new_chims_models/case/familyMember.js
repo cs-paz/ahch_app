@@ -11,8 +11,8 @@ let familyMemberSchema = mongoose.Schema({
     LastName: {
         type: String
     },
-    RelationshipID: {
-        type: Number
+    Relationship: {
+        type: String
     },
     SSN: {
         type: String
@@ -26,7 +26,7 @@ let familyMemberSchema = mongoose.Schema({
     LegalStatus: {
         type: String
     },
-    PrimaryLanguageID: {
+    PrimaryLanguage: {
         type: Number
     },
     Address: {

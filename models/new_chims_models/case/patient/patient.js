@@ -1,11 +1,11 @@
 let mongoose = require('mongoose');
+const abuse = require('./abuse');
+const evaluation = require('./evaluation');
+const interview = require('./interview/interview');
+const history = require('./history');
 
 // Patient Schema
 let patientSchema = mongoose.Schema({
-    patientID: {
-        type: Number,
-        required: true
-    },
     firstName: {
         type: String,
     },
@@ -29,6 +29,9 @@ let patientSchema = mongoose.Schema({
     },
     Gender: {
         type: String
+    },
+    PrimaryLanguage: {
+        type: Number
     },
     languageID: {
         type: Number
@@ -125,8 +128,20 @@ let patientSchema = mongoose.Schema({
     },
     referralDate97: {
         type: Date
-    }
-
+    },
+    medicalRef: {
+        type: String
+    },
+    livesWith: {
+        type: String
+    },
+    generalBehavior: {
+        type: String
+    },
+    abuse: abuse,
+    interview: interview,
+    history: history,
+    evaluations: [evaluation]
 });
 
 let Patient = module.exports = mongoose.model('Patient', patientSchema);

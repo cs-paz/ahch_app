@@ -1,16 +1,7 @@
 let mongoose = require('mongoose');
-
+const activity = require('./activities');
 // Interview Schema
 let interviewSchema = mongoose.Schema({
-    InterviewID: {
-        type: Number
-    },
-    CaseID: {
-        type: Number
-    },
-    PatientID: {
-        type: Number
-    },
     InterviewDate: {
         type: Date
     },
@@ -31,7 +22,8 @@ let interviewSchema = mongoose.Schema({
     },
     OralDetails: {
         type: String
-    }
+    },
+    activities: [activity]
 
 });
 

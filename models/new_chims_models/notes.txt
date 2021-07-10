@@ -1,0 +1,54 @@
+delete this before merging into master
+
+this file is a summary of each file from the old chims models and how
+they are going to be reflected in our new models
+
+case - in progress
+caseNote - done, child arr of case
+caseStatus - done
+casePatient - deleted, moved medicalRef to patient
+family - changed to family member, child arr of case
+patient - in progress, child arr of case
+abuse - done, child of patient
+abuseType - deleted and combined with abuse 
+Evaluation - done, child arr on patient
+history - done, child of patient
+patientliveswith - deleted, added “livesWith” field to patient
+worker - done, child of case
+workerType - deleted, added “typeName” and “description” to worker
+history97, deleted added “EventDate” to history
+user - done?
+userorganization - done, child of user
+userroles - done, child arr of user
+Relationship - deleted, added “Relationship” field to familyMember
+languages - deleted, added “primaryLanguage” field to familyMember and patient
+interviewActivities - deleted
+activities - done, child arr of interview
+referral - done, child arr of case
+Behavior - deleted, added “generalBehavior” field to patient
+escort - deleted
+caseSuspect - deleted
+suspect - done, child arr of patient
+Serviceschedulepatient, deleted
+Casetype - done, child of case
+caseworker - deleted, added “referer” field to worker
+
+Files that still need to be looked at:
+counties
+Countries
+Examposition
+Findings
+Followup
+Recommendation
+Recommendation family
+Riskfactors
+Service
+Serviceschedule
+Serviceschedulehistory
+Serviceschedulestatus
+Siteservicescategory
+Siteservices
+Siteservicetypes
+States
+Tanner stage
+tannerstage

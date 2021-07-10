@@ -2,12 +2,6 @@ let mongoose = require('mongoose');
 
 // History Schema
 let historySchema = mongoose.Schema({
-    HistoryID: {
-        type: Number
-    },
-    CaseID: {
-        type: Number
-    },
     PertinentHistory: {
         type: String
     },
@@ -24,6 +18,9 @@ let historySchema = mongoose.Schema({
         type: String
     },
     LastContactDate: {
+        type: Date
+    },
+    EventDate: {
         type: Date
     }
 
