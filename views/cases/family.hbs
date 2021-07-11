@@ -28,8 +28,8 @@
     <h4> Family Members</h4>
 
     <div class="form-group row">
-        <label style="margin:15px;" for="family members">Pre-fill form with patient info:</label>
-        <select name="family" id="family members">
+        <label style="margin:15px;" for="patient">Pre-fill form with patient info:</label>
+        <select name="patient" id="patient">
             <option value="-Select-">-Select-</option>
             <option value="name1">First Last1</option>
             <option value="name2">First Last2</option>
@@ -42,8 +42,8 @@
     </div>
 
     <div class="form-group row">
-        <label style="margin:15px;" for="family members">Pre-fill form with family member info:</label>
-        <select name="family" id="family members">
+        <label style="margin:15px;" for="family-members">Pre-fill form with family member info:</label>
+        <select name="family-members" id="family-members">
             <option value="-Select-">-Select-</option>
             <option value="name1">First Last1</option>
             <option value="name2">First Last2</option>
@@ -74,23 +74,20 @@
         <h4>Member Info</h4>
         <div class="form-group row">
             <div>
-                <label style="margin:15px;" for="first name">First Name: <abbr title="required"
-                        aria-label="required">*</abbr></label>
-                <input id="first name" type="text" name="first name">
+                <label style="margin:15px;" for="first-name">First Name:</label>
+                <input id="first-name" type="text" name="first-name">
             </div>
             <div>
-                <label style="margin:15px;" for="last name">Last Name: <abbr title="required"
-                        aria-label="required">*</abbr></label>
-                <input id="last name" type="text" name="last name">
+                <label style="margin:15px;" for="last-name">Last Name:></label>
+                <input id="last-name" type="text" name="last-name">
             </div>
             <div>
-                <label style="margin:15px;" for="middle name">MI:</label>
-                <input id="middle name" type="text" name="middle name">
+                <label style="margin:15px;" for="middle-name">MI:</label>
+                <input id="middle-name" type="text" name="middle-name">
             </div>
         </div>
         <div class="form-group row">
-            <label style="margin:15px;" for="relationship">Relationship:<abbr title="required"
-                    aria-label="required">*</abbr></label>
+            <label style="margin:15px;" for="relationship">Relationship:</label>
             <select name="relationship" id="relationship">
                 <option value="-Select-">-Select-</option>
                 <option value="mother">Mother</option>
@@ -102,22 +99,20 @@
 
         <div class="form-group row">
             <div>
-                <label style="margin:15px;" for="social security">Social Security:<abbr title="required"
-                        aria-label="required">*</abbr></label>
-                <input id="social security" type="text" name="social security">
+                <label style="margin:15px;" for="social-security">Social Security:</label>
+                <input id="social-security" type="text" name="social-security">
             </div>
         </div>
 
         <div class="form-group row">
             <div>
-                <label style="margin:15px;" for="dob">DOB:<abbr title="required" aria-label="required">*</abbr></label>
+                <label style="margin:15px;" for="dob">DOB:</label>
                 <input id="dob" type="text" name="dob">
             </div>
         </div>
 
         <div class="form-group row">
-            <label style="margin:15px;" for="gender">Gender:<abbr title="required"
-                    aria-label="required">*</abbr></label>
+            <label style="margin:15px;" for="gender">Gender:</label>
             <select name="gender" id="gender">
                 <option value="-Select-">-Select-</option>
                 <option value="female">Female</option>
@@ -128,9 +123,8 @@
         </div>
 
         <div class="form-group row">
-            <label style="margin:15px;" for="legal status">Legal Status:<abbr title="required"
-                    aria-label="required">*</abbr></label>
-            <select name="legal status" id="legal status">
+            <label style="margin:15px;" for="legal-status">Legal Status:</label>
+            <select name="legal-status" id="legal-status">
                 <option value="-Select-">-Select-</option>
                 <option value="citizen">Citizen</option>
                 <option value="resident">Resident</option>
@@ -140,9 +134,8 @@
         </div>
 
         <div class="form-group row">
-            <label style="margin:15px;" for="primary language spoken">Primary Language Spoken:<abbr title="required"
-                    aria-label="required">*</abbr></label>
-            <select name="primary language spoken" id="primary language spoken">
+            <label style="margin:15px;" for="primary-language-spoken">Primary Language Spoken:</label>
+            <select name="primary-language-spoken" id="primary-language-spoken">
                 <option value="-Select-">-Select-</option>
                 <option value="english">English</option>
                 <option value="spanish">Spanish</option>
@@ -154,8 +147,7 @@
 
         <div class="form-group row">
             <div>
-                <label style="margin:15px;" for="address">Address:<abbr title="required"
-                        aria-label="required">*</abbr></label>
+                <label style="margin:15px;" for="address">Address:</label>
                 <input id="address" type="address" name="address">
             </div>
         </div>
@@ -167,15 +159,13 @@
         </div>
         <div class="form-group row">
             <div>
-                <label style="margin:15px;" for="city">City:<abbr title="required"
-                        aria-label="required">*</abbr></label>
+                <label style="margin:15px;" for="city">City:</label>
                 <input id="city" type="text" name="city">
             </div>
         </div>
 
         <div class="form-group row">
-            <label style="margin:15px;" for="county">County:<abbr title="required"
-                    aria-label="required">*</abbr></label>
+            <label style="margin:15px;" for="county">County:</label>
             <select name="county" id="county">
                 <option value="-Select-">-Select-</option>
                 <option value="essex">Essex</option> {{!--need to get all counties--}}
@@ -184,7 +174,7 @@
         </div>
 
         <div class="form-group row">
-            <label style="margin:15px;" for="state">State:<abbr title="required" aria-label="required">*</abbr></label>
+            <label style="margin:15px;" for="state">State:</label>
             <select name="state" id="state">
                 <option value="-Select-">-Select-</option>
                 <option value="new jersey">New Jersey</option> {{!--need to get all states--}}
@@ -193,16 +183,14 @@
         </div>
         <div class="form-group row">
             <div>
-                <label style="margin:15px;" for="zip code">Zip Code:<abbr title="required"
-                        aria-label="required">*</abbr></label>
-                <input id="zip code" type="text" name="zip code">
+                <label style="margin:15px;" for="zip-code">Zip Code:</label>
+                <input id="zip-code" type="text" name="zip-code">
             </div>
         </div>
 
         <div class="form-group row">
             <div>
-                <label style="margin:15px;" for="phone">Phone:<abbr title="required"
-                        aria-label="required">*</abbr></label>
+                <label style="margin:15px;" for="phone">Phone:</label>
                 <input id="phone" type="text" name="phone">
             </div>
         </div>
@@ -229,9 +217,9 @@
         </div>
 
         <div class="form-group row">
-            <label for="special needs" class="col-sm-2 col-form-label">Special Needs/ Disabilities:</label>
+            <label for="special-needs" class="col-sm-2 col-form-label">Special Needs/ Disabilities:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control  form-control-sm" id="special needs">
+                <input type="text" class="form-control  form-control-sm" id="special-needs">
             </div>
         </div>
     </div>
