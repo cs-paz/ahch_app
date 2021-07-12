@@ -10,16 +10,16 @@ body {
 }
 
 .case-tab-table {
-    width: 70%
+    width: 70%;
 }
 
 #main-content-wrapper {
     margin-top: 56px;
-    margin-top: 75px;
+   
 }
 
 #table-case-list {
-    position: relative
+    position: relative;
 }
 
 #btn-submit-intake {

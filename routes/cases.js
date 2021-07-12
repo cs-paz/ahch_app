@@ -57,6 +57,13 @@ router.get('/family', async (req, res, next) => {
   });
 });
 
+router.get('/family/edit', async (req, res, next) => {
+  res.render('cases/familyForm', {
+    title: 'Case Family',
+    layout: 'cases'
+  });
+});
+
 router.get('/history', async (req, res, next) => {
   res.render('cases/history', {
     title: 'Case History',
