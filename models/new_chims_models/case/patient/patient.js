@@ -1,8 +1,8 @@
 let mongoose = require('mongoose');
-const abuse = require('./abuse');
-const evaluation = require('./evaluation');
-const interview = require('./interview/interview');
-const history = require('./history');
+const abuse = require('./abuse').schema;
+const evaluation = require('./evaluation').schema;
+const interview = require('./interview/interview').schema;
+const history = require('./history').schema;
 
 // Patient Schema
 let patientSchema = mongoose.Schema({
@@ -136,6 +136,9 @@ let patientSchema = mongoose.Schema({
         type: String
     },
     generalBehavior: {
+        type: String
+    },
+    TannerStage: {
         type: String
     },
     abuse: abuse,

@@ -1,7 +1,7 @@
 let mongoose = require('mongoose');
 
 // Activites Schema
-let activitesSchema = mongoose.Schema({
+let activitiesSchema = mongoose.Schema({
     activity: {
         type: String
     },
@@ -14,4 +14,4 @@ let activitesSchema = mongoose.Schema({
 
 });
 
-let Activites = module.exports = mongoose.model('Activites', activitesSchema);
+let Activities = module.exports = mongoose.model('Activities', activitiesSchema);

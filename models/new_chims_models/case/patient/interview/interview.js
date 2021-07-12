@@ -1,5 +1,5 @@
 let mongoose = require('mongoose');
-const activity = require('./activities');
+const activity  = require('./activities').schema;
 // Interview Schema
 let interviewSchema = mongoose.Schema({
     InterviewDate: {
