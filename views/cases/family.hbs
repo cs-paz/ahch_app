@@ -28,28 +28,20 @@
     <h4> Family Members</h4>
 
     <div class="form-group row">
-        <label style="margin:15px;" for="patient">Pre-fill form with patient info:</label>
-        <select name="patient" id="patient">
-            <option value="-Select-">-Select-</option>
-            <option value="name1">First Last1</option>
-            <option value="name2">First Last2</option>
-            <option value="name3">First Last3</option>
-            <option value="name4">First Last4</option>
-        </select>
+        <div>
+            <label style="margin:15px;" for="patient">Pre-fill form with patient info:</label>
+            <input id="patient-info" type="text" name="patient-info">
+        </div>
         <div class="row justify-content-center" style="margin: 15px;">
             <button type="button" class="btn btn-secondary">Populate</button>
         </div>
     </div>
 
     <div class="form-group row">
-        <label style="margin:15px;" for="family-members">Pre-fill form with family member info:</label>
-        <select name="family-members" id="family-members">
-            <option value="-Select-">-Select-</option>
-            <option value="name1">First Last1</option>
-            <option value="name2">First Last2</option>
-            <option value="name3">First Last3</option>
-            <option value="name4">First Last4</option>
-        </select>
+        <div>
+            <label style="margin:15px;" for="family-members">Pre-fill form with family member info:</label>
+            <input id="family-members" type="text" name="family-members">
+        </div>
         <div class="row justify-content-center" style="margin: 15px;">
             <button type="button" class="btn btn-secondary">Populate</button>
         </div>
@@ -86,15 +78,12 @@
                 <input id="middle-name" type="text" name="middle-name">
             </div>
         </div>
+
         <div class="form-group row">
-            <label style="margin:15px;" for="relationship">Relationship:</label>
-            <select name="relationship" id="relationship">
-                <option value="-Select-">-Select-</option>
-                <option value="mother">Mother</option>
-                <option value="father">Father</option>
-                <option value="guardian">Guardian</option>
-                <option value="other">Other</option>
-            </select>
+            <div>
+                <label style="margin:15px;" for="relationship">Relationship:</label>
+                <input id="relationship" type="text" name="relationship">
+            </div>
         </div>
 
         <div class="form-group row">
@@ -112,37 +101,26 @@
         </div>
 
         <div class="form-group row">
-            <label style="margin:15px;" for="gender">Gender:</label>
-            <select name="gender" id="gender">
-                <option value="-Select-">-Select-</option>
-                <option value="female">Female</option>
-                <option value="male">Male</option>
-                <option value="guardian">Non-Binary</option>
-                <option value="other">Other</option>
-            </select>
+            <div>
+                <label style="margin:15px;" for="gender">Gender:</label>
+                <input id="gender" type="text" name="gender">
+            </div>
         </div>
 
         <div class="form-group row">
-            <label style="margin:15px;" for="legal-status">Legal Status:</label>
-            <select name="legal-status" id="legal-status">
-                <option value="-Select-">-Select-</option>
-                <option value="citizen">Citizen</option>
-                <option value="resident">Resident</option>
-                <option value="non-immigrant">Non-Immigrant</option>
-                <option value="other">Other</option>
-            </select>
+            <div>
+                <label style="margin:15px;" for="legal-status">Legal Status:</label>
+                <input id="legal-status" type="text" name="legal-status">
+            </div>
+
         </div>
 
         <div class="form-group row">
-            <label style="margin:15px;" for="primary-language-spoken">Primary Language Spoken:</label>
-            <select name="primary-language-spoken" id="primary-language-spoken">
-                <option value="-Select-">-Select-</option>
-                <option value="english">English</option>
-                <option value="spanish">Spanish</option>
-                <option value="chinese">Chinese</option>
-                <option value="french">French</option>
-                <option value="other">Other</option>
-            </select>
+            <div>
+                <label style="margin:15px;" for="primary-language-spoken">Primary Language Spoken:</label>
+                <input id="primary-language-spoken" type="text" name="primary-language-spoken">
+            </div>
+
         </div>
 
         <div class="form-group row">
@@ -165,21 +143,17 @@
         </div>
 
         <div class="form-group row">
-            <label style="margin:15px;" for="county">County:</label>
-            <select name="county" id="county">
-                <option value="-Select-">-Select-</option>
-                <option value="essex">Essex</option> {{!--need to get all counties--}}
-                <option value="other">Other</option>
-            </select>
+            <div>
+                <label style="margin:15px;" for="county">County:</label>
+                <input id="country" type="text" name="country">
+            </div>
         </div>
 
         <div class="form-group row">
-            <label style="margin:15px;" for="state">State:</label>
-            <select name="state" id="state">
-                <option value="-Select-">-Select-</option>
-                <option value="new jersey">New Jersey</option> {{!--need to get all states--}}
-                <option value="other">Other</option>
-            </select>
+            <div>
+                <label style="margin:15px;" for="state">State:</label>
+                <input id="state" type="text" name="state">
+            </div>
         </div>
         <div class="form-group row">
             <div>
