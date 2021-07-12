@@ -1,0 +1,289 @@
+<div class='row justify-content-center' style="margin-top: 15px;">
+    <h2> Family </h2>
+</div>
+
+<div class="card body p-2 text-center" style="border-radius: 1rem; margin-bottom: 15px;">
+    <div class='row justify-content-center' style="margin-top: 10px;">
+        <p style="margin:15px;">Case: Last Name</p>
+        <p style="margin:15px;">DYFS: 00000</p>
+        <p style="margin:15px;">Status: Closed</p>
+    </div>
+</div>
+
+<div class="card body p-2 text-center" style="border-radius: 1rem; margin-bottom: 15px;">
+
+    <button type="button" class="btn btn-link"><a href="../patients">Return to Patient List</a></button>
+
+    {{!-- <div class='row justify-content-center'>
+        <button style="margin:5px;" type="button" class="btn btn-secondary">Make Family Member A Patient</button>
+        <button style="margin:5px;" type="button" class="btn btn-secondary">Make Family Member An Actor</button>
+    </div> --}}
+
+    <div id="btn-login" class="row justify-content-center">
+        <button type="submit" class="btn btn-primary btn-md">Update</button>
+    </div>
+</div>
+
+<div class="card body p-2 text-center" style="border-radius: 1rem; margin-bottom: 15px">
+    <h4> Family Members</h4>
+
+    <div class="form-group row">
+        <label style="margin:15px;" for="family members">Pre-fill form with patient info:</label>
+        <select name="family" id="family members">
+            <option value="-Select-">-Select-</option>
+            {{#each patients}}
+                <option value="{{this._id}}">{{this.name}}</option>
+            {{/each}}
+            <option value="name1">First Last1</option> {{!-- Delete after we have data --}}
+            <option value="name2">First Last2</option>
+            <option value="name3">First Last3</option>
+            <option value="name4">First Last4</option>
+        </select>
+        <div class="row justify-content-center" style="margin: 15px;">
+            <button type="button" class="btn btn-secondary">Populate</button>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label style="margin:15px;" for="family members">Pre-fill form with family member info:</label>
+        <select name="family" id="family members">
+            <option value="-Select-">-Select-</option>
+            {{#each family}}
+                <option value="{{this._id}}">{{this.name}}</option>
+                {{/each}}
+            <option value="name1">First Last1</option> {{!-- Delete after we have data --}}
+            <option value="name2">First Last2</option>
+            <option value="name3">First Last3</option>
+            <option value="name4">First Last4</option>
+        </select>
+        <div class="row justify-content-center" style="margin: 15px;">
+            <button type="button" class="btn btn-secondary">Populate</button>
+        </div>
+    </div>
+
+    <div class="card body p-2 text-center" style="border-radius: 1rem; margin-bottom: 15px">
+        {{!-- <h4>Patient</h4>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="all">
+            <label class="form-check-label" for="all">
+                All
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="patient1" checked>
+            <label class="form-check-label" for="patient1">
+                First Last1
+            </label>
+        </div> --}}
+
+        <div class="form-group row">
+            <div>
+                <label style="margin:15px;" for="medicalRefNum">Medical Ref #: <abbr title="required"
+                        aria-label="required">*</abbr></label>
+                <input id="medicalRefNum" type="text" name="medicalRefNum">
+            </div>
+        </div>
+
+        <h4>Patient Info</h4>
+        <div class="form-group row">
+            <div>
+                <label style="margin:15px;" for="first name">First Name: <abbr title="required"
+                        aria-label="required">*</abbr></label>
+                <input id="first name" type="text" name="first name">
+            </div>
+            <div>
+                <label style="margin:15px;" for="last name">Last Name: <abbr title="required"
+                        aria-label="required">*</abbr></label>
+                <input id="last name" type="text" name="last name">
+            </div>
+            <div>
+                <label style="margin:15px;" for="middle name">MI:</label>
+                <input id="middle name" type="text" name="middle name">
+            </div>
+        </div>
+        
+        <div class="form-group row">
+            <label style="margin:15px;" for="legalFamilyCustodian">Legal Family Custodian:<abbr title="required"
+                    aria-label="required">*</abbr></label>
+            <select name="relationship" id="relationship">
+                <option value="-Select-">-Select-</option>
+                {{#each family}}
+                <option value="{{this._id}}">{{this.name}}</option>
+                {{/each}}
+                <option value="name1">First Last1</option> {{!-- Delete after we have data --}}
+                <option value="name2">First Last2</option>
+                <option value="name3">First Last3</option>
+                <option value="name4">First Last4</option>
+            </select>
+        </div>
+        <div class="form-group row" id="location-for-relationship" hidden> {{!-- Hide this until something above changes --}}
+            <label style="margin:15px;" for="relationship">Custodian Relationship:</label>
+            <select name="relationship" id="relationship">
+                <option value="-Select-">-Select-</option>
+                <option value="mother">Mother</option>
+                <option value="father">Father</option>
+                <option value="guardian">Guardian</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-group row">
+            <label style="margin:15px;" for="relationship">Legal Non-Family Custodian:<abbr title="required"
+                    aria-label="required">*</abbr></label>
+            <select name="relationship" id="relationship">
+                <option value="-Select-">-Select-</option>
+                {{#each staff}}
+                <option value="{{this._id}}">{{this.name}}</option>
+                {{/each}}
+                <option value="name1">First Last1</option> {{!-- Delete after we have data --}}
+                <option value="name2">First Last2</option>
+                <option value="name3">First Last3</option>
+                <option value="name4">First Last4</option>
+            </select>
+        </div>
+
+        <div class="form-group row">
+            <div>
+                <label style="margin:15px;" for="social security">Social Security:<abbr title="required"
+                        aria-label="required">*</abbr></label>
+                <input id="social security" type="text" name="social security">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div>
+                <label style="margin:15px;" for="dob">DOB:<abbr title="required" aria-label="required">*</abbr></label>
+                <input id="dob" type="text" name="dob">
+            </div>
+        </div>
+
+        <div class="form-group row" id="location-for-age" hidden> {{!-- Hide this until something above changes --}}
+            <div>
+                Age:
+            </div>
+        </div>  
+
+        <div class="form-group row">
+            <label style="margin:15px;" for="gender">Gender:<abbr title="required"
+                    aria-label="required">*</abbr></label>
+            <select name="gender" id="gender">
+                <option value="-Select-">-Select-</option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+                <option value="guardian">Non-Binary</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-group row">
+            <label style="margin:15px;" for="legal status">Legal Status:<abbr title="required"
+                    aria-label="required">*</abbr></label>
+            <select name="legal status" id="legal status">
+                <option value="-Select-">-Select-</option>
+                <option value="citizen">Citizen</option>
+                <option value="resident">Resident</option>
+                <option value="non-immigrant">Non-Immigrant</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-group row">
+            <label style="margin:15px;" for="primary language spoken">Primary Language Spoken:<abbr title="required"
+                    aria-label="required">*</abbr></label>
+            <select name="primary language spoken" id="primary language spoken">
+                <option value="-Select-">-Select-</option>
+                <option value="english">English</option>
+                <option value="spanish">Spanish</option>
+                <option value="chinese">Chinese</option>
+                <option value="french">French</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-group row">
+            <div>
+                <label style="margin:15px;" for="address">Address:<abbr title="required"
+                        aria-label="required">*</abbr></label>
+                <input id="address" type="address" name="address">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div>
+                <label style="margin:15px;" for="address2">Address 2:</label>
+                <input id="address2" type="address2" name="address2">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div>
+                <label style="margin:15px;" for="city">City:<abbr title="required"
+                        aria-label="required">*</abbr></label>
+                <input id="city" type="text" name="city">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label style="margin:15px;" for="county">County:<abbr title="required"
+                    aria-label="required">*</abbr></label>
+            <select name="county" id="county">
+                <option value="-Select-">-Select-</option>
+                <option value="essex">Essex</option> {{!--need to get all counties--}}
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-group row">
+            <label style="margin:15px;" for="state">State:<abbr title="required" aria-label="required">*</abbr></label>
+            <select name="state" id="state">
+                <option value="-Select-">-Select-</option>
+                <option value="new jersey">New Jersey</option> {{!--need to get all states--}}
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div class="form-group row">
+            <div>
+                <label style="margin:15px;" for="zip code">Zip Code:<abbr title="required"
+                        aria-label="required">*</abbr></label>
+                <input id="zip code" type="text" name="zip code">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div>
+                <label style="margin:15px;" for="phone">Phone:<abbr title="required"
+                        aria-label="required">*</abbr></label>
+                <input id="phone" type="text" name="phone">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div>
+                <label style="margin:15px;" for="phone2">Phone 2:</label>
+                <input id="phone2" type="text" name="phone2">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div>
+                <label style="margin:15px;" for="mobile">Mobile:</label>
+                <input id="mobile" type="text" name="mobile">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div>
+                <label style="margin:15px;" for="email">Email:</label>
+                <input id="email" type="text" name="email">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="special needs" class="col-sm-2 col-form-label">Special Needs/ Disabilities:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control  form-control-sm" id="special needs">
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>

@@ -43,6 +43,13 @@ router.get('/patients', async (req, res, next) => {
   });
 });
 
+router.get('/patients/edit', async (req, res, next) => {
+  res.render('cases/patientForm', {
+    title: 'Case Patients',
+    layout: 'cases'
+  });
+});
+
 router.get('/medical', async (req, res, next) => {
   res.render('cases/medical', {
     title: 'Case Medical',
