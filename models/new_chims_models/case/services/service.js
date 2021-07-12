@@ -4,52 +4,52 @@ const serviceScheduleHistory = require('./serviceschedulehistory').schema;
 const serviceType = require('./servicetype').schema;
 // Service Schema
 let serviceSchema = mongoose.Schema({
-    CaseID: {
+    caseID: {
         type: Number
     },
-    Service: {
+    service: {
         type: String
     },
-    ProviderType: {
+    providerType: {
         type: String
     },
-    ServiceTypeID: {
+    serviceTypeID: {
         type: Number
     },
-    Agency: {
+    agency: {
         type: String
     },
-    Address: {
+    address: {
         type: String
     },
-    Address2: {
+    address2: {
         type: String
     },
-    City: {
+    city: {
         type: String
     },
-    StateID: {
+    stateID: {
         type: Number
     },
-    ZipCode: {
+    zipCode: {
         type: String
     },
-    CountryID: {
+    countryID: {
         type: Number
     },
-    CountyID: {
+    countyID: {
         type: Number
     },
-    Phone: {
+    phone: {
         type: String
     },
-    Phone2: {
+    phone2: {
         type: String
     },
-    Mobile: {
+    mobile: {
         type: String
     },
-    Email: {
+    email: {
         type: String
     },
     serviceSchedule: serviceSchedule,

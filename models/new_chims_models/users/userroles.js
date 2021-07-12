@@ -2,16 +2,16 @@ let mongoose = require('mongoose');
 
 // User Roles Schema
 let userRolesSchema = mongoose.Schema({
-    Role: {
+    role: {
         type: String
     },
-    Description: {
+    description: {
         type: String
     },
-    Category: {
+    category: {
         type: String
     },
-    Order: {
+    order: {
         type: Number
     }
 

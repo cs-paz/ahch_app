@@ -2,10 +2,10 @@ let mongoose = require('mongoose');
 
 // Recommendation Factor Key Schema
 let recommendationFactorKeySchema = mongoose.Schema({
-    FactorType: {
+    factorType: {
         type: String
     },
-    Description: {
+    description: {
         type: String
     }
 

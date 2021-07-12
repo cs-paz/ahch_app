@@ -2,58 +2,58 @@ let mongoose = require('mongoose');
 
 // Suspect Schema
 let suspectSchema = mongoose.Schema({
-    FirstName: {
+    firstName: {
         type: String
     },
     MI: {
         type: String
     },
-    LastName: {
+    lastName: {
         type: String
     },
     DOB: {
         type: Date
     },
-    AbuseHistory: {
+    abuseHistory: {
         type: String
     },
-    Gender: {
+    gender: {
         type: String
     },
-    RelationshipID: {
+    relationshipID: {
         type: Number
     },
-    Address: {
+    address: {
         type: String
     },
-    Address2: {
+    address2: {
         type: String
     },
-    City: {
+    city: {
         type: String
     },
-    StateID: {
+    stateID: {
         type: Number
     },
-    ZipCode: {
+    zipCode: {
         type: String
     },
-    CountryID: {
+    countryID: {
         type: Number
     },
-    CountyID: {
+    countyID: {
         type: Number
     },
-    Phone: {
+    phone: {
         type: String
     },
-    Phone2: {
+    phone2: {
         type: String
     },
-    Mobile: {
+    mobile: {
         type: String
     },
-    Email: {
+    email: {
         type: String
     }
 

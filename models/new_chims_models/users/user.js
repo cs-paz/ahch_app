@@ -4,31 +4,31 @@ const role = require('./userroles')
 
 // Users Schema
 let userSchema = mongoose.Schema({
-    Username: {
+    username: {
         type: String
     },
-    FirstName: {
+    firstName: {
         type: String
     },
     MI: {
         type: String
     },
-    LastName: {
+    lastName: {
         type: String
     },
-    Password: {
+    password: {
         type: String
     },
-    AuthType: {
+    authType: {
         type: String
     },
-    UserGUID: {
+    userGUID: {
         type: String
     },
-    Notes: {
+    notes: {
         type: String
     },
-    Role: {
+    role: {
         type: String
     },
     organization: organization,

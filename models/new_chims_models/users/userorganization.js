@@ -2,10 +2,10 @@ let mongoose = require('mongoose');
 
 // User Organization Schema
 let userOrganizationSchema = mongoose.Schema({
-    Organization: {
+    organization: {
         type: String
     },
-    Description: {
+    description: {
         type: String
     }
 

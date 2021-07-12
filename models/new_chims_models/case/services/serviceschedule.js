@@ -2,28 +2,28 @@ let mongoose = require('mongoose');
 
 // Service Schedule Schema
 let serviceScheduleSchema = mongoose.Schema({
-    ReferralType: {
+    referralType: {
         type: String
     },
-    Scheduler: {
+    scheduler: {
         type: String
     },
-    Notes: {
+    notes: {
         type: String
     },
-    ProviderID: {
+    providerID: {
         type: Number
     },
-    ReportSubmitted: {
+    reportSubmitted: {
         type: String
     },
-    ReportSubmittedDate: {
+    reportSubmittedDate: {
         type: Date
     },
-    CreatedDate: {
+    createdDate: {
         type: Date
     },
-    Status: {
+    status: {
         type: String
     }
 

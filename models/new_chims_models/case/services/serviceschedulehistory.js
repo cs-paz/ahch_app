@@ -2,13 +2,13 @@ let mongoose = require('mongoose');
 
 // Service Schedule History Schema
 let serviceScheduleHistorySchema = mongoose.Schema({
-    SubmittedDate: {
+    submittedDate: {
         type: Date
     },
-    ScheduleDate: {
+    scheduleDate: {
         type: Date
     },
-    StatusChangeDate: {
+    statusChangeDate: {
         type: Date
     }
 

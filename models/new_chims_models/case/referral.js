@@ -2,31 +2,31 @@ let mongoose = require('mongoose');
 
 // Referral Schema
 let referralSchema = mongoose.Schema({
-    Reason: {
+    reason: {
         type: String
     },
-    Questions: {
+    questions: {
         type: String
     },
-    Disclosure: {
+    disclosure: {
         type: String
     },
-    DisclosureDesc: {
+    disclosureDesc: {
         type: String
     },
-    Circumstances: {
+    circumstances: {
         type: String
     },
-    Interview: {
+    interview: {
         type: String
     },
-    InterviewDesc: {
+    interviewDesc: {
         type: String
     },
-    Statements: {
+    statements: {
         type: String
     },
-    StatementDate: {
+    statementDate: {
         type: Date
     }
 

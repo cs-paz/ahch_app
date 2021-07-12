@@ -27,10 +27,10 @@ let patientSchema = mongoose.Schema({
     DOB: {
         type: Date
     },
-    Gender: {
+    gender: {
         type: String
     },
-    PrimaryLanguage: {
+    primaryLanguage: {
         type: Number
     },
     languageID: {
@@ -138,7 +138,7 @@ let patientSchema = mongoose.Schema({
     generalBehavior: {
         type: String
     },
-    TannerStage: {
+    tannerStage: {
         type: String
     },
     abuse: abuse,

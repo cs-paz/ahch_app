@@ -2,19 +2,19 @@ let mongoose = require('mongoose');
 
 // Evaluation Schema
 let evaluationSchema = mongoose.Schema({
-    EvalType: {
+    evalType: {
         type: String
     },
-    EvalDate: {
+    evalDate: {
         type: Date
     },
-    FirstName: {
+    firstName: {
         type: String
     },
     MI: {
         type: String
     },
-    LastName: {
+    lastName: {
         type: String
     }
 

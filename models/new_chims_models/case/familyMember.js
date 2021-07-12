@@ -2,16 +2,16 @@ let mongoose = require('mongoose');
 
 // FamilyMember Schema
 let familyMemberSchema = mongoose.Schema({
-    FirstName: {
+    firstName: {
         type: String
     },
     MI: {
         type: String
     },
-    LastName: {
+    lastName: {
         type: String
     },
-    Relationship: {
+    relationship: {
         type: String
     },
     SSN: {
@@ -20,49 +20,49 @@ let familyMemberSchema = mongoose.Schema({
     DOB: {
         type: Date
     },
-    Gender: {
+    gender: {
         type: String
     },
-    LegalStatus: {
+    legalStatus: {
         type: String
     },
-    PrimaryLanguage: {
+    primaryLanguage: {
         type: Number
     },
-    Address: {
+    address: {
         type: String
     },
-    Address2: {
+    address2: {
         type: String
     },
-    City: {
+    city: {
         type: String
     },
-    StateID: {
+    stateID: {
         type: Number
     },
-    ZipCode: {
+    zipCode: {
         type: String
     },
-    CountyID: {
+    countyID: {
         type: Number
     },
-    CountryID: {
+    countryID: {
         type: Number
     },
-    Phone: {
+    phone: {
         type: String
     },
-    Phone2: {
+    phone2: {
         type: String
     },
-    Mobile: {
+    mobile: {
         type: String
     },
-    Email: {
+    email: {
         type: String
     },
-    SpecialNeeds: {
+    specialNeeds: {
         type: String
     }
 

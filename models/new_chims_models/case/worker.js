@@ -2,64 +2,64 @@ let mongoose = require('mongoose');
 
 // Worker Schema
 let workerSchema = mongoose.Schema({
-    Service: {
+    service: {
         type: String
     },
-    WorkerTypeID: {
+    workerTypeID: {
         type: Number
     },
-    FirstName: {
+    firstName: {
         type: String
     },
     MI: {
         type: String
     },
-    LastName: {
+    lastName: {
         type: String
     },
-    Agency: {
+    agency: {
         type: String
     },
-    Address: {
+    address: {
         type: String
     },
-    Address2: {
+    address2: {
         type: String
     },
-    City: {
+    city: {
         type: String
     },
-    StateID: {
+    stateID: {
         type: Number
     },
-    CountyID: {
+    countyID: {
         type: Number
     },
-    ZipCode: {
+    zipCode: {
         type: String
     },
-    CountryID: {
+    countryID: {
         type: Number
     },
-    Phone: {
+    phone: {
         type: String
     },
-    Ext: {
+    ext: {
         type: String
     },
-    CreatedDate: {
+    createdDate: {
         type: Date
     },
-    ModifiedDate: {
+    modifiedDate: {
         type: Date
     },
-    OrganizationID: {
+    organizationID: {
         type: Number
     },
-    TypeName: {
+    typeName: {
         type: String
     },
-    Description: {
+    description: {
         type: String
     },
     referer: {

@@ -2,25 +2,25 @@ let mongoose = require('mongoose');
 
 // History Schema
 let historySchema = mongoose.Schema({
-    PertinentHistory: {
+    pertinentHistory: {
         type: String
     },
-    PertinentHistoryDesc: {
+    pertinentHistoryDesc: {
         type: String
     },
-    SexualizedBehavior: {
+    sexualizedBehavior: {
         type: String
     },
-    SexualizedBehaviorDesc: {
+    sexualizedBehaviorDesc: {
         type: String
     },
-    Evaluation: {
+    evaluation: {
         type: String
     },
-    LastContactDate: {
+    lastContactDate: {
         type: Date
     },
-    EventDate: {
+    eventDate: {
         type: Date
     }
 
