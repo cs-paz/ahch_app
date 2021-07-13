@@ -13,6 +13,11 @@ body {
     width: 70%;
 }
 
+.service-label {
+    margin:15px; 
+    margin-left: 20px;
+}
+
 #main-content-wrapper {
     margin-top: 56px;
    
