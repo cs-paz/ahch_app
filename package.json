@@ -26,7 +26,6 @@
     "express": "^4.17.1",
     "express-handlebars": "^4.0.3",
     "express-session": "^1.17.2",
-    "expression": "^0.0.1",
     "jquery": "^3.5.0",
     "mongodb": "^3.6.9",
     "mongoose": "^5.9.7",
