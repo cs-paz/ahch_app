@@ -32,7 +32,7 @@ app.use(session({
   }));
 
 // Bring in Models
-let Patient = require('./models/patient');
+let Patient = require('./models/new_chims_models/case/patient/patient');
 // let p = new Patient();
 
 // p.patientID = 123;
