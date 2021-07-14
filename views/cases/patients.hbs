@@ -28,7 +28,7 @@
             </tr>
             {{#each patients}}
                 {{#if this.name}}
-                    <th>{{this.name}}</th>
+                    <th><a href="patients/edit/{{this._id}}">{{this.name}}</a></th>
                 {{else}}
                     <th>N/A</th>
                 {{/if}}
@@ -51,5 +51,5 @@
 
 
 <div class='row justify-content-center'>
-    <button type="button" class="btn btn-secondary btn-sm"><a href="patients/edit">Add Patient</a></button>
+    <button type="button" class="btn btn-secondary btn-sm"><a href="patients/edit/new">Add Patient</a></button>
 </div>

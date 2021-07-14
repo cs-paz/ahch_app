@@ -1,4 +1,6 @@
 const express = require('express');
+const data = require('../data');
+const patientData = data.patients;
 const router = express.Router();
 
 
@@ -37,21 +39,24 @@ router.get('/referral', async (req, res, next) => {
 });
 
 router.get('/patients', async (req, res, next) => {
+  // caseId = req.params.caseId
+  // patientArr = patientData.getAllPatients(caseId)
   res.render('cases/patients', {
     title: 'Case Patients',
+    // patients: patientArr,
     layout: 'cases'
   });
 });
 
-router.get('/patients/edit', async (req, res, next) => {
+router.get('/patients/edit/new', async (req, res, next) => {
   console.log(req.query)
   let form = {};
   if (req.query.patientPopSelector == "name1") {
-    form.medicalRefNum = 202020
+    form.medicalRef = 202020
     form.firstName = "Elijah"
     form.lastName = "Wendel"
     form.middleInitial = "Z"
-    form.legalFamilyCustodian = "name2"
+    form.guardianID = "name2"
   }
   res.render('cases/patientForm', {
     title: 'Case Patients',
@@ -60,20 +65,20 @@ router.get('/patients/edit', async (req, res, next) => {
   });
 });
 
-// router.get('/patients/edit/:id', async (req, res, next) => {
-//   let form = {};
-//   if (req.params.id == "name1") {
-//     form.medicalRefNum = 202020
-//     form.firstName = "Elijah"
-//     form.lastName = "Wendel"
-//     form.middleInitial = "Z"
-//   }
-//   res.render('cases/patientForm', {
-//     title: 'Case Patients',
-//     layout: 'cases',
-//     form: form
-//   });
-// });
+router.get('/patients/edit/:id', async (req, res, next) => {
+  let form = {};
+  if (req.params.id == "name1") {
+    form.medicalRefNum = 202020
+    form.firstName = "Elijah"
+    form.lastName = "Wendel"
+    form.middleInitial = "Z"
+  }
+  res.render('cases/patientForm', {
+    title: 'Case Patients',
+    layout: 'cases',
+    form: form
+  });
+});
 
 router.get('/medical', async (req, res, next) => {
   res.render('cases/medical', {

@@ -1,6 +1,6 @@
 let mongoose = require('mongoose');
-const organization = require('./userorganization')
-const role = require('./userroles')
+const organization = require('./userorganization').schema
+const role = require('./userroles').schema
 
 // Users Schema
 let userSchema = mongoose.Schema({
@@ -31,7 +31,7 @@ let userSchema = mongoose.Schema({
     role: {
         type: String
     },
-    organization: organization,
+    organization: [organization],
     roles: [role]
 });
 

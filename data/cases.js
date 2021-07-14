@@ -7,7 +7,7 @@ function spiritNumberExists(spiritNum) {
 
 async function addCase(formRequestBody) {
     if (!formRequestBody) throw 'No form body provided'
-    let Case = require('./models/new_chims_models/case/case.js');
+    let Case = require('../models/new_chims_models/case/case.js');
 
     let newCase = new Case();
 
