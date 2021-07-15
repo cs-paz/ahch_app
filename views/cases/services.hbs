@@ -1,0 +1,60 @@
+<div class='row justify-content-center' style="margin-top: 10px;">
+    <h3> Services </h3>
+</div>
+
+<div class='row justify-content-center'>
+    <p>[Family Name]</p>
+</div>
+
+<div class="row justify-content-center">
+
+    {{!-- <table class="table table-hover" style="background-color: silver; width:200%;"> --}}
+    {{#if service}}
+    <table class="table" style="width:70%;">
+        <tr>
+            <th>Schedule Date</th>
+            <td>Patients</td>
+            <td>Service</td>
+            <td>Clinician</td>
+            <td>Status</td>
+        </tr>
+        {{#each service}}
+            <tr>
+                {{#if this.serviceScheduleHistory.scheduleDate}}
+                    <th>{{this.serviceScheduleHistory.scheduleDate}}</th>
+                {{else}}
+                    <th>N/A</th>
+                {{/if}}
+                {{!-- will need to figure out a way to go about this when configuring backend --}}
+                {{!-- Not currently the structure of schema --}}
+                {{#if this.patients}}
+                    {{#each this.patients}}
+                        <td>{{this.patients}}</td>
+                    {{/each}}
+                {{else}}
+                    <th>N/A</th>
+                {{/if}}
+                {{!-- haven't found clinician in our schema but this is in their current table --}}
+                {{#if this.clinician}}
+                    <td>{{this.clinician}}</td>
+                {{else}}
+                    <td>N/A</td>
+                {{/if}}
+                {{#if this.serviceSchedule.status}}
+                    <td>{{this.serviceSchedule.status}}</td>
+                {{else}}
+                    <td>N/A</td>
+                {{/if}}
+            </tr>
+        {{/each}}
+    </table>
+    {{else}}
+        <p>There are no recorded services.</p>
+    {{/if}}
+
+</div>
+
+
+<div class='row justify-content-center'>
+    <button type="button" class="btn btn-secondary btn-sm"><a href="/cases/services/edit">Add Service</a></button>
+</div>

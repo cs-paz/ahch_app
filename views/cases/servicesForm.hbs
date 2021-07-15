@@ -1,7 +1,7 @@
 <div class='row justify-content-center' style="margin-top: 15px;">
     <h2> Services </h2>
 </div>
-<div class="card body p-2" style="border-radius: 1rem; width: 50rem; margin: auto;">
+<div class="card body p-2" id="services-card-ext">
     <div class="form-group row">
         <div>
             <label class="service-label" for="scheduled by">Scheduled by: <abbr title="required"
@@ -14,13 +14,23 @@
         <div class="service-label">
             Patient:
         </div>
+        <div class="col-md-12" style="margin-left: 3px;">
+                <div class="form-check form-check-inline  form-control-sm">
+                    <input class="form-check-input" type="radio" name="patientOptions" value="patient1">
+                    <label class="form-check-label checkbox-label" for="patient1">Patient1</label>
+                </div>
+                <div class="form-check form-check-inline  form-control-sm">
+                    <input class="form-check-input" type="radio" name="patientOptions" value="patient2">
+                    <label class="form-check-label checkbox-label" for="inputDisclosureNo">Patient2</label>
+                </div>
+        </div>
     </div>
 
     <div class="form-group row">
         <div class="service-label">
             Referal Type:
         </div>
-        <select name="referal type" id="referal type" style="width: 75px; height: 35px; margin-top: 12px;">
+        <select name="referal type" id="referal type" class="services-dropdown">
             <option value="data">data</option>
         </select>
     </div>
@@ -29,7 +39,7 @@
         <div class="service-label">
             Service:
         </div>
-        <select name="service" id="service" style="width: 75px; height: 35px; margin-top: 12px;">
+        <select name="service" id="service" class="services-dropdown">
             <option value="data">data</option>
         </select>
     </div>
@@ -38,7 +48,7 @@
         <div class="service-label">
             Clinician Name:
         </div>
-        <select name="clinician name" id="clinician name" style="width: 75px; height: 35px; margin-top: 12px;">
+        <select name="clinician name" id="clinician name" class="services-dropdown">
             <option value="data">data</option>
         </select>
     </div>
@@ -47,7 +57,7 @@
         <div class="service-label">
             Report Submitted:
         </div>
-        <select name="report submitted" id="report submitted" style="width: 75px; height: 35px; margin-top: 12px;">
+        <select name="report submitted" id="report submitted" class="services-dropdown">
             <option value="yes">yes</option>
             <option value="no">no</option>
         </select>
@@ -63,9 +73,9 @@
 
     <div class="form-group row">
         <div class="service-label">
-            <label style="display:block;" for="Report Date">Notes: <abbr title="required"
+            <label class="block" for="Report Date">Notes: <abbr title="required"
                     aria-label="required"></abbr></label>
-            <textarea style="display:block;" rows="5" cols="50" for="Report Date"></textarea>
+            <textarea class="block" rows="5" cols="50" for="Report Date"></textarea>
         </div>
     </div>
 </div>
