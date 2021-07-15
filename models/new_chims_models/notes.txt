@@ -1,0 +1,54 @@
+this file is a summary of each file from the old chims models and how
+they are going to be reflected in our new models
+
+case - done
+caseNote - done, child arr of case
+caseStatus - done
+casePatient - deleted, moved medicalRef to patient
+family - changed to family member, child arr of case
+patient - done, child arr of case
+abuse - done, child of patient
+abuseType - deleted and combined with abuse 
+Evaluation - done, child arr on patient
+history - done, child of patient
+patientliveswith - deleted, added “livesWith” field to patient
+worker - done, child of case
+workerType - deleted, added “typeName” and “description” to worker
+history97, deleted added “EventDate” to history
+user - done?
+userorganization - done, child of user
+userroles - done, child arr of user
+Relationship - deleted, added “Relationship” field to familyMember
+languages - deleted, added “primaryLanguage” field to familyMember and patient
+interviewActivities - deleted
+activities - done, child arr of interview
+referral - done, child arr of case
+Behavior - deleted, added “generalBehavior” field to patient
+escort - deleted
+caseSuspect - deleted
+suspect - done, child arr of patient
+Serviceschedulepatient, deleted
+Casetype - done, child of case
+caseworker - deleted, added “referer” field to worker
+tannerstage - deleted, added "tannerStage" field to patent
+Referal - done, child arr of case
+Recommendation - done, child of case
+RecommendationFactorKey - done, child of recommendation
+Serviceschedule - done, child of service
+Serviceschedulehistory - done, child of service
+Serviceschedulestatus - deleted, added "status" field to serviceschedule
+serviceType - done, child of servcice
+Service - done, child of case
+
+Files that still need to be looked at:
+counties - leaving be for now (maybe do this in just the front end)
+Countries - leaving be for now (maybe do this in just the front end)
+Examposition - leaving be for now
+Findings - leaving be for now
+Followup - leaving be for now
+Riskfactors - leaving be for now
+Siteservicescategory - leave be for now
+Siteservices - leave be for now
+Siteservicetypes - leave be for now
+States - leaving be for now (maybe do this in just the front end)
+

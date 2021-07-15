@@ -32,7 +32,7 @@ app.use(session({
   }));
 
 // Bring in Models
-let Patient = require('./models/patient');
+let Patient = require('./models/new_chims_models/case/patient/patient');
 // let p = new Patient();
 
 // p.patientID = 123;
@@ -69,6 +69,36 @@ app.use(express.urlencoded({ extended: true }));
 // View Engine Setup: Handlebars (extension .hbs)
 app.engine('hbs', exphbs({ extname: 'hbs', defaultLayout: 'main', layoutsDir: __dirname + '/views/layouts' }));
 app.set('view engine', 'hbs');
+
+var hbs = exphbs.create({});
+
+hbs.handlebars.registerHelper('ifCond', function (v1, operator, v2, options) {
+
+    switch (operator) {
+        case '==':
+            return (v1 == v2) ? options.fn(this) : options.inverse(this);
+        case '===':
+            return (v1 === v2) ? options.fn(this) : options.inverse(this);
+        case '!=':
+            return (v1 != v2) ? options.fn(this) : options.inverse(this);
+        case '!==':
+            return (v1 !== v2) ? options.fn(this) : options.inverse(this);
+        case '<':
+            return (v1 < v2) ? options.fn(this) : options.inverse(this);
+        case '<=':
+            return (v1 <= v2) ? options.fn(this) : options.inverse(this);
+        case '>':
+            return (v1 > v2) ? options.fn(this) : options.inverse(this);
+        case '>=':
+            return (v1 >= v2) ? options.fn(this) : options.inverse(this);
+        case '&&':
+            return (v1 && v2) ? options.fn(this) : options.inverse(this);
+        case '||':
+            return (v1 || v2) ? options.fn(this) : options.inverse(this);
+        default:
+            return options.inverse(this);
+    }
+});
 
 // Configure Routing from ./routes
 const configRoutes = require('./routes');
