@@ -51,6 +51,20 @@ router.get('/patients', async (req, res, next) => {
 router.get('/patients/edit/new', async (req, res, next) => {
   console.log(req.query)
   let form = {};
+  if (req.query.patientPopSelector || req.query.familyPopSelector) {
+    let id;
+    if (req.query.patientPopSelector) {
+      id = req.query.patientPopSelector;
+    } else {
+      id = req.query.familyPopSelector;
+    }
+    try {
+      form = await patientData.getPatient(id)
+    } catch (e) {
+      res.status(500).render('error');
+    }
+  }
+  
   if (req.query.patientPopSelector == "name1") {
     form.medicalRef = 202020
     form.firstName = "Elijah"
@@ -65,19 +79,68 @@ router.get('/patients/edit/new', async (req, res, next) => {
   });
 });
 
+router.post('/patients/edit/new', async (req, res, next) => {
+  let form = req.body // have to add error checking/xss
+  let patient;
+  try {
+    patient = await patientData.add(form)
+  } catch (e) {
+    res.status(500).render('error');
+  }
+  // caseId = req.params.caseId
+  // patientArr = patientData.getAllPatients(caseId)
+  res.render('cases/patients', {
+    title: 'Case Patients',
+    // patients: patientArr,
+    layout: 'cases'
+  });
+  return patient;
+});
+
 router.get('/patients/edit/:id', async (req, res, next) => {
   let form = {};
-  if (req.params.id == "name1") {
-    form.medicalRefNum = 202020
-    form.firstName = "Elijah"
-    form.lastName = "Wendel"
-    form.middleInitial = "Z"
+  try {
+    form = await patientData.getPatient(req.params.id);
+  } catch (e) {
+    res.status(500).render('error');
+  }
+  if (req.query.patientPopSelector || req.query.familyPopSelector) { // can populate when editing already existing patient as welll
+    let id;
+    if (req.query.patientPopSelector) {
+      id = req.query.patientPopSelector;
+    } else {
+      id = req.query.familyPopSelector;
+    }
+    try {
+      form = await patientData.getPatient(id)
+    } catch (e) {
+      res.status(500).render('error');
+    }
   }
   res.render('cases/patientForm', {
     title: 'Case Patients',
     layout: 'cases',
-    form: form
+    form: form,
+    patientId: req.params.id
   });
+});
+
+router.post('/patients/edit/:id', async (req, res, next) => {
+  let form = req.body // have to add error checking/xss
+  let patient;
+  try {
+    patient = await patientData.update(form)
+  } catch (e) {
+    res.status(500).render('error');
+  }
+  // caseId = req.params.caseId
+  // patientArr = patientData.getAllPatients(caseId)
+  res.render('cases/patients', {
+    title: 'Case Patients',
+    // patients: patientArr,
+    layout: 'cases'
+  });
+  return patient;
 });
 
 router.get('/medical', async (req, res, next) => {

@@ -73,6 +73,10 @@ async function add(formRequestBody) {
     return updated
 }
 
+async function update(id, formRequestBody) {
+    
+}
+
 async function getAllPatients(id) {
     if (!id) throw 'Error: id not given.'
     if (typeof(id) != "string") throw 'Error: type of id not string.'

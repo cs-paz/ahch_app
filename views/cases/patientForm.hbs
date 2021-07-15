@@ -28,7 +28,11 @@
     <h4>Patients/Family Members</h4>
 
     <div class="form-group row">
+        {{#if patientId}}
+        <form action="/cases/patients/edit/{{patientId}}" method="GET">
+        {{else}}
         <form action="/cases/patients/edit/new" method="GET">
+        {{/if}}
         <label style="margin:15px;" for="patientPopSelector">Pre-fill form with patient info:</label>
         <select name="patientPopSelector" id="patientPopSelector">
             <option value="-Select-">-Select-</option>
@@ -47,7 +51,11 @@
     </div>
 
     <div class="form-group row">
+        {{#if patientId}}
+        <form action="/cases/patients/edit/{{patientId}}" method="GET">
+        {{else}}
         <form action="/cases/patients/edit/new" method="GET">
+        {{/if}} 
         <label style="margin:15px;" for="family members">Pre-fill form with family member info:</label>
         <select name="family" id="familyPopSelector">
             <option value="-Select-">-Select-</option>
