@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    
+
     <h1 class="text-center">AHCH Information Management System</h1>
 
     <div class="row">
@@ -15,7 +15,24 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        {{#each patients}}
+                            {{#if this.name}}
+                                <td scope="row">{{this.name}}</td>
+                            {{else}}
+                                <td scope="row">N/A</td>
+                            {{/if}}
+                            {{#if this.spiritNum}}
+                                <td scope="row">{{this.spiritNum}}</td>
+                            {{else}}
+                                <td scope="row">N/A</td>
+                            {{/if}}
+                            {{#if this.dateCreated}}
+                                <td scope="row">{{this.dateCreated}}</td>
+                            {{else}}
+                                <td scope="row">N/A</td>
+                            {{/if}}
+                        {{/each}}
+                        <tr> <!-- REMOVE LATER -->
                             <td scope="row">Smith</td>
                             <td>274628</td>
                             <td>12/28/2019</td>

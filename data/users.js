@@ -10,7 +10,7 @@ function clean(obj) {
 
 async function add(formRequestBody) {
     if (!formRequestBody) throw 'No form body provided'
-    let User = require('../models/chims_models/users');
+    let User = require('../models/new_chims_models/users/user');
 
     let newUser = new User();
 

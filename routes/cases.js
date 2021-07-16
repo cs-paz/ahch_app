@@ -43,6 +43,38 @@ router.get('/patients', async (req, res, next) => {
   });
 });
 
+router.get('/patients/edit', async (req, res, next) => {
+  console.log(req.query)
+  let form = {};
+  if (req.query.patientPopSelector == "name1") {
+    form.medicalRefNum = 202020
+    form.firstName = "Elijah"
+    form.lastName = "Wendel"
+    form.middleInitial = "Z"
+    form.legalFamilyCustodian = "name2"
+  }
+  res.render('cases/patientForm', {
+    title: 'Case Patients',
+    layout: 'cases',
+    form: form
+  });
+});
+
+// router.get('/patients/edit/:id', async (req, res, next) => {
+//   let form = {};
+//   if (req.params.id == "name1") {
+//     form.medicalRefNum = 202020
+//     form.firstName = "Elijah"
+//     form.lastName = "Wendel"
+//     form.middleInitial = "Z"
+//   }
+//   res.render('cases/patientForm', {
+//     title: 'Case Patients',
+//     layout: 'cases',
+//     form: form
+//   });
+// });
+
 router.get('/medical', async (req, res, next) => {
   res.render('cases/medical', {
     title: 'Case Medical',
@@ -52,6 +84,13 @@ router.get('/medical', async (req, res, next) => {
 
 router.get('/family', async (req, res, next) => {
   res.render('cases/family', {
+    title: 'Case Family',
+    layout: 'cases'
+  });
+});
+
+router.get('/family/edit', async (req, res, next) => {
+  res.render('cases/familyForm', {
     title: 'Case Family',
     layout: 'cases'
   });

@@ -7,27 +7,75 @@
 
 <div class="row justify-content-center">
     <table class="table case-tab-table">
+        
+        {{#if caseInfo.spiritNum}}
         <tr>
+            <th>NJ Spirit Number</th>
+            <td>#{{caseInfo.spiritNum}}</td>
+        </tr>
+        {{/if}}
+
+        <tr> <!-- REMOVE ONCE DATA IS ADDED -->
             <th>NJ Spirit Number</th>
             <td>#000000</td>
         </tr>
+
+        {{#if caseInfo.familyName}}
         <tr>
+            <th>Family Name</th>
+            <td>{{caseInfo.familyName}}</td>
+        </tr>
+        {{/if}}
+        
+        <tr> <!-- REMOVE ONCE DATA IS ADDED -->
             <th>Family Name</th>
             <td>Smith</td>
         </tr>
+
+        {{#if caseInfo.caseManager}}
         <tr>
+            <th>Case Manager</th>
+            <td>{{caseInfo.caseManager}}</td>
+        </tr>
+        {{/if}}
+
+        <tr> <!-- REMOVE ONCE DATA IS ADDED -->
             <th>Case Manager</th>
             <td>Dr. Pederson</td>
         </tr>
+
+        {{#if caseInfo.caseType}}
         <tr>
+            <th>Case Type</th>
+            <td>{{caseInfo.caseType}}</td>
+        </tr>
+        {{/if}}
+
+        <tr> <!-- REMOVE ONCE DATA IS ADDED -->
             <th>Case Type</th>
             <td>[insert type]</td>
         </tr>
+
+        {{#if caseInfo.status}}
         <tr>
+            <th>Status</th>
+            <td>{{caseInfo.status}}</td>
+        </tr>
+        {{/if}}
+
+        <tr> <!-- REMOVE ONCE DATA IS ADDED -->
             <th>Status</th>
             <td>Active</td>
         </tr>
+
+        {{#if caseInfo.dateCreated}}
         <tr>
+            <th>Date Created</th>
+            <td>{{caseInfo.dateCreated}}</td>
+        </tr>
+        {{/if}}
+
+        <tr> <!-- REMOVE ONCE DATA IS ADDED -->
             <th>Date Created</th>
             <td>MM/DD/YYYY</td>
         </tr>

@@ -9,48 +9,46 @@
 <div class="row justify-content-center">
 
     {{!-- <table class="table table-hover" style="background-color: silver; width:200%;"> --}}
+    {{#if familyMembers}}
     <table class="table" style="width:70%;">
         <tr>
             <th>Name</th>
-            <td>Age/DOB</td>
+            <td>DOB</td>
             <td>Sex</td>
             <td>Relationship</td>
         </tr>
-        <tr>
-            <th>Name</th>
-            <td>Age/DOB</td>
-            <td>Sex</td>
-            <td>Relationship</td>
-        </tr>
-        <tr>
-            <th>Name</th>
-            <td>Age/DOB</td>
-            <td>Sex</td>
-            <td>Relationship</td>
-        </tr>
-        <tr>
-            <th>Name</th>
-            <td>Age/DOB</td>
-            <td>Sex</td>
-            <td>Relationship</td>
-        </tr>
-        <tr>
-            <th>Name</th>
-            <td>Age/DOB</td>
-            <td>Sex</td>
-            <td>Relationship</td>
-        </tr>
-        <tr>
-            <th>Name</th>
-            <td>Age/DOB</td>
-            <td>Sex</td>
-            <td>Relationship</td>
-        </tr>
+        {{#each familyMembers}}
+            <tr>
+                {{#if this.name}}
+                    <th>{{this.name}}</th>
+                {{else}}
+                    <th>N/A</th>
+                {{/if}}
+                {{#if this.dob}}
+                    <td>{{this.dob}}</td>
+                {{else}}
+                    <th>N/A</th>
+                {{/if}}
+                {{#if this.sex}}
+                    <td>{{this.sex}}</td>
+                {{else}}
+                    <td>N/A</td>
+                {{/if}}
+                {{#if this.relationship}}
+                    <td>{{this.relationship}}</td>
+                {{else}}
+                    <td>N/A</td>
+                {{/if}}
+            </tr>
+        {{/each}}
     </table>
+    {{else}}
+        <p>There are no recorded family members.</p>
+    {{/if}}
 
 </div>
 
 
 <div class='row justify-content-center'>
-    <button type="button" class="btn btn-secondary btn-sm">Add Family Member</button>
+    <button type="button" class="btn btn-secondary btn-sm"><a href="family/edit">Add Family Member</a></button>
 </div>
