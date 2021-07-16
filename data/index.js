@@ -7,5 +7,6 @@ module.exports = {
     users: userData,
     cases: caseData,
     intake: intakeData,
-    patients: patientData
+    patients: patientData,
+    family: familyData
 }

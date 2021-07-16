@@ -1,6 +1,7 @@
 const express = require('express');
 const data = require('../data');
 const patientData = data.patients;
+const familyData = data.family;
 const router = express.Router();
 
 
@@ -157,10 +158,34 @@ router.get('/family', async (req, res, next) => {
   });
 });
 
-router.get('/family/edit', async (req, res, next) => {
+router.get('/family/edit/new', async (req, res, next) => {
+  console.log(req.query)
+  let form = {};
+  if (req.query.patientPopSelector || req.query.familyPopSelector) {
+    let id;
+    if (req.query.patientPopSelector) {
+      id = req.query.patientPopSelector;
+    } else {
+      id = req.query.familyPopSelector;
+    }
+    try {
+      form = await familyData.getFamilyMember(id)
+    } catch (e) {
+      res.status(500).render('error');
+    }
+  }
+  
+  if (req.query.patientPopSelector == "name1") {
+    form.medicalRef = 202020
+    form.firstName = "Elijah"
+    form.lastName = "Wendel"
+    form.middleInitial = "Z"
+    form.guardianID = "name2"
+  }
   res.render('cases/familyForm', {
     title: 'Case Family',
-    layout: 'cases'
+    layout: 'cases',
+    form: form
   });
 });
 

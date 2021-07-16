@@ -138,6 +138,7 @@ async function getPatient(id) {
 
 module.exports = {
     add,
+    update,
     getPatient,
     getAllPatients
 }
