@@ -110,6 +110,13 @@ router.get('/services', async (req, res, next) => {
   });
 });
 
+router.get('/services/edit', async (req, res, next) => {
+  res.render('cases/servicesForm', {
+    title: 'Case Services',
+    layout: 'cases'
+  });
+});
+
 router.get('/staff', async (req, res, next) => {
   res.render('cases/staff', {
     title: 'Case Staff',

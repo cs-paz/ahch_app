@@ -4,9 +4,6 @@ const serviceScheduleHistory = require('./serviceschedulehistory').schema;
 const serviceType = require('./servicetype').schema;
 // Service Schema
 let serviceSchema = mongoose.Schema({
-    caseID: {
-        type: Number
-    },
     service: {
         type: String
     },
@@ -55,7 +52,6 @@ let serviceSchema = mongoose.Schema({
     serviceSchedule: serviceSchedule,
     serviceScheduleHistory: serviceScheduleHistory,
     serviceType: serviceType
-
 });
 
 let Service = module.exports = mongoose.model('Service', serviceSchema);
