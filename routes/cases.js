@@ -92,11 +92,12 @@ router.post('/patients/edit/new', async (req, res, next) => {
   }
   // caseId = req.params.caseId
   // patientArr = patientData.getAllPatients(caseId)
-  res.render('cases/patients', { // may just res.redirect to /cases/${caseId}/patients
-    title: 'Case Patients',
-    // patients: patientArr,
-    layout: 'cases'
-  });
+  res.redirect("/cases/patients");
+  // res.render('cases/patients', { // may just res.redirect to /cases/${caseId}/patients
+  //   title: 'Case Patients',
+  //   // patients: patientArr,
+  //   layout: 'cases'
+  // });
   return patient;
 });
 
@@ -138,11 +139,12 @@ router.post('/patients/edit/:id', async (req, res, next) => {
   }
   // caseId = req.params.caseId
   // patientArr = patientData.getAllPatients(caseId)
-  res.render('cases/patients', { // may just res.redirect to /cases/${caseId}/patients
-    title: 'Case Patients',
-    // patients: patientArr,
-    layout: 'cases'
-  });
+  res.redirect("/cases/patients");
+  // res.render('cases/patients', { // may just res.redirect to /cases/${caseId}/patients
+  //   title: 'Case Patients',
+  //   // patients: patientArr,
+  //   layout: 'cases'
+  // });
   return patient;
 });
 
@@ -196,11 +198,12 @@ router.post('/family/edit/new', async (req, res, next) => {
   }
   // caseId = req.params.caseId
   // familyArr = patientData.getFamily(caseId)
-  res.render('cases/family', { // may just res.redirect to /cases/${caseId}/family
-    title: 'Case Family',
-    // family: familyArr,
-    layout: 'cases'
-  });
+  res.redirect("/cases/family");
+  // res.render('cases/family', { // may just res.redirect to /cases/${caseId}/family
+  //   title: 'Case Family',
+  //   // family: familyArr,
+  //   layout: 'cases'
+  // });
   return familyMember;
 });
 
@@ -242,11 +245,12 @@ router.post('/family/edit/:id', async (req, res, next) => {
   }
   // caseId = req.params.caseId
   // familyArr = patientData.getFamily(caseId)
-  res.render('cases/patients', { // may just res.redirect to /cases/${caseId}/family
-    title: 'Case Patients',
-    // family: familyArr,
-    layout: 'cases'
-  });
+  res.redirect("/cases/family");
+  // res.render('cases/family', { // may just res.redirect to /cases/${caseId}/family
+  //   title: 'Case Family',
+  //   // family: familyArr,
+  //   layout: 'cases'
+  // });
   return familyMember;
 });
 
@@ -294,11 +298,12 @@ router.post('/services/edit/new', async (req, res, next) => {
   }
   // caseId = req.params.caseId
   // serviceArr = patientData.getServices(caseId)
-  res.render('cases/services', { // may just res.redirect to /cases/${caseId}/service
-    title: 'Case Services',
-    // service: serviceArr,
-    layout: 'cases'
-  });
+  res.redirect("/cases/services");
+  // res.render('cases/services', { // may just res.redirect to /cases/${caseId}/service
+  //   title: 'Case Services',
+  //   // service: serviceArr,
+  //   layout: 'cases'
+  // });
   return service;
 });
 
@@ -326,11 +331,12 @@ router.post('/services/edit/:id', async (req, res, next) => {
   }
   // caseId = req.params.caseId
   // serviceArr = patientData.getServices(caseId)
-  res.render('cases/family', { // may just res.redirect to /cases/${caseId}/service
-    title: 'Case Family',
-    // service: serviceArr,
-    layout: 'cases'
-  });
+  res.redirect("/cases/services");
+  // res.render('cases/family', { // may just res.redirect to /cases/${caseId}/service
+  //   title: 'Case Family',
+  //   // service: serviceArr,
+  //   layout: 'cases'
+  // });
   // res.redirect("/cases/service")
   return service;
 });
