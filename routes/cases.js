@@ -1,3 +1,4 @@
+const { compareSync } = require('bcryptjs');
 const express = require('express');
 const data = require('../data');
 const patientData = data.patients;
@@ -275,7 +276,16 @@ router.get('/services/edit/new', async (req, res, next) => {
 });
 
 router.post('/services/edit/new', async (req, res, next) => {
-  let form = req.body // have to add error checking/xss
+  console.log("here");
+  let form = req.body; // have to add error checking/xss
+  // let patients = form.patientOptions; // this is just incase we need to do something with patientOptions before sending it to db
+  // let servicesForm = ["scheduler", "referralType", "service", "clinician", "reportSubmitted", "reportSubmittedDate", "notes"]
+  // for (i in form) {
+  //   console.log(i)
+  //   if (!servicesForm.includes(i)) {
+  //     console.log("this!")
+  //   }
+  // }
   let service;
   try {
     service = await serviceData.add(form)
@@ -284,8 +294,8 @@ router.post('/services/edit/new', async (req, res, next) => {
   }
   // caseId = req.params.caseId
   // serviceArr = patientData.getServices(caseId)
-  res.render('cases/family', { // may just res.redirect to /cases/${caseId}/service
-    title: 'Case Family',
+  res.render('cases/services', { // may just res.redirect to /cases/${caseId}/service
+    title: 'Case Services',
     // service: serviceArr,
     layout: 'cases'
   });
@@ -321,6 +331,7 @@ router.post('/services/edit/:id', async (req, res, next) => {
     // service: serviceArr,
     layout: 'cases'
   });
+  // res.redirect("/cases/service")
   return service;
 });
 

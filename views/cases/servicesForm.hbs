@@ -2,6 +2,11 @@
     <h2> Services </h2>
 </div>
 <div class="card body p-2" id="services-card-ext">
+    {{#if serviceId}}
+    <form action="/cases/services/edit/{{serviceId}}" method="POST">
+    {{else}}
+    <form action="/cases/services/edit/new" method="POST">
+    {{/if}}
     <div class="form-group row">
         <div>
             <label class="service-label" for="scheduler">Scheduled by: <abbr title="required"
@@ -17,16 +22,16 @@
         <div class="col-md-12" style="margin-left: 3px;">
                 {{#each patients}}
                 <div class="form-check form-check-inline  form-control-sm">
-                    <input class="form-check-input" type="radio" name="patientOptions" value="{{this._id}}">
+                    <input class="form-check-input" type="checkbox" name="patientOptions" value="{{this._id}}">
                     <label class="form-check-label checkbox-label" for="{{this._id}}">{{this.firstName}} {{this.lastName}}</label>
                 </div>
                 {{/each}}
                 <div class="form-check form-check-inline  form-control-sm">
-                    <input class="form-check-input" type="radio" name="patientOptions" value="patient1">
+                    <input class="form-check-input" type="checkbox" name="patientOptions" value="patient1">
                     <label class="form-check-label checkbox-label" for="patient1">Patient1</label>
                 </div>
                 <div class="form-check form-check-inline  form-control-sm">
-                    <input class="form-check-input" type="radio" name="patientOptions" value="patient2">
+                    <input class="form-check-input" type="checkbox" name="patientOptions" value="patient2">
                     <label class="form-check-label checkbox-label" for="inputDisclosureNo">Patient2</label>
                 </div>
         </div>
@@ -103,6 +108,8 @@
             <textarea class="block" rows="5" cols="50" for="notes" value="{{form.serviceSchedule.notes}}"></textarea>
         </div>
     </div>
+    <button type="submit" class="btn btn-secondary btn-sm">Submit</button>
+    </form>
 </div>
 <div class="card body p-2" id="services-card-ext" style="margin-top: 8px;">
     <table class="table" style="width:70%;">
