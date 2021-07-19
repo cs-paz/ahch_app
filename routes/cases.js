@@ -2,6 +2,7 @@ const express = require('express');
 const data = require('../data');
 const patientData = data.patients;
 const familyData = data.family;
+const serviceData = data.services;
 const router = express.Router();
 
 
@@ -176,31 +177,30 @@ router.get('/family/edit/new', async (req, res, next) => {
     } catch (e) {
       res.status(500).render('error');
     }
-  }
-
-  router.post('/family/edit/new', async (req, res, next) => {
-    let form = req.body // have to add error checking/xss
-    let familyMember;
-    try {
-      familyMember = await familyData.add(form)
-    } catch (e) {
-      res.status(500).render('error');
-    }
-    // caseId = req.params.caseId
-    // familyArr = patientData.getFamily(caseId)
-    res.render('cases/patients', { // may just res.redirect to /cases/${caseId}/family
-      title: 'Case Patients',
-      // family: familyArr,
-      layout: 'cases'
+    res.render('cases/familyForm', {
+      title: 'Case Family',
+      layout: 'cases',
+      form: form
     });
-    return familyMember;
-  });
-  
-  res.render('cases/familyForm', {
+  }
+});
+
+router.post('/family/edit/new', async (req, res, next) => {
+  let form = req.body // have to add error checking/xss
+  let familyMember;
+  try {
+    familyMember = await familyData.add(form)
+  } catch (e) {
+    res.status(500).render('error');
+  }
+  // caseId = req.params.caseId
+  // familyArr = patientData.getFamily(caseId)
+  res.render('cases/family', { // may just res.redirect to /cases/${caseId}/family
     title: 'Case Family',
-    layout: 'cases',
-    form: form
+    // family: familyArr,
+    layout: 'cases'
   });
+  return familyMember;
 });
 
 router.get('/family/edit/:id', async (req, res, next) => {
@@ -258,10 +258,70 @@ router.get('/history', async (req, res, next) => {
 });
 
 router.get('/services', async (req, res, next) => {
+  // caseId = req.params.caseId
+  // serviceArr = patientData.getAllServices(caseId)
   res.render('cases/services', {
     title: 'Case Services',
+    // services: serviceArr,
     layout: 'cases'
   });
+});
+
+router.get('/services/edit/new', async (req, res, next) => {
+  res.render('cases/servicesForm', {
+    title: 'Case Services',
+    layout: 'cases',
+  });
+});
+
+router.post('/services/edit/new', async (req, res, next) => {
+  let form = req.body // have to add error checking/xss
+  let service;
+  try {
+    service = await serviceData.add(form)
+  } catch (e) {
+    res.status(500).render('error');
+  }
+  // caseId = req.params.caseId
+  // serviceArr = patientData.getServices(caseId)
+  res.render('cases/family', { // may just res.redirect to /cases/${caseId}/service
+    title: 'Case Family',
+    // service: serviceArr,
+    layout: 'cases'
+  });
+  return service;
+});
+
+router.get('/services/edit/:id', async (req, res, next) => {
+  let form = {};
+  try {
+    form = await familyData.getFamilyMember(req.params.id);
+  } catch (e) {
+    res.status(500).render('error');
+  }
+  res.render('cases/familyForm', {
+    title: 'Case Patients',
+    layout: 'cases',
+    form: form
+  });
+});
+
+router.post('/services/edit/:id', async (req, res, next) => {
+  let form = req.body // have to add error checking/xss
+  let service;
+  try {
+    service = await serviceData.update(form)
+  } catch (e) {
+    res.status(500).render('error');
+  }
+  // caseId = req.params.caseId
+  // serviceArr = patientData.getServices(caseId)
+  res.render('cases/family', { // may just res.redirect to /cases/${caseId}/service
+    title: 'Case Family',
+    // service: serviceArr,
+    layout: 'cases'
+  });
+  return service;
 });
 
 router.get('/staff', async (req, res, next) => {

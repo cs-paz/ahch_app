@@ -11,6 +11,9 @@ let serviceScheduleSchema = mongoose.Schema({
     notes: {
         type: String
     },
+    clinician: { // for now
+        type: String
+    },
     providerID: {
         type: Number
     },

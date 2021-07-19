@@ -1,0 +1,115 @@
+<div class='row justify-content-center' style="margin-top: 15px;">
+    <h2> Services </h2>
+</div>
+<div class="card body p-2" id="services-card-ext">
+    <div class="form-group row">
+        <div>
+            <label class="service-label" for="scheduler">Scheduled by: <abbr title="required"
+                    aria-label="required"></abbr></label>
+            <input id="scheduler" type="text" name="scheduler" value="{{form.serviceSchedule.scheduler}}">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="service-label">
+            Patient:
+        </div>
+        <div class="col-md-12" style="margin-left: 3px;">
+                {{#each patients}}
+                <div class="form-check form-check-inline  form-control-sm">
+                    <input class="form-check-input" type="radio" name="patientOptions" value="{{this._id}}">
+                    <label class="form-check-label checkbox-label" for="{{this._id}}">{{this.firstName}} {{this.lastName}}</label>
+                </div>
+                {{/each}}
+                <div class="form-check form-check-inline  form-control-sm">
+                    <input class="form-check-input" type="radio" name="patientOptions" value="patient1">
+                    <label class="form-check-label checkbox-label" for="patient1">Patient1</label>
+                </div>
+                <div class="form-check form-check-inline  form-control-sm">
+                    <input class="form-check-input" type="radio" name="patientOptions" value="patient2">
+                    <label class="form-check-label checkbox-label" for="inputDisclosureNo">Patient2</label>
+                </div>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="service-label">
+            Referral Type:
+        </div>
+        <select name="referralType" id="referralType" class="services-dropdown">
+            {{#each referralTypes}}
+            {{#ifCond this '==' form.serviceSchedule.referralType}}
+            <option value="{{this}}" selected>{{this}}</option>
+            {{else}}
+            <option value="{{this}}">{{this}}</option>
+            {{/ifCond}}
+            {{/each}}
+            <option value="data">data</option>
+        </select>
+    </div>
+
+    <div class="form-group row">
+        <div class="service-label">
+            Service:
+        </div>
+        <select name="service" id="service" class="services-dropdown">
+            {{#each services}}
+            {{#ifCond this '==' form.service}}
+            <option value="{{this}}" selected>{{this}}</option>
+            {{else}}
+            <option value="{{this}}">{{this}}</option>
+            {{/ifCond}}
+            {{/each}}
+            <option value="data">data</option>
+        </select>
+    </div>
+
+    <div class="form-group row">
+        <div class="service-label">
+            Clinician Name:
+        </div>
+        <select name="clinician" id="clinician" class="services-dropdown">
+            <option value="data">data</option>
+        </select>
+    </div>
+
+    <div class="form-group row">
+        <div class="service-label">
+            Report Submitted:
+        </div>
+        <select name="reportSubmitted" id="reportSubmitted" class="services-dropdown">
+            {{#ifCond form.serviceSchedule.reportSubmitted '==' 'yes'}}
+            <option value="yes" selected>yes</option>
+            <option value="no">no</option>
+            {{else}}
+            <option value="yes">yes</option>
+            <option value="no" selected>no</option>
+            {{/ifCond}}
+        </select>
+    </div>
+
+    <div class="form-group row">
+        <div>
+            <label class="service-label" for="reportSubmittedDate">Report Date: <abbr title="required"
+                    aria-label="required"></abbr></label>
+            <input id="reportSubmittedDate" type="date" name="reportSubmittedDate" value="{{form.serviceSchedule.reportSubmittedDate}}">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="service-label">
+            <label class="block" for="notes">Notes: <abbr title="required"
+                    aria-label="required"></abbr></label>
+            <textarea class="block" rows="5" cols="50" for="notes" value="{{form.serviceSchedule.notes}}"></textarea>
+        </div>
+    </div>
+</div>
+<div class="card body p-2" id="services-card-ext" style="margin-top: 8px;">
+    <table class="table" style="width:70%;">
+        <tr>
+            <th>Status</th>
+            <td>Schedule Date</td>
+            <td>Schedule Changed on</td>
+            <td>[add/delete]</td>
+        </tr>
+</div>
