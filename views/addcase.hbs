@@ -3,10 +3,9 @@
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <li><a href="#top">Top</a></li>
-            <li><a href="#section1">Persons Referred for Services</a></li>
-            <li><a href="#section2">Allegations</a></li>
-            <li><a href="#section3">Placement, Custody, and Guardianship</a></li>
-            <li><a href="#section4">Reason for Referral and Specific Questions</a></li>
+            <li><a href="#sectionPersonsReferred">Persons Referred for Services</a></li>
+            <li><a href="#sectionPCG">Placement, Custody, and Guardianship</a></li>
+            <li><a href="#sectionReasonForReferral">Reason for Referral and Specific Questions</a></li>
             <li><a href="#section5">Previous CP&P History</a></li>
         </ul>
     </div>
@@ -441,7 +440,7 @@
                         </div>
 
                         {{!------------------- SECTION 1 -------------------}}
-                        <div id="section1">
+                        <div id="sectionPersonsReferred">
                             <div class="border-top my-3"></div>
 
                             <div class="row justify-content-center">
@@ -596,8 +595,6 @@
                                 </div>
                             </div>
 
-                            <div class="border-top my-3"></div>
-
                             <div class="form-group row">
                                 <label for="input-perp-name-and-relation"
                                     class="col-sm-2 col-form-label col-form-label-sm">Alleged Perpetrator & Relationship to Child: </label>
@@ -675,162 +672,10 @@
                                 </div>
                             </div>
 
-                            <div class="border-top my-3"></div>
-
-                            <div class="form-group row">
-                                <label for="input-agency-name" class="col-sm-2 col-form-label col-form-label-sm">Agency
-                                    Name</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control form-control-sm" id="input-agency"
-                                        autocomplete="off" name="agencyName">
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="input-agency-address"
-                                    class="col-sm-2 col-form-label col-form-label-sm">Agency
-                                    Address</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control form-control-sm" id="inputAgencyAddress"
-                                        autocomplete="off" name="agencyAddress">
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="input-agency-city" class="col-sm-2 col-form-label col-form-label-sm">Agency
-                                    City</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control form-control-sm" id="input-agency-city"
-                                        autocomplete="off" name="agencyCity">
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="input-agency-state" class="col-sm-2 col-form-label col-form-label-sm">Agency
-                                    State</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control form-control-sm" id="input-agency-state"
-                                        autocomplete="off" name="agencyState">
-                                </div>
-                            </div>
-
-
-                            <div class="form-group row">
-                                <label for="input-agency-phone" class="col-sm-2 col-form-label col-form-label-sm">Agency
-                                    Phone #</label>
-                                <div class="col-sm-10">
-                                    <input type="tel" class="form-control form-control-sm" id="input-agency-phone"
-                                        autocomplete="off" name="agencyPhone">
-                                </div>
-                            </div>
-
-                        </div>
+                        </div>          
 
                         {{!------------------- SECTION 2 -------------------}}
-                        <div id="section2">
-
-                            <div class="border-top my-3"></div>
-
-                            <div class="row justify-content-center">
-                                <h4>Allegations</h4>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="input-referred-member-name"
-                                    class="col-sm-2 col-form-label col-form-label-sm">Referred Member
-                                    #1</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control form-control-sm" autocomplete="off"
-                                        id="input-referred-member-name" name="referredMemberName1">
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="input-referred-member-gender"
-                                    class="col-sm-2 col-form-label col-form-label-sm">Gender</label>
-                                <div class="col-sm-10">
-                                    <div class="form-check form-check-inline  form-control-sm">
-                                        <input class="form-check-input" type="radio" id="input-gender-m" value="M"
-                                            name="referredMemberGender1">
-                                        <label class="form-check-label" for="input-gender-m">M</label>
-                                    </div>
-                                    <div class="form-check form-check-inline  form-control-sm">
-                                        <input class="form-check-input" type="radio" id="input-gender-f" value="F"
-                                            name="referredMemberGender1">
-                                        <label class="form-check-label" for="input-gender-f">F</label>
-                                    </div>
-                                    <div class="form-check form-check-inline  form-control-sm">
-                                        <input class="form-check-input" type="radio" id="input-gender-other"
-                                            value="Other" name="referredMemberGender1">
-                                        <label class="form-check-label" for="input-gender-other">Other</label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="input-referred-member-DOB"
-                                    class="col-sm-2 col-form-label col-form-label-sm">Date of
-                                    Birth</label>
-                                <div class="col-sm-10">
-                                    <input type="date" class="form-control form-control-sm"
-                                        id="input-referred-member-DOB" name="referredMemberDOB1">
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="input-referred-member-SSN"
-                                    class="col-sm-2 col-form-label col-form-label-sm">SSN</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control form-control-sm" autocomplete="off"
-                                        id="input-referred-member-SSN" name="referredMemberSSN1">
-                                </div>
-                            </div>
-
-
-                            <div class="form-group row">
-                                <label for="input-referred-member-address"
-                                    class="col-sm-2 col-form-label col-form-label-sm">Address</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control form-control-sm" autocomplete="off"
-                                        id="input-referred-member-address" name="referredMemberAddress1">
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="input-referred-member-city"
-                                    class="col-sm-2 col-form-label col-form-label-sm">City</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control form-control-sm" autocomplete="off"
-                                        id="input-referred-member-city" name="referredMemberCity1">
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="input-referred-member-state"
-                                    class="col-sm-2 col-form-label col-form-label-sm">State</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control form-control-sm" autocomplete="off"
-                                        id="input-referred-member-state" name="referredMemberState1">
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="input-referred-member-lives-with"
-                                    class="col-sm-2 col-form-label col-form-label-sm">Lives
-                                    With</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control form-control-sm" autocomplete="off"
-                                        id="input-referred-member-lives-with" name="referredMemberLivesWith1">
-                                </div>
-                            </div>
-
-                            <div class="row justify-content-center">
-                                <button type="button" class="btn btn-secondary btn-sm">Add Additional Member</button>
-                            </div>
-                        </div>
-
-                        {{!------------------- SECTION 3 -------------------}}
-                        <div id="section3">
+                        <div class="col-md-12" id="sectionPCG">
                             <div class="border-top my-3"></div>
 
                             <div class="row justify-content-center">
@@ -838,76 +683,198 @@
                             </div>
 
                             <div class="form-group row">
-                                <label class="col-sm-12 col-form-label col-form-label-sm">Primary Language</label>
-                                <label for="input-language-spoken-parent"
-                                    class="col-sm-2 col-form-label col-form-label-sm">Parent:</label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control form-control-sm" autocomplete="off"
-                                        id="input-language-spoken-parent" name="patentLanguage">
+                                <label for="input-contact-with-perp"
+                                    class="col-sm-2 col-form-label col-form-label-sm">Patient Residency Status: </label>
+                                <div class="col-sm-10">
+                                    <div class="form-check form-check-inline  form-control-sm">
+                                        <input class="form-check-input" type="radio" id="input-home" value="home"
+                                            name="residencyHome">
+                                        <label class="form-check-label" for="input-home">In Home (custody remains with legal gaurdians)</label>
+                                    </div>
+                                    <div class="form-check form-check-inline  form-control-sm">
+                                        <input class="form-check-input" type="radio" id="input-out-of-home" value="out-of-home"
+                                            name="residencyOutOfHome">
+                                        <label class="form-check-label" for="input-out-of-home">Out of Home (CP&P has care, custody, and supervision)</label>
+                                    </div>
                                 </div>
-                                <label for="input-language-spoken-child"
-                                    class="col-sm-2 col-form-label col-form-label-sm">Child:</label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control form-control-sm" autocomplete="off"
-                                        id="input-language-spoken-child" name="childLanguage">
+                            </div>
+                            <div style="margin-left: 3rem;">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label col-form-label-sm"
+                                        for="input-out-of-home-entry-date"><span class="font-weight-bold">Date of entry into out of home care: </span></label>
+                                        <div class="col-sm-3">
+                                            <input type="date" class="form-control  form-control-sm"
+                                                id="input-out-of-home-entry-date" name="outOfHomeEntryDate">
+                                        </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label col-form-label-sm"
+                                        for="input-out-of-home-placement-type"><span class="font-weight-bold">Out of Home Placement Type: </span></label>
+                                    <div class="form-check form-check-inline  form-control-sm">
+                                        <input class="form-check-input" type="radio" id="input-out-of-home-kinship" value="kinship"
+                                            name="outOfHomeKinship">
+                                        <label class="form-check-label" for="input-out-of-home-kinship">Kinship</label>
+                                    </div>
+                                    <div class="form-check form-check-inline  form-control-sm">
+                                        <input class="form-check-input" type="radio" id="input-out-of-home-unrelated" value="unrelated"
+                                        name="outOfHomeUnrelated">
+                                        <label class="form-check-label" for="input-out-of-home-unrelated">Unrelated Resource</label>
+                                    </div>
+                                    <div class="form-check form-check-inline  form-control-sm">
+                                        <input class="form-check-input" type="radio" id="input-out-of-home-residential" value="residential"
+                                            name="outOfHomeResidential">
+                                        <label class="form-check-label" for="input-out-of-home-residential">Residential</label>
+                                    </div>
+                                    <div class="form-check form-check-inline  form-control-sm">
+                                        <input class="form-check-input" type="radio" id="input-out-of-home-other" value="No"
+                                        name="perpContactNo">
+                                        <label class="form-check-label" for="input-out-of-home-other">Other</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="input-perp-name-and-relation"
+                                    class="col-sm-2 col-form-label col-form-label-sm">Other: </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control form-control-sm" id="input-perp-name-and-relation"
+                                            autocomplete="off" name="perpNameAndRelation">
+                                    </div>
                                 </div>
                             </div>
 
 
+                            <div class="form-group row col-sm-12" style="margin-bottom: 0.2rem"><h4>Child's Primary Caregiver(s)</h4></div>
+
                             <div class="form-group row">
-                                <label for="input-legal-guardian-name"
-                                    class="col-sm-12 col-form-label col-form-label-sm">Legal Guardian
+                                <label for="input-caregiver-name"
+                                    class="col-sm-12 col-form-label col-form-label-sm">
                                     Name</label>
                                 <div class="col-sm-12">
                                     <input type="text" class="form-control form-control-sm" autocomplete="off"
-                                        id="input-legal-guardian-name" name="legalGuardianName">
+                                        id="input-caregiver-name" name="caregiverName">
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="input-legal-guardian-relationship"
-                                    class="col-sm-12 col-form-label col-form-label-sm">Legal
-                                    Guardian's
-                                    Relationship to Child</label>
+                                <label for="input-caregiver-address"
+                                    class="col-sm-12 col-form-label col-form-label-sm">
+                                    Address</label>
                                 <div class="col-sm-12">
                                     <input type="text" class="form-control form-control-sm" autocomplete="off"
-                                        id="input-legal-guardian-relationship" name="legalGuardianRelaitonship">
+                                        id="input-caregiver-address" name="caregiverAddress">
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="input-seen" class="col-sm-12 col-form-label col-form-label-sm">Has the child
-                                    been seen
-                                    medically or
-                                    psychologically for this current disclosure?</label>
+                                <label for="input-caregiver-phone"
+                                    class="col-sm-12 col-form-label col-form-label-sm">Phone Number</label>
                                 <div class="col-sm-12">
-                                    <div class="form-check form-check-inline  form-control-sm">
-                                        <input class="form-check-input" type="radio" id="input-seen-yes" name="seen"
-                                            value="Yes" required>
-                                        <label class="form-check-label" for="input-seen-yes">Yes</label>
-                                    </div>
-                                    <div class="form-check form-check-inline  form-control-sm">
-                                        <input class="form-check-input" type="radio" id="input-seen-no" name="seen"
-                                            value="No" required>
-                                        <label class="form-check-label" for="input-seen-no">No</label>
-                                    </div>
+                                    <input type="text" class="form-control form-control-sm" autocomplete="off"
+                                        id="input-caregiver-phone" name="caregiverPhone">
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="inputLegalGuardianName"
-                                    class="col-sm-12 col-form-label col-form-label-sm">If so, when and
-                                    where?</label>
+                                <label for="input-caregiver-relationship"
+                                    class="col-sm-12 col-form-label col-form-label-sm">Relationship to Child</label>
                                 <div class="col-sm-12">
-                                    <textarea class="form-control form-control-sm"
-                                        aria-label="With textarea"></textarea>
+                                    <input type="text" class="form-control form-control-sm" autocomplete="off"
+                                        id="input-caregiver-relationship" name="caregiverRelationship">
+                                </div>
+                            </div>
+                        
+                            <div class="form-group row col-sm-12" style="margin-bottom: 0.2rem"><h4>Child's Legal Gaurdian(s) (if different from above): </h4></div>
+
+                            <div class="form-group row">
+                                <label for="input-legal-gaurdian-name"
+                                    class="col-sm-12 col-form-label col-form-label-sm">
+                                    Name</label>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control form-control-sm" autocomplete="off"
+                                        id="input-legal-gaurdian-name" name="legalGaurdianName">
                                 </div>
                             </div>
 
+                            <div class="form-group row">
+                                <label for="input-legal-gaurdian-address"
+                                    class="col-sm-12 col-form-label col-form-label-sm">
+                                    Address</label>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control form-control-sm" autocomplete="off"
+                                        id="input-legal-gaurdian-address" name="legalGaurdianAddress">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="input-legal-gaurdian-phone"
+                                    class="col-sm-12 col-form-label col-form-label-sm">Phone Number</label>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control form-control-sm" autocomplete="off"
+                                        id="input-legal-gaurdian-phone" name="legalGaurdianPhone">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="input-legal-gaurdian-relationship"
+                                    class="col-sm-12 col-form-label col-form-label-sm">Relationship to Child</label>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control form-control-sm" autocomplete="off"
+                                        id="input-legal-gaurdian-relationship" name="legalGaurdianRelationship">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label col-form-label-sm"
+                                            for="input-out-of-home-placement-type"><span class="font-weight-bold">Is CP&P involved in litigation with this family? </span></label>
+                                <div class="form-check form-check-inline  form-control-sm">
+                                    <input class="form-check-input" type="radio" id="input-yes" value="yes"
+                                        name="litigationYes">
+                                    <label class="form-check-label" for="input-yes">Yes</label>
+                                </div>
+                                <div class="form-check form-check-inline  form-control-sm">
+                                    <input class="form-check-input" type="radio" id="input-no" value="no"
+                                    name="litigationNo">
+                                    <label class="form-check-label" for="input-no">No</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label col-form-label-sm"
+                                            for="input-out-of-home-placement-type"><span class="font-weight-bold">Have parental rights been terminated and DCP&P has legal gaurdianship? </span></label>
+                                <div class="form-check form-check-inline  form-control-sm">
+                                    <input class="form-check-input" type="radio" id="input-yes-mother" value="yesMother"
+                                        name="parentalRightsYesMother">
+                                    <label class="form-check-label" for="input-yes-mother">Yes (mother)</label>
+                                </div>
+                                <div class="form-check form-check-inline  form-control-sm">
+                                    <input class="form-check-input" type="radio" id="input-yes-father" value="yesFather"
+                                    name="parentalRightsYesFather">
+                                    <label class="form-check-label" for="input-yes-father">Yes (father)</label>
+                                </div>
+                                <div class="form-check form-check-inline  form-control-sm">
+                                    <input class="form-check-input" type="radio" id="input-yes-both" value="yesBoth"
+                                        name="parentalRightsYesBoth">
+                                    <label class="form-check-label" for="input-yes-both">Yes (both)</label>
+                                </div>
+                                <div class="form-check form-check-inline  form-control-sm">
+                                    <input class="form-check-input" type="radio" id="input-no" value="no"
+                                    name="parentalRightsNo">
+                                    <label class="form-check-label" for="input-no">No</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="input-litigation-comments"
+                                    class="col-sm-12 col-form-label col-form-label-sm">Additional Comments/Notes:</label>
+                                <div class="col-sm-12">
+                                    <textarea type="text" class="form-control form-control-sm" autocomplete="off"
+                                        id="input-litigation-comments" name="legalGaurdianRelationship"></textarea>
+                                </div>
+                            </div>
                         </div>
 
-                        {{!------------------- SECTION 4 -------------------}}
-                        <div id="section4">
+                        {{!------------------- SECTION 3 -------------------}}
+                        <div class="col-md-12" id="sectionReasonForReferral">
                             <div class="border-top my-3"></div>
 
                             <div class="row justify-content-center">
@@ -915,59 +882,34 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="input-referral-reason"
-                                    class="col-sm-12 col-form-label col-form-label-sm">What
-                                    is the reason for
-                                    the
-                                    referral?</label>
+                                <label for="input-current-allegations"
+                                    class="col-sm-12 col-form-label col-form-label-sm">Describe the current allegations and situation: </label>
                                 <div class="col-sm-12">
-                                    <textarea class="form-control form-control-sm" id="input-referral-reason"
-                                        aria-label="With textarea" name="referralReason"></textarea>
+                                    <textarea class="form-control form-control-sm" id="input-current-allegations"
+                                        aria-label="With textarea" name="currentAllegations"></textarea>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="input-evaluation-questions"
-                                    class="col-sm-12 col-form-label col-form-label-sm">What
-                                    questions do you hope
-                                    to
-                                    answer
-                                    through
-                                    this evauluation?</label>
+                                <label for="input-statements"
+                                    class="col-sm-12 col-form-label col-form-label-sm"> Describe any statements, disclosures, or behaviors 
+                                    made/exhibited by the ßchild related to the current allegation. Identify if alleged child victim was
+                                    interviewed, by whom, and when: </label>
                                 <div class="col-sm-12">
-                                    <textarea class="form-control form-control-sm" id="input-evaluation-questions"
-                                        aria-label="With textarea" name="evaluationQuestions"></textarea>
+                                    <textarea class="form-control form-control-sm" id="input-statements"
+                                        aria-label="With textarea" name="statements"></textarea>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="input-had-disclosure" class="col-sm-12 col-form-label col-form-label-sm">Was
-                                    there a
-                                    disclosure?</label>
+                                <label for="input-service-purpose"
+                                    class="col-sm-12 col-form-label col-form-label-sm">Describe the purpose for the service requested:</label>
                                 <div class="col-sm-12">
-                                    <div class="form-check form-check-inline  form-control-sm">
-                                        <input class="form-check-input" type="radio" name="hadDisclosure"
-                                            id="input-disclosure-yes" value="Yes" required>
-                                        <label class="form-check-label" for="input-disclosure-yes">Yes</label>
-                                    </div>
-                                    <div class="form-check form-check-inline  form-control-sm">
-                                        <input class="form-check-input" type="radio" name="hadDisclosure"
-                                            id="input-disclosure-no" value="No" required>
-                                        <label class="form-check-label" for="input-disclosure-yes">No</label>
-                                    </div>
+                                    <textarea class="form-control form-control-sm" id="input-service-purpose"
+                                        aria-label="With textarea" name="servicePurpose"></textarea>
                                 </div>
                             </div>
-
-                            <div class="form-group row">
-                                <label for="input-disclosure-details"
-                                    class="col-sm-12 col-form-label col-form-label-sm">If
-                                    yes, what was the
-                                    disclosure?</label>
-                                <div class="col-sm-12">
-                                    <textarea class="form-control form-control-sm" id="input-disclosure-details"
-                                        aria-label="With textarea" name="disclosureDetails"></textarea>
-                                </div>
-                            </div>
+                            {{!------------------- Christian Ending Here -------------------}}
 
                             <div class="form-group row">
                                 <label for="input-disclosure-circumstances"
@@ -1038,8 +980,8 @@
 
                         </div>
 
-                        {{!------------------- SECTION 5 -------------------}}
-                        <div id="section5">
+                        {{!------------------- SECTION 4 -------------------}}
+                        <div class="col-md-12" id="section4">
                             <div class="border-top my-3"></div>
 
                             <div class="row justify-content-center">
