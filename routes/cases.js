@@ -158,8 +158,8 @@ router.get('/medical', async (req, res, next) => {
 router.get('/family', async (req, res, next) => {
   // caseId = req.params.caseId
   // familyArr = patientData.getFamily(caseId)
-  res.render('cases/patients', { 
-    title: 'Case Patients',
+  res.render('cases/family', { 
+    title: 'Case Family',
     // family: familyArr,
     layout: 'cases'
   });
@@ -180,12 +180,12 @@ router.get('/family/edit/new', async (req, res, next) => {
     } catch (e) {
       res.status(500).render('error');
     }
-    res.render('cases/familyForm', {
-      title: 'Case Family',
-      layout: 'cases',
-      form: form
-    });
   }
+  res.render('cases/familyForm', {
+    title: 'Case Family',
+    layout: 'cases',
+    form: form
+  });
 });
 
 router.post('/family/edit/new', async (req, res, next) => {
@@ -228,7 +228,7 @@ router.get('/family/edit/:id', async (req, res, next) => {
     }
   }
   res.render('cases/familyForm', {
-    title: 'Case Patients',
+    title: 'Case Family',
     layout: 'cases',
     form: form,
     familyId: req.params.id
@@ -314,7 +314,7 @@ router.get('/services/edit/:id', async (req, res, next) => {
   } catch (e) {
     res.status(500).render('error');
   }
-  res.render('cases/familyForm', {
+  res.render('cases/servicesForm', {
     title: 'Case Patients',
     layout: 'cases',
     form: form
