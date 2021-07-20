@@ -14,17 +14,17 @@ async function add(formRequestBody) {
 
     let newUser = new User();
 
-    newUser.UserID = formRequestBody.UserID;
-    newUser.Username = formRequestBody.Username;
-    newUser.FirstName = formRequestBody.FirstName;
-    newUser.MI = formRequestBody.MI;
-    newUser.LastName = formRequestBody.LastName;
-    newUser.Password = await bcrypt.hash(formRequestBody.Password, 10);
-    newUser.AuthType = formRequestBody.AuthType;
-    newUser.UserGUID = formRequestBody.UserGUID;
-    newUser.OrganizationID = formRequestBody.OrganizationID;
-    newUser.Notes = formRequestBody.Notes;
-    newUser.Role = formRequestBody.Role;
+    newUser.userId = formRequestBody.userId;
+    newUser.username = formRequestBody.username;
+    newUser.firstName = formRequestBody.firstName;
+    newUser.middleInitial = formRequestBody.middleInitial;
+    newUser.lastName = formRequestBody.LastName;
+    newUser.password = await bcrypt.hash(formRequestBody.password, 10);
+    newUser.authType = formRequestBody.authType;
+    newUser.userGUID = formRequestBody.userGUID;
+    newUser.organization.organization = formRequestBody.organization.organization;
+    newUser.notes = formRequestBody.notes;
+    newUser.role = formRequestBody.role;
     console.log(newUser);
 
     try {

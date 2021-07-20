@@ -1,0 +1,105 @@
+<div class='row justify-content-center' style="margin-top: 15px;">
+    <h2> User </h2>
+</div>
+
+<div class="card body p-2 text-center" style="border-radius: 1rem; margin-bottom: 15px;">
+
+    <button type="button" class="btn btn-link"><a href="../">Return to User List</a></button>
+
+    <div id="btn-login" class="row justify-content-center">
+        <button type="submit" class="btn btn-primary btn-md">Update</button>
+    </div>
+</div>
+
+<div class="card body p-2 text-center" style="border-radius: 1rem; margin-bottom: 15px">
+
+    <div class="card body p-2 text-center" style="border-radius: 1rem; margin-bottom: 15px">
+        
+        {{#if userId}}
+        <form action="/cases/family/edit/{{userId}}" method="POST">
+        {{else}}
+        <form action="/cases/family/edit/new" method="POST">
+        
+        <h4>Login Info</h4>
+
+        <div class="form-group row">
+            <div>
+                <label style="margin:15px;" for="username">Username: <abbr title="required"
+                        aria-label="required">*</abbr></label>
+                <input id="username" type="text" name="username" value="{{form.username}}">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div>
+                <label style="margin:15px;" for="password">Password: <abbr title="required"
+                        aria-label="required">*</abbr></label>
+                <input id="password" type="password" name="password">
+            </div>
+        </div>
+        
+        {{/if}}
+
+        <h4>Member Info</h4>
+        <div class="form-group row">
+            <div>
+                <label style="margin:15px;" for="firstName">First Name: <abbr title="required"
+                        aria-label="required">*</abbr></label>
+                <input id="firstName" type="text" name="firstName" value="{{form.firstName}}">
+            </div>
+            <div>
+                <label style="margin:15px;" for="lastName">Last Name: <abbr title="required"
+                        aria-label="required">*</abbr></label>
+                <input id="lastName" type="text" name="lastName" value="{{form.lastName}}">
+            </div>
+            <div>
+                <label style="margin:15px;" for="middleInitial">MI:</label>
+                <input id="middleInitial" type="text" name="middleInitial" value="{{form.middleInitial}}">
+            </div>
+        </div>
+        
+        <div class="form-group row">
+            <div>
+                <label style="margin:15px;" for="authType">Authentication Types:<abbr title="required"
+                        aria-label="required">*</abbr></label>
+                <input id="authType" type="text" name="authType" value="{{form.authType}}">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label style="margin:15px;" for="organization">Organization:<abbr title="required"
+                    aria-label="required">*</abbr></label>
+            <select name="organization" id="organization">
+                <option value="-Select-">-Select-</option>
+                {{#each organizations}}
+                {{#ifCond form.organization '==' this._id}}
+                <option value="{{this._id}}" selected>{{this.name}}</option>
+                {{else}}
+                <option value="{{this._id}}">{{this.name}}</option>
+                {{/ifCond}}
+                {{/each}}
+            </select>
+        </div>
+
+        <div class="form-group row">
+            <label style="margin:15px;" for="stateID">State:<abbr title="required" aria-label="required">*</abbr></label>
+            <select name="stateID" id="stateID">
+                <option value="-Select-">-Select-</option>
+                {{#each roles}}
+                {{#ifCond this._id '==' form.role}}
+                    <option value="{{this._id}}" selected>{{this.name}}</option>
+                {{else}}
+                    <option value="{{this._id}}">{{this.name}}</option>
+                {{/ifCond}}
+                {{/each}}
+            </select>
+        </div>
+        <div class="form-group row">
+            <div>
+                <label style="margin:15px;" for="notes">Notes:<abbr title="required"
+                        aria-label="required">*</abbr></label>
+                <input id="notes" type="text" name="notes" value="{{form.notes}}">
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
