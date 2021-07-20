@@ -3,11 +3,11 @@
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <li><a href="#top">Top</a></li>
-            <li><a href="#section1">Section I</a></li>
-            <li><a href="#section2">Section II</a></li>
-            <li><a href="#section3">Section III</a></li>
-            <li><a href="#section4">Section IV</a></li>
-            <li><a href="#section5">Section V</a></li>
+            <li><a href="#section1">Persons Referred for Services</a></li>
+            <li><a href="#section2">Allegations</a></li>
+            <li><a href="#section3">Placement, Custody, and Guardianship</a></li>
+            <li><a href="#section4">Reason for Referral and Specific Questions</a></li>
+            <li><a href="#section5">Previous CP&P History</a></li>
         </ul>
     </div>
 
@@ -27,34 +27,176 @@
                         <div id="initial-info">
 
                             <div class="form-group row">
-                                <label for="input-family-name" class="col-sm-3 col-form-label col-form-label-sm">Family
-                                    Name</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control form-control-sm" id="input-family-name"
-                                        name="familyName" autocomplete="off" required>
+                                <label for="input-caseworker-name" class="col-sm-3 col-form-label col-form-label-sm ">CP&P Caseworker</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control form-controlsm" id="input-caseworker-name"
+                                        name="caseworkerName" autocomplete="off" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="input-caseworker-number" class="col-sm-3 col-form-label col-form-label-sm">CP&P Caseworker Phone Number</label>
+                                <div class="col-sm-4">
+                                    <input type="number" class="form-control form-controlsm" id="input-caseworker-number"
+                                        name="caseworkerNumber" autocomplete="off" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="input-caseworker-email" class="col-sm-3 col-form-label col-form-label-sm">CP&P Caseworker Email Address</label>
+                                <div class="col-sm-4">
+                                    <input type="email" class="form-control form-controlsm" id="input-caseworker-email"
+                                        name="caseworkerEmail" autocomplete="off" required>
+                                </div>
+                            </div>
+
+                            <div class="border-top my-3"></div>
+
+                            <div class="form-group row">
+                                <label for="input-supervisor-name" class="col-sm-3 col-form-label col-form-label-sm ">CP&P Supervisor</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control form-controlsm" id="input-supervisor-name"
+                                        name="supervisorName" autocomplete="off" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="input-supervisor-number" class="col-sm-3 col-form-label col-form-label-sm">CP&P Supervisor Phone Number</label>
+                                <div class="col-sm-4">
+                                    <input type="number" class="form-control form-controlsm" id="input-supervisor-number"
+                                        name="supervisorNumber" autocomplete="off" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="input-supervisor-email" class="col-sm-3 col-form-label col-form-label-sm">CP&P Supervisor Email Address</label>
+                                <div class="col-sm-4">
+                                    <input type="email" class="form-control form-controlsm" id="input-supervisor-email"
+                                        name="supervisorEmail" autocomplete="off" required>
+                                </div>
+                            </div>
+
+                            <div class="border-top my-3"></div>
+
+                            <div class="form-group row">
+                                <label for="input-gatekeeper-name" class="col-sm-3 col-form-label col-form-label-sm ">Referral Gatekeeper</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control form-controlsm" id="input-rg-name"
+                                        name="rgName" autocomplete="off" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="input-gatekeeper-number" class="col-sm-3 col-form-label col-form-label-sm">Referral Gatekeeper Phone Number</label>
+                                <div class="col-sm-4">
+                                    <input type="number" class="form-control form-controlsm" id="input-rg-number"
+                                        name="rgNumber" autocomplete="off" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="input-gatekeeper-email" class="col-sm-3 col-form-label col-form-label-sm">Referral Gatekeeper Email Address</label>
+                                <div class="col-sm-4">
+                                    <input type="email" class="form-control form-controlsm" id="input-rg-email"
+                                        name="rgEmail" autocomplete="off" required>
+                                </div>
+                            </div>
+                            
+                            <div class="border-top my-3"></div>
+
+                            <div class="form-group row">
+                                <label for="input-office-name" class="col-sm-3 col-form-label col-form-label-sm ">Local Office</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control form-controlsm" id="input-office-name"
+                                        name="officeName" autocomplete="off" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="input-office-address" class="col-sm-3 col-form-label col-form-label-sm">Local Office Address</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control form-controlsm" id="input-office-address"
+                                        name="officeAddress" autocomplete="off" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="input-office-fax" class="col-sm-3 col-form-label col-form-label-sm">Local Office Fax Number</label>
+                                <div class="col-sm-4">
+                                    <input type="number" class="form-control form-controlsm" id="input-office-fax#"
+                                        name="officeFaxNumber" autocomplete="off" required>
+                                </div>
+                            </div>
+
+                            <div class="border-top my-3"></div>
+                            
+                            <div class="form-group row">
+                                <label for="input-date" class="col-sm-3 col-form-label col-form-label-sm"><span class="font-weight-bold">Date Submitted to RTDC: </span></label>
+                                <div class="col-sm-4">
+                                    <input type="date" class="form-control form-controlsm" id="date-submitted"
+                                        name="dateSubmitted" autocomplete="off" required>
+                                </div>
+                            </div>
+
+                            <div class="border-top my-3"></div>
+
+                            <div class="font-weight-bold" style="margin-bottom:10px;">Case Information: </div>
+
+                            <div class="form-group row">
+                                <label for="input-case-name" class="col-sm-3 col-form-label col-form-label-sm">Case Name: </label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control form-controlsm" id="case-name"
+                                        name="caseName" autocomplete="off" required>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="input-secondary-familyName"
-                                    class="col-sm-3 col-form-label col-form-label-sm">Secondary Family
-                                    Name</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control form-control-sm"
-                                        id="input-secondary-familyName" name="familyNameSecondary" autocomplete="off">
+                                <label for="input-case-id" class="col-sm-3 col-form-label col-form-label-sm">NJ SPIRIT Case ID #: </label>
+                                <div class="col-sm-4">
+                                    <input type="number" class="form-control form-controlsm" id="spirit-case-ID"
+                                        name="spiritCaseID" autocomplete="off" required>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="input-NJ-spirit-number" class="col-sm-3 col-form-label col-form-label-sm">NJ
-                                    Spirit
-                                    Number</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control  form-control-sm" id="input-NJ-spirit-number"
-                                        name="spiritNumber" autocomplete="off" required>
+                                <label for="input-referred-name" class="col-sm-3 col-form-label col-form-label-sm">Name of Referred Household Member: </label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control form-controlsm" id="name-referred-member"
+                                        name="referredMemberName" autocomplete="off" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group row">
+                                <label for="input-person-id" class="col-sm-3 col-form-label col-form-label-sm">NJ SPIRIT Person ID #: </label>
+                                <div class="col-sm-4">
+                                    <input type="number" class="form-control form-controlsm" id="spirit-person-ID"
+                                        name="spiritPersonID" autocomplete="off" required>
                                 </div>
                             </div>
 
+                            <div class="border-top my-3"></div>
+
+                            <div class="font-weight-bold" style="margin-bottom:10px;">Service(s) Requested: </div>
+
+                        <div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                <label class="form-check-label" for="inlineCheckbox1">Child Abuse & Neglect Medical
+                                Exam</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                <label class="form-check-label" for="inlineCheckbox2">Child Abuse & Neglect
+                                Psychological Evaluation</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                                <label class="form-check-label" for="inlineCheckbox3">Medical Record Review</label>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+                                <label class="form-check-label" for="inlineCheckbox4">Therapy/Counseling</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+                                <label class="form-check-label" for="inlineCheckbox5">Child Psychiatric Evaluation
+                                (CARES only)</label>
+                            </div>
+                        </div>
                             <div class="border-top my-3"></div>
 
                             <div class="row justify-content-center">
@@ -63,7 +205,7 @@
 
                             <div class="input-group mb-3 input-group-sm">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">Sceening Summary</span>
+                                    <span class="input-group-text">CP&P Screening Summaries</span>
                                 </div>
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="input-screening-summary-file"
@@ -75,7 +217,7 @@
 
                             <div class="input-group mb-3 input-group-sm">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">Case Assessment Parts I-IV</span>
+                                    <span class="input-group-text">CP&P Investigation Summaries</span>
                                 </div>
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="input-case-assessment-file"
@@ -87,7 +229,7 @@
 
                             <div class="input-group mb-3 input-group-sm">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">DYFS Form 26-81</span>
+                                    <span class="input-group-text">CP&P Family Risk Assessment</span>
                                 </div>
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="input-DYFS-form-file"
@@ -98,7 +240,7 @@
 
                             <div class="input-group mb-3 input-group-sm">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">Verified Complaint</span>
+                                    <span class="input-group-text">CP&P Safety Plan</span>
                                 </div>
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="input-verified-complaint-file"
@@ -110,7 +252,7 @@
 
                             <div class="input-group mb-3 input-group-sm">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">Court Orders</span>
+                                    <span class="input-group-text">CP&P Litigation Complaint</span>
                                 </div>
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="input-court-orders-file"
@@ -121,7 +263,8 @@
 
                             <div class="input-group mb-3 input-group-sm">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">Safety Assessment</span>
+                                    <span class="input-group-text">CP&P Family Case Plan/Family
+                                    Agreement</span>
                                 </div>
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="input-safety-assessment-file"
@@ -130,6 +273,163 @@
                                         file</label>
                                 </div>
                             </div>
+
+                            <div class="input-group mb-3 input-group-sm">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Court Order (if service is court
+                                    ordered)</span>
+                                </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="input-safety-assessment-file"
+                                        name="safetyAssessmentFile">
+                                    <label class="custom-file-label" for="input-safety-assessment-file">Choose
+                                        file</label>
+                                </div>
+                            </div>
+
+                            <div class="input-group mb-3 input-group-sm">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Police Reports</span>
+                                </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="input-safety-assessment-file"
+                                        name="safetyAssessmentFile">
+                                    <label class="custom-file-label" for="input-safety-assessment-file">Choose
+                                        file</label>
+                                </div>
+                            </div>
+
+                            <div class="input-group mb-3 input-group-sm">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">SAR</span>
+                                </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="input-safety-assessment-file"
+                                        name="safetyAssessmentFile">
+                                    <label class="custom-file-label" for="input-safety-assessment-file">Choose
+                                        file</label>
+                                </div>
+                            </div>
+
+                            <div class="input-group mb-3 input-group-sm">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Psychological/Psychiatric Evaluation</span>
+                                </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="input-safety-assessment-file"
+                                        name="safetyAssessmentFile">
+                                    <label class="custom-file-label" for="input-safety-assessment-file">Choose
+                                        file</label>
+                                </div>
+                            </div>
+
+                            <div class="input-group mb-3 input-group-sm">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Child Study Team</span>
+                                </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="input-safety-assessment-file"
+                                        name="safetyAssessmentFile">
+                                    <label class="custom-file-label" for="input-safety-assessment-file">Choose
+                                        file</label>
+                                </div>
+                            </div>
+
+                            <div class="input-group mb-3 input-group-sm">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Primary Care Provider Records</span>
+                                </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="input-safety-assessment-file"
+                                        name="safetyAssessmentFile">
+                                    <label class="custom-file-label" for="input-safety-assessment-file">Choose
+                                        file</label>
+                                </div>
+                            </div>
+
+                            <div class="input-group mb-3 input-group-sm">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Hospital/ER Records</span>
+                                </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="input-safety-assessment-file"
+                                        name="safetyAssessmentFile">
+                                    <label class="custom-file-label" for="input-safety-assessment-file">Choose
+                                        file</label>
+                                </div>
+                            </div>
+
+                            <div class="input-group mb-3 input-group-sm">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Birth Records</span>
+                                </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="input-safety-assessment-file"
+                                        name="safetyAssessmentFile">
+                                    <label class="custom-file-label" for="input-safety-assessment-file">Choose
+                                        file</label>
+                                </div>
+                            </div>
+
+                            <div class="input-group mb-3 input-group-sm">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Medical Examiner Records</span>
+                                </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="input-safety-assessment-file"
+                                        name="safetyAssessmentFile">
+                                    <label class="custom-file-label" for="input-safety-assessment-file">Choose
+                                        file</label>
+                                </div>
+                            </div>
+
+                            <div class="input-group mb-3 input-group-sm">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Other</span>
+                                </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="input-safety-assessment-file"
+                                        name="safetyAssessmentFile">
+                                    <label class="custom-file-label" for="input-safety-assessment-file">Choose
+                                        file</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="inputLegalGuardianName"
+                                    class="col-sm-12 col-form-label col-form-label-sm">Please Describe the "Other" Document: </label>
+                                <div class="col-sm-12">
+                                    <textarea class="form-control form-control-sm"
+                                        aria-label="With textarea"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="border-top my-3"></div>
+
+                            <div class="form-group row">
+                                <label for="input-case-name" class="col-sm-3 col-form-label col-form-label-sm"><span class="font-weight-bold">Case Name: </span></label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control form-controlsm" id="case-name"
+                                        name="caseName" autocomplete="off" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="input-case-id" class="col-sm-3 col-form-label col-form-label-sm"><span class="font-weight-bold">NJS Case ID #: </span></label>
+                                <div class="col-sm-4">
+                                    <input type="number" class="form-control form-controlsm" id="spirit-case-ID"
+                                        name="spiritCaseID" autocomplete="off" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="input-referral-date" class="col-sm-3 col-form-label col-form-label-sm"><span class="font-weight-bold">Date of Referral: </span></label>
+                                <div class="col-sm-4">
+                                    <input type="date" class="form-control form-controlsm" id="referral-date"
+                                        name="referralDate" autocomplete="off" required>
+                                </div>
+                            </div>
+
 
                             {{!-- TODO: Add Additional Default Attachments --}}
 
@@ -145,135 +445,153 @@
                             <div class="border-top my-3"></div>
 
                             <div class="row justify-content-center">
-                                <h4>Section I</h4>
+                                <h4>Persons Referred for Services</h4>
                             </div>
 
                             <div class="form-group row">
                                 <label for="input-patient-name"
-                                    class="col-sm-2 col-form-label col-form-label-sm">Patient Name</label>
+                                    class="col-sm-2 col-form-label col-form-label-sm"><span class="font-weight-bold">Client Name: </span></label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control  form-control-sm" id="input-patient-name"
-                                        name="patientName" autocomplete="off" required>
+                                    <input type="text" class="form-control  form-control-sm" id="input-clent-name"
+                                        name="clentName" autocomplete="off" required>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="input-date-last-abuse-contact"
-                                    class="col-sm-2 col-form-label col-form-label-sm">Date of Last
-                                    Abuse/Contact</label>
+                                <label for="input-date-of-birth"
+                                    class="col-sm-2 col-form-label col-form-label-sm"><span class="font-weight-bold">Date of Birth: </span></label>
                                 <div class="col-sm-10">
                                     <input type="date" class="form-control form-control-sm"
-                                        id="input-date-last-abuse-contact" name="dateOfLastAbuse" autocomplete="off"
+                                        id="input-date-of-birth" name="dateOfBirth" autocomplete="off"
                                         required>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="inputEmergency"
-                                    class="col-sm-2 col-form-label col-form-label-sm">Emergency</label>
+                                <label for="input-participant-njs-id"
+                                    class="col-sm-2 col-form-label col-form-label-sm">Participant NJS ID: </label>
                                 <div class="col-sm-10">
-                                    <div class="form-check form-check-inline  form-control-sm">
-                                        <input class="form-check-input" type="radio" name="emergency"
-                                            id="input-emergency-yes" value="Yes" required>
-                                        <label class="form-check-label" for="radioEmergencyYes">Yes</label>
-                                    </div>
-                                    <div class="form-check form-check-inline  form-control-sm">
-                                        <input class="form-check-input" type="radio" name="emergency"
-                                            id="input-emergency-no" value="No" required>
-                                        <label class="form-check-label" for="radioEmergencyNo" required>No</label>
-                                    </div>
+                                    <input type="number" class="form-control form-control-sm"
+                                        id="input-njs-id" name="njsID" autocomplete="off"
+                                        required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="input-gender-identity"
+                                    class="col-sm-2 col-form-label col-form-label-sm">Gender Identity: </label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control form-control-sm"
+                                        id="input-gender-identity" name="genderIdentity" autocomplete="off"
+                                        required>
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label for="input-patient-status"
-                                    class="col-sm-2 col-form-label col-form-label-sm">Status</label>
+                                    class="col-sm-2 col-form-label col-form-label-sm"><span class="font-weight-bold">Service Requested: </span></label>
                                 <div class="col-sm-10">
-                                    <select class="form-control form-control-sm" id="input-patient-status"
+                                    <select class="form-control form-control-sm" id="input-service-requested"
                                         name="patientStatus" required>
                                         <option hidden value="">Select...</option>
-                                        <option value="attended">Attended</option>
-                                        <option value="scheduled">Scheduled</option>
-                                        <option value="cancelled">Cancelled</option>
-                                        <option value="missed">Missed</option>
+                                        <option value="Medical Exam">CA/N Medical Exam</option>
+                                        <option value="Psychological Eval">CA/N Psychological Evaluation</option>
+                                        <option value="Medical Record Review">Medical Record Review</option>
+                                        <option value="Therapy/Counseling">Therapy/Counseling</option>
+                                        <option value="Psychiatric Eval">Child Psychiatric Evaluation</option>
                                     </select>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="input-date-today" class="col-sm-2 col-form-label col-form-label-sm">Today's
-                                    Date</label>
+                                <label for="input-lang-accom" class="col-sm-2 col-form-label col-form-label-sm">Language/Accomodations: </label>
                                 <div class="col-sm-10">
-                                    <input type="date" class="form-control form-control-sm" id="input-date-today"
-                                        name="dateToday" required>
+                                    <input type="text" class="form-control form-control-sm" id="input-lang-accom"
+                                        name="languagesOrAccomodations" required>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="input-abuse-type" class="col-sm-2 col-form-label col-form-label-sm">Type of
-                                    Abuse</label>
+                                <label for="input-abuse-type" class="col-sm-2 col-form-label col-form-label-sm"><span class="font-weight-bold">Allegations: </span></label>
                                 <div class="col-sm-10">
 
                                     <div class="form-check form-check-inline form-control-sm">
-                                        <input class="form-check-input" type="checkbox" id="input-abuse-neglect"
-                                            name="abuseType" value="Neglect">
-                                        <label class="form-check-label" for="input-abuse-neglect">Neglect</label>
+                                        <input class="form-check-input" type="checkbox" id="input-abuse-physical"
+                                            name="abuseType" value="Physical Abuse">
+                                        <label class="form-check-label" for="input-abuse-physical"><span class="font-weight-bold">Physical
+                                            Abuse</label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline form-control-sm">
+                                        <input class="form-check-input" type="checkbox" id="input-abuse-emotional"
+                                            name="abuseType" value="Emotional Abuse">
+                                        <label class="form-check-label" for="input-abuse-emotional"><span class="font-weight-bold">Emotional
+                                            Abuse</label>
                                     </div>
 
                                     <div class="form-check form-check-inline form-control-sm">
                                         <input class="form-check-input" type="checkbox" id="input-abuse-sexual"
                                             name="abuseType" value="Sexual Abuse">
-                                        <label class="form-check-label" for="input-abuse-sexual">Sexual Abuse</label>
-                                    </div>
-
-                                    <div class="form-check form-check-inline form-control-sm">
-                                        <input class="form-check-input" type="checkbox" id="input-abuse-institutional"
-                                            name="abuseType" value="Institutional Abuse">
-                                        <label class="form-check-label" for="input-abuse-institutional">Institutional
+                                        <label class="form-check-label" for="input-abuse-sexual"><span class="font-weight-bold">Sexual
                                             Abuse</label>
                                     </div>
 
                                     <div class="form-check form-check-inline form-control-sm">
-                                        <input class="form-check-input" type="checkbox" id="input-abuse-physical"
-                                            name="abuseType" value="Physical Abuse">
-                                        <label class="form-check-label" for="input-abuse-physical">Physical
-                                            Abuse</label>
+                                        <input class="form-check-input" type="checkbox" id="input-abuse-neglect"
+                                            name="abuseType" value="Neglect">
+                                        <label class="form-check-label" for="input-abuse-neglect"><span class="font-weight-bold">Neglect</span></label>
                                     </div>
+                                
+
+
+                                <div class="form-group row">
+                                <label for="specifyAllegations"
+                                    class="col-sm-12 col-form-label col-form-label-sm"><span class="font-weight-bold">Specify Type of Allegations: </span></label>
+                                <div class="col-sm-12">
+                                    <textarea class="form-control form-control-sm"
+                                        aria-label="With textarea"></textarea>
+                                </div>
 
                                 </div>
+
+                                
+                            </div>
+
                             </div>
 
                             <div class="form-group row">
-                                <label for="inputEmergency"
-                                    class="col-sm-2 col-form-label col-form-label-sm">Evaluations Request</label>
+                                <label for="inputFindings"
+                                    class="col-sm-2 col-form-label col-form-label-sm"><span class="font-weight-bold">Findings: </span></label>
                                 <div class="col-sm-10">
                                     <div class="form-check form-check-inline form-control-sm">
-                                        <input class="form-check-input" type="checkbox" id="input-eval-psychological"
-                                            name="evaluationRequest" value="Psychological">
+                                        <input class="form-check-input" type="checkbox" id="input-substantiated"
+                                            name="findings" value="Substantiated">
                                         <label class="form-check-label"
-                                            for="input-eval-psychological">Psychological</label>
+                                            for="input-substantiated">Substantiated</label>
                                     </div>
                                     <div class="form-check form-check-inline form-control-sm">
-                                        <input class="form-check-input" type="checkbox" id="input-eval-forensic"
-                                            name="evaluationRequest" value="Forensic">
-                                        <label class="form-check-label" for="input-eval-forensic">Forensic</label>
+                                        <input class="form-check-input" type="checkbox" id="input-established"
+                                            name="findings" value="Established">
+                                        <label class="form-check-label"
+                                            for="input-established">Established</label>
                                     </div>
                                     <div class="form-check form-check-inline form-control-sm">
-                                        <input class="form-check-input" type="checkbox" id="input-eval-medical"
-                                            name="evaluationRequest" value="Medical">
-                                        <label class="form-check-label" for="input-eval-medical">Medical</label>
+                                        <input class="form-check-input" type="checkbox" id="input-not-established"
+                                            name="findings" value="Not Established">
+                                        <label class="form-check-label"
+                                            for="input-not-established">Not Established</label>
                                     </div>
                                     <div class="form-check form-check-inline form-control-sm">
-                                        <input class="form-check-input" type="checkbox"
-                                            id="input-eval-neuropsychological" name="evaluationRequest"
-                                            value="Neuropsychological">
-                                        <label class="form-check-label" for="checkEvalNeuro">Neuropsychological</label>
+                                        <input class="form-check-input" type="checkbox" id="input-unfounded"
+                                            name="findings" value="Unfounded">
+                                        <label class="form-check-label"
+                                            for="input-unfounded">Unfounded</label>
                                     </div>
                                     <div class="form-check form-check-inline form-control-sm">
-                                        <input class="form-check-input" type="checkbox" id="input-eval-medical"
-                                            name="evaluationRequest" value="Medical Consult">
-                                        <label class="form-check-label" for="input-eval-medical">Medical
-                                            Consult</label>
+                                        <input class="form-check-input" type="checkbox" id="input-pending"
+                                            name="findings" value="Pending">
+                                        <label class="form-check-label"
+                                            for="input-pending">Pending</label>
                                     </div>
                                 </div>
                             </div>
@@ -281,37 +599,59 @@
                             <div class="border-top my-3"></div>
 
                             <div class="form-group row">
-                                <label for="input-case-worker-name"
-                                    class="col-sm-2 col-form-label col-form-label-sm">Case
-                                    Worker
-                                    Name</label>
+                                <label for="input-perp-name-and-relation"
+                                    class="col-sm-2 col-form-label col-form-label-sm">Alleged Perpetrator & Relationship to Child: </label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control form-control-sm" id="input-case-worker-name"
-                                        autocomplete="off" name="caseWorkerName">
+                                    <input type="text" class="form-control form-control-sm" id="input-perp-name-and-relation"
+                                        autocomplete="off" name="perpNameAndRelation">
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="nput-case-worker-phone"
-                                    class="col-sm-2 col-form-label col-form-label-sm">Case
-                                    Worker Phone
-                                    #</label>
+                                <label for="input-dates-of-abuse"
+                                    class="col-sm-2 col-form-label col-form-label-sm">Dates of Alleged Abuse: </label>
                                 <div class="col-sm-10">
-                                    <input type="tel" class="form-control form-control-sm" id="input-case-worker-phone"
-                                        autocomplete="off" name="caseWorkerPhone">
+                                    <input type="text" class="form-control form-control-sm" id="input-dates-of-abuse"
+                                        autocomplete="off" name="datesOfAbuse">
                                 </div>
                             </div>
 
-                            <div class="border-top my-3"></div>
+                            <div class="form-group row">
+                                <label for="input-disclosure-date"
+                                    class="col-sm-2 col-form-label col-form-label-sm">Date of Disclosure: </label>
+                                <div class="col-sm-10">
+                                    <input type="date" class="form-control form-control-sm" id="input-disclosure-date"
+                                        autocomplete="off" name="disclosureDate">
+                                </div>
+                            </div>
+
 
                             <div class="form-group row">
-                                <label for="input-supervisor-name"
-                                    class="col-sm-2 col-form-label col-form-label-sm">Name
-                                    of
-                                    Supervisor</label>
+                                <label for="input-contact-with-perp"
+                                    class="col-sm-2 col-form-label col-form-label-sm">Does Alleged Perpetrator Have Contact with Alleged Victim: </label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control form-control-sm" id="input-supervisor-name"
-                                        autocomplete="off" name="supervisorName">
+                                    <div class="form-check form-check-inline  form-control-sm">
+                                        <input class="form-check-input" type="radio" id="input-yes" value="Yes"
+                                            name="perpContactYes">
+                                        <label class="form-check-label" for="input-yes">Yes</label>
+                                    </div>
+                                    <div class="form-check form-check-inline  form-control-sm">
+                                        <input class="form-check-input" type="radio" id="input-no" value="No"
+                                            name="perpContactNo">
+                                        <label class="form-check-label" for="input-no">No</label>
+                                    </div>
+                                    <div class="form-check form-check-inline  form-control-sm">
+                                        <input class="form-check-input" type="radio" id="input-unknown"
+                                            value="Unknown" name="perpContactUnknown">
+                                        <label class="form-check-label" for="input-unknown">Unknown</label>
+                                    </div>
+                                        <label for="input-contact-date"
+                                                class="col-sm-2 col-form-label col-form-label-sm">Last Known Contact: </label>
+                                        <div class="form-check form-check-inline  form-control-sm">
+                                            <input type="date" class="form-control form-control-sm" id="input-contact-date"
+                                                autocomplete="off" name="disclosureDate">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -392,7 +732,7 @@
                             <div class="border-top my-3"></div>
 
                             <div class="row justify-content-center">
-                                <h4>Section II</h4>
+                                <h4>Allegations</h4>
                             </div>
 
                             <div class="form-group row">
@@ -494,7 +834,7 @@
                             <div class="border-top my-3"></div>
 
                             <div class="row justify-content-center">
-                                <h4>Section III</h4>
+                                <h4>Placement, Custody, and Guardianship</h4>
                             </div>
 
                             <div class="form-group row">
@@ -571,7 +911,7 @@
                             <div class="border-top my-3"></div>
 
                             <div class="row justify-content-center">
-                                <h4>Section IV</h4>
+                                <h4>Reason for Referral and Specific Questions</h4>
                             </div>
 
                             <div class="form-group row">
@@ -703,7 +1043,7 @@
                             <div class="border-top my-3"></div>
 
                             <div class="row justify-content-center">
-                                <h4>Section V</h4>
+                                <h4>Previous CP&P History</h4>
                             </div>
 
                             <div class="form-group row">
