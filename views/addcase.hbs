@@ -6,7 +6,7 @@
             <li><a href="#sectionPersonsReferred">Persons Referred for Services</a></li>
             <li><a href="#sectionPCG">Placement, Custody, and Guardianship</a></li>
             <li><a href="#sectionReasonForReferral">Reason for Referral and Specific Questions</a></li>
-            <li><a href="#section5">Previous CP&P History</a></li>
+            <li><a href="#sectionPreviousCPP">Previous CP&P History</a></li>
         </ul>
     </div>
 
@@ -909,79 +909,79 @@
                                         aria-label="With textarea" name="servicePurpose"></textarea>
                                 </div>
                             </div>
-                            {{!------------------- Christian Ending Here -------------------}}
 
                             <div class="form-group row">
-                                <label for="input-disclosure-circumstances"
-                                    class="col-sm-12 col-form-label col-form-label-sm">Please
-                                    provide
-                                    circumstances
-                                    of the
-                                    disclosure. (How, when, where, and to whom)</label>
-                                <div class="col-sm-12">
-                                    <textarea class="form-control form-control-sm" id="input-disclosure-circumstances"
-                                        aria-label="With textarea" name="disclosureCircumstances"></textarea>
+                                <label for="input-referral-questions"
+                                    class="col-sm-12 col-form-label col-form-label-sm">
+                                    Provide case specific referral questions for the Provider 
+                                    to answer and identify what CP&P seeks to learn from the requested service. </label>
+
+                                <div class="col-sm-1">
+                                    <label for="input-referral-question1"
+                                        class="col-sm-1 col-form-label">a </label> 
+                                </div>
+                                <div class="col-sm-11">
+                                    <textarea type="text" class="form-control form-control-sm" id="input-referral-question1"
+                                        autocomplete="off"aria-label="With textarea" name="referalQeustion1"></textarea>
+                                </div>
+                                <div class="col-sm-1">
+                                    <label for="input-referral-question2"
+                                        class="col-sm-1 col-form-label">b </label> 
+                                </div>
+                                <div class="col-sm-11">
+                                    <textarea type="text" class="form-control form-control-sm" id="input-referral-question2"
+                                        autocomplete="off"aria-label="With textarea" name="referalQeustion2"></textarea>
+                                </div>
+                                <div class="col-sm-1">
+                                    <label for="input-referral-question3"
+                                        class="col-sm-1 col-form-label">c </label> 
+                                </div>
+                                <div class="col-sm-11">
+                                    <textarea type="text" class="form-control form-control-sm" id="input-referral-question3"
+                                        autocomplete="off"aria-label="With textarea" name="referalQeustion3"></textarea>
+                                </div>
+                                <div class="col-sm-1">
+                                    <label for="input-referral-question4"
+                                        class="col-sm-1 col-form-label">d </label> 
+                                </div>
+                                <div class="col-sm-11">
+                                    <textarea type="text" class="form-control form-control-sm" id="input-referral-question4"
+                                        autocomplete="off" aria-label="With textarea" name="referalQeustion4"></textarea>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="input-interviewed" class="col-sm-12 col-form-label col-form-label-sm">Was
-                                    the
-                                    child
-                                    interviewed?</label>
+                                <label for="input-safety-concern" class="col-sm-12 col-form-label col-form-label-sm">
+                                    <span class=font-weight-bold>Are there any barriers/safety concerns preventing family members from
+                                    attending evaluation together?</span>
+                                    </label>
                                 <div class="col-sm-12">
                                     <div class="form-check form-check-inline  form-control-sm">
-                                        <input class="form-check-input" type="radio" name="interviewed"
-                                            id="input-interview-yes" value="Yes">
+                                        <input class="form-check-input" type="radio" name="safetyConcern"
+                                            id="input-safety-concern-yes" value="Yes">
                                         <label class="form-check-label" for="input-interview-yes">Yes</label>
                                     </div>
                                     <div class="form-check form-check-inline  form-control-sm">
-                                        <input class="form-check-input" type="radio" name="interviewed"
-                                            id="input-interview-no" value="No">
+                                        <input class="form-check-input" type="radio" name="safetyConcern"
+                                            id="input-safety-concern-no" value="No">
                                         <label class="form-check-label" for="input-interview-no">No</label>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="input-interviewer-info"
+                                <label for="input-safety-concern-info"
                                     class="col-sm-12 col-form-label col-form-label-sm">If yes,
-                                    by whom and
-                                    when?</label>
+                                    please explain:</label>
                                 <div class="col-sm-12">
-                                    <textarea class="form-control form-control-sm" id="input-interviewer-info"
-                                        aria-label="With textarea" name="interviewerInfo"></textarea>
+                                    <textarea class="form-control form-control-sm" id="input-safety-concern-info"
+                                        aria-label="With textarea" name="safetyConcernInfo"></textarea>
                                 </div>
                             </div>
-
-                            <div class="form-group row">
-                                <label for="input-interview-statements"
-                                    class="col-sm-12 col-form-label col-form-label-sm">Statements made
-                                    by
-                                    child during
-                                    interview</label>
-                                <div class="col-sm-12">
-                                    <textarea class="form-control form-control-sm" id="input-interview-statements"
-                                        aria-label="With textarea" name="interviewStatements"></textarea>
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="input-perpetrator-info"
-                                    class="col-sm-12 col-form-label col-form-label-sm">Where is the
-                                    perpetrator
-                                    located now
-                                    and has he/she been charged?</label>
-                                <div class="col-sm-12">
-                                    <textarea class="form-control form-control-sm" id="input-perpetrator-info"
-                                        aria-label="With textarea" name="perpetratorInfo"></textarea>
-                                </div>
-                            </div>
-
                         </div>
 
                         {{!------------------- SECTION 4 -------------------}}
-                        <div class="col-md-12" id="section4">
+                        <div class="col-md-12" id="sectionPreviousCPP">
                             <div class="border-top my-3"></div>
 
                             <div class="row justify-content-center">
@@ -989,93 +989,146 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="input-DYFS-involvement"
-                                    class="col-sm-12 col-form-label col-form-label-sm">Previous DYFS
-                                    Involvement
-                                    with
-                                    family:</label>
+                                <label for="input-cpp-involvement"
+                                    class="col-sm-12 col-form-label col-form-label-sm">
+                                    Summarize previous CP&P involvement:
+                                </label>
                                 <div class="col-sm-12">
-                                    <textarea class="form-control form-control-sm" id="input-DYFS-involvement"
-                                        aria-label="With textarea" name="DYFSinvolvement"></textarea>
+                                    <textarea class="form-control form-control-sm" id="input-cpp-involvement"
+                                        aria-label="With textarea" name="CPPInvolvement"></textarea>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="input-other-history"
-                                    class="col-sm-12 col-form-label col-form-label-sm">Other
-                                    pertinent history
-                                    and/or specific
-                                    issue:</label>
+                                <label for="input-previous-evaluation"
+                                    class="col-sm-12 col-form-label col-form-label-sm">Summarize previous, related medical 
+                                    and mental/behavioral health evaluations:</label>
                                 <div class="col-sm-12">
-                                    <textarea class="form-control form-control-sm" id="input-other-history"
-                                        aria-label="With textarea" name="otherHistory"></textarea>
+                                    <textarea class="form-control form-control-sm" id="input-previous-evaluation"
+                                        aria-label="With textarea" name="previousEvaluation"></textarea>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="input-behavior"
-                                    class="col-sm-12 col-form-label col-form-label-sm">Sexualized
-                                    behaviours and/or
-                                    behavior
-                                    changes?</label>
+                                <label for="input-previous-mental"
+                                    class="col-sm-12 col-form-label col-form-label-sm">Describe previous and/or current utilization of 
+                                    mental health services:</label>
                                 <div class="col-sm-12">
-                                    <textarea class="form-control form-control-sm" id="input-behavior"
-                                        aria-label="With textarea" name="behavior"></textarea>
+                                    <textarea class="form-control form-control-sm" id="input-previous-mental"
+                                        aria-label="With textarea" name="previousMental"></textarea>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label class="col-sm-12 col-form-label col-form-label-sm">Previous Evaluations
-                                    Completed</label>
+                                <label class="col-sm-12 col-form-label col-form-label-sm">
+                                    Does the referred have a previous and/or current psychological and/or
+                                    psychiatric diagnosis?
+                                </label>
 
-                                <label class="col-sm-1 col-form-label col-form-label-sm"
-                                    for="input-previous-eval-type">Type</label>
+                                <div class="col-sm-12">
+                                    <div class="form-check form-check-inline  form-control-sm">
+                                        <input class="form-check-input" type="radio" name="safetyConcern"
+                                            id="input-safety-concern-yes" value="Yes">
+                                        <label class="form-check-label" for="input-interview-yes">Yes</label>
+                                    </div>
+                                    <div class="form-check form-check-inline  form-control-sm">
+                                        <input class="form-check-input" type="radio" name="safetyConcern"
+                                            id="input-safety-concern-no" value="No">
+                                        <label class="form-check-label" for="input-interview-no">No</label>
+                                    </div>
+                                </div>
+
                                 <div class="col-sm-2">
-                                    <select class="form-control form-control-sm" id="input-previous-eval-type"
-                                        name="evaluationType1">
-                                        <option value="" hidden>Select...</option>
-                                        <option value="Psychological">Psychological</option>
-                                        <option value="Forensic">Forensic</option>
-                                        <option value="Medical">Medical</option>
-                                        <option value="Parenting">Parenting</option>
-                                        <option value="Neuropsychological">Neuropsychological</option>
-                                        <option value="Medical Consult">Medical Consult</option>
-                                    </select>
+                                    <label for="input-referral-question1"
+                                        class="col-form-label-sm">a. Current Diagnosis: </label> 
+                                </div>
+                                <div class="col-sm-10">
+                                    <textarea type="text" class="form-control form-control-sm" id="input-referral-question1"
+                                        autocomplete="off"aria-label="With textarea" name="referalQeustion1"></textarea>
+                                </div>
+                                <div class="col-sm-2">
+                                    <label for="input-referral-question2"
+                                        class="col-form-label-sm">b. Current Medications: </label> 
+                                </div>
+                                <div class="col-sm-10">
+                                    <textarea type="text" class="form-control form-control-sm" id="input-referral-question2"
+                                        autocomplete="off"aria-label="With textarea" name="referalQeustion2"></textarea>
+                                </div>
+                                <div class="col-sm-2">
+                                    <label for="input-referral-question3"
+                                        class="col-form-label-sm">c. Previous Diagnosis:</label> 
+                                </div>
+                                <div class="col-sm-10">
+                                    <textarea type="text" class="form-control form-control-sm" id="input-referral-question3"
+                                        autocomplete="off"aria-label="With textarea" name="referalQeustion3"></textarea>
+                                </div>
+                                <div class="col-sm-2">
+                                    <label for="input-referral-question4"
+                                        class="col-form-label-sm">d. Previous Medications:</label> 
+                                </div>
+                                <div class="col-sm-10">
+                                    <textarea type="text" class="form-control form-control-sm" id="input-referral-question4"
+                                        autocomplete="off" aria-label="With textarea" name="referalQeustion4"></textarea>
+                                </div>
+                            </div> 
+                        </div>
+
+                        {{!------------------- SUBMISSION -------------------}}
+                        <div class="col-md-12" id="submission" class="row justify-content-center">
+                            <div class="form-group row "> 
+                            <br>Please contact the caseworker or supervisor with any questions or comments. <br>
+                            Thank you.
+                            </div>
+                        
+                            <div class="form-group row "> 
+                                <label class="col-sm-2 col-form-label-sm font-weight-bold"
+                                    for="input-caseworker-signiture">Caseworker Signiture</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control form-control-sm" id="input-caseworker-signiture"
+                                        name="caseworkerSigniture" autocomplete="off" required>
                                 </div>
 
-                                <label class="col-sm-1 col-form-label col-form-label-sm"
-                                    for="input-previous-eval-date">Date</label>
+                                <label class="col-sm-2 col-form-label-sm font-weight-bold"
+                                    for="input-caseworker-signiture-date">Date</label>
+                                <div class="col-sm-3">
+                                    <input type="date" class="form-control form-control-sm"
+                                        id="input-caseworker-signiture-date" name="caseworkerSignitureDate">
+                                </div>
+
+                                <label class="col-sm-2 col-form-label-sm font-weight-bold"
+                                    for="input-supervisor-signiture">Supervisor Signiture</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control form-control-sm" id="input-supervisor-signiture"
+                                        name="supervisorSigniture" autocomplete="off" required>
+                                </div>
+
+                                <label class="col-sm-2 col-form-label-sm font-weight-bold"
+                                    for="input-supervisor-signiture-date">Date</label>
                                 <div class="col-sm-3">
                                     <input type="date" class="form-control  form-control-sm"
-                                        id="input-previous-eval-date" name="previousEvalDate1">
+                                        id="input-supervisor-signiture-date" name="supervisorSignitureDate">
                                 </div>
 
+                                <label class="col-sm-2 col-form-label-sm font-weight-bold"
+                                    for="input-gatekeeper-signiture">Gatekeeper Signiture</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control form-control-sm" id="input-gatekeeper-signiture"
+                                        name="caseworkerSigniture" autocomplete="off" required>
+                                </div>
 
-                                <label class="col-sm-2 col-form-label col-form-label-sm"
-                                    for="input-previous-eval">Completed By</label>
+                                <label class="col-sm-2 col-form-label-sm font-weight-bold"
+                                    for="input-gatekeeper-signiture-date">Date</label>
                                 <div class="col-sm-3">
-                                    <select class="form-control form-control-sm" id="input-previous-eval"
-                                        name="evaluationStaff">
-                                        {{!-- Insert Staff Members Here --}}
-                                        <option value="" hidden>Select...</option>
-                                        <option value="Staff 1">Staff 1</option>
-                                        <option value="Staff 2">Staff 2</option>
-                                    </select>
+                                    <input type="date" class="form-control form-control-sm"
+                                        id="input-gatekeeper-signiture-date" name="gatekeeperSignitureDate">
                                 </div>
                             </div>
+                            
+                            <div id="btn-submit-intake" class="row justify-content-center">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
                         </div>
-
-                        <div class="row justify-content-center">
-                            <button type="button" class="btn btn-secondary btn-sm">Add Additional
-                                Evaluation</button>
-                        </div>
-
-                        <div id="btn-submit-intake" class="row justify-content-center">
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </div>
-
                     </form>
-
                 </div>
             </div>
         </div>
