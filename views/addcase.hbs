@@ -29,21 +29,21 @@
                                 <label for="input-caseworker-name" class="col-sm-3 col-form-label col-form-label-sm ">CP&P Caseworker</label>
                                 <div class="col-sm-4">
                                     <input type="text" class="form-control form-controlsm" id="input-caseworker-name"
-                                        name="caseworkerName" autocomplete="off" required>
+                                        name="caseworkerNameCPP" autocomplete="off" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="input-caseworker-number" class="col-sm-3 col-form-label col-form-label-sm">CP&P Caseworker Phone Number</label>
                                 <div class="col-sm-4">
                                     <input type="number" class="form-control form-controlsm" id="input-caseworker-number"
-                                        name="caseworkerNumber" autocomplete="off" required>
+                                        name="caseworkerNumberCPP" autocomplete="off" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="input-caseworker-email" class="col-sm-3 col-form-label col-form-label-sm">CP&P Caseworker Email Address</label>
                                 <div class="col-sm-4">
                                     <input type="email" class="form-control form-controlsm" id="input-caseworker-email"
-                                        name="caseworkerEmail" autocomplete="off" required>
+                                        name="caseworkerEmailCPP" autocomplete="off" required>
                                 </div>
                             </div>
 
@@ -53,21 +53,21 @@
                                 <label for="input-supervisor-name" class="col-sm-3 col-form-label col-form-label-sm ">CP&P Supervisor</label>
                                 <div class="col-sm-4">
                                     <input type="text" class="form-control form-controlsm" id="input-supervisor-name"
-                                        name="supervisorName" autocomplete="off" required>
+                                        name="supervisorNameCPP" autocomplete="off" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="input-supervisor-number" class="col-sm-3 col-form-label col-form-label-sm">CP&P Supervisor Phone Number</label>
                                 <div class="col-sm-4">
                                     <input type="number" class="form-control form-controlsm" id="input-supervisor-number"
-                                        name="supervisorNumber" autocomplete="off" required>
+                                        name="supervisorNumberCPP" autocomplete="off" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="input-supervisor-email" class="col-sm-3 col-form-label col-form-label-sm">CP&P Supervisor Email Address</label>
                                 <div class="col-sm-4">
                                     <input type="email" class="form-control form-controlsm" id="input-supervisor-email"
-                                        name="supervisorEmail" autocomplete="off" required>
+                                        name="supervisorEmailCPP" autocomplete="off" required>
                                 </div>
                             </div>
 
@@ -409,7 +409,7 @@
                                 <label for="input-case-name" class="col-sm-3 col-form-label col-form-label-sm"><span class="font-weight-bold">Case Name: </span></label>
                                 <div class="col-sm-4">
                                     <input type="text" class="form-control form-controlsm" id="case-name"
-                                        name="caseName" autocomplete="off" required>
+                                        name="caseName2" autocomplete="off" required>
                                 </div>
                             </div>
 
@@ -417,7 +417,7 @@
                                 <label for="input-case-id" class="col-sm-3 col-form-label col-form-label-sm"><span class="font-weight-bold">NJS Case ID #: </span></label>
                                 <div class="col-sm-4">
                                     <input type="number" class="form-control form-controlsm" id="spirit-case-ID"
-                                        name="spiritCaseID" autocomplete="off" required>
+                                        name="spiritCaseID2" autocomplete="off" required>
                                 </div>
                             </div>
 
@@ -629,24 +629,24 @@
                                 <div class="col-sm-10">
                                     <div class="form-check form-check-inline  form-control-sm">
                                         <input class="form-check-input" type="radio" id="input-yes" value="Yes"
-                                            name="perpContactYes">
+                                            name="perpContact">
                                         <label class="form-check-label" for="input-yes">Yes</label>
                                     </div>
                                     <div class="form-check form-check-inline  form-control-sm">
                                         <input class="form-check-input" type="radio" id="input-no" value="No"
-                                            name="perpContactNo">
+                                            name="perpContact">
                                         <label class="form-check-label" for="input-no">No</label>
                                     </div>
                                     <div class="form-check form-check-inline  form-control-sm">
                                         <input class="form-check-input" type="radio" id="input-unknown"
-                                            value="Unknown" name="perpContactUnknown">
+                                            value="Unknown" name="perpContact">
                                         <label class="form-check-label" for="input-unknown">Unknown</label>
                                     </div>
                                         <label for="input-contact-date"
                                                 class="col-sm-2 col-form-label col-form-label-sm">Last Known Contact: </label>
                                         <div class="form-check form-check-inline  form-control-sm">
                                             <input type="date" class="form-control form-control-sm" id="input-contact-date"
-                                                autocomplete="off" name="disclosureDate">
+                                                autocomplete="off" name="lastKnownContact">
                                         </div>
                                     </div>
                                 </div>
@@ -688,12 +688,12 @@
                                 <div class="col-sm-10">
                                     <div class="form-check form-check-inline  form-control-sm">
                                         <input class="form-check-input" type="radio" id="input-home" value="home"
-                                            name="residencyHome">
+                                            name="residency">
                                         <label class="form-check-label" for="input-home">In Home (custody remains with legal gaurdians)</label>
                                     </div>
                                     <div class="form-check form-check-inline  form-control-sm">
                                         <input class="form-check-input" type="radio" id="input-out-of-home" value="out-of-home"
-                                            name="residencyOutOfHome">
+                                            name="residency">
                                         <label class="form-check-label" for="input-out-of-home">Out of Home (CP&P has care, custody, and supervision)</label>
                                     </div>
                                 </div>
@@ -712,32 +712,32 @@
                                         for="input-out-of-home-placement-type"><span class="font-weight-bold">Out of Home Placement Type: </span></label>
                                     <div class="form-check form-check-inline  form-control-sm">
                                         <input class="form-check-input" type="radio" id="input-out-of-home-kinship" value="kinship"
-                                            name="outOfHomeKinship">
+                                            name="outOfHome">
                                         <label class="form-check-label" for="input-out-of-home-kinship">Kinship</label>
                                     </div>
                                     <div class="form-check form-check-inline  form-control-sm">
                                         <input class="form-check-input" type="radio" id="input-out-of-home-unrelated" value="unrelated"
-                                        name="outOfHomeUnrelated">
+                                        name="outOfHome">
                                         <label class="form-check-label" for="input-out-of-home-unrelated">Unrelated Resource</label>
                                     </div>
                                     <div class="form-check form-check-inline  form-control-sm">
                                         <input class="form-check-input" type="radio" id="input-out-of-home-residential" value="residential"
-                                            name="outOfHomeResidential">
+                                            name="outOfHome">
                                         <label class="form-check-label" for="input-out-of-home-residential">Residential</label>
                                     </div>
                                     <div class="form-check form-check-inline  form-control-sm">
                                         <input class="form-check-input" type="radio" id="input-out-of-home-other" value="No"
-                                        name="perpContactNo">
+                                        name="outOfHome">
                                         <label class="form-check-label" for="input-out-of-home-other">Other</label>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="input-perp-name-and-relation"
+                                    <label for="input-out-of-home-placement-other"
                                     class="col-sm-2 col-form-label col-form-label-sm">Other: </label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control form-control-sm" id="input-perp-name-and-relation"
-                                            autocomplete="off" name="perpNameAndRelation">
+                                        <input type="text" class="form-control form-control-sm" id="input-out-of-home-placement-other"
+                                            autocomplete="off" name="outOfHomePlacementOther">
                                     </div>
                                 </div>
                             </div>
@@ -791,7 +791,7 @@
                                     Name</label>
                                 <div class="col-sm-12">
                                     <input type="text" class="form-control form-control-sm" autocomplete="off"
-                                        id="input-legal-gaurdian-name" name="legalGaurdianName">
+                                        id="input-legal-gaurdian-name" name="legalGuardianName">
                                 </div>
                             </div>
 
@@ -801,7 +801,7 @@
                                     Address</label>
                                 <div class="col-sm-12">
                                     <input type="text" class="form-control form-control-sm" autocomplete="off"
-                                        id="input-legal-gaurdian-address" name="legalGaurdianAddress">
+                                        id="input-legal-gaurdian-address" name="legalGuardianAddress">
                                 </div>
                             </div>
 
@@ -810,7 +810,7 @@
                                     class="col-sm-12 col-form-label col-form-label-sm">Phone Number</label>
                                 <div class="col-sm-12">
                                     <input type="text" class="form-control form-control-sm" autocomplete="off"
-                                        id="input-legal-gaurdian-phone" name="legalGaurdianPhone">
+                                        id="input-legal-gaurdian-phone" name="legalGuardianPhone">
                                 </div>
                             </div>
 
@@ -819,7 +819,7 @@
                                     class="col-sm-12 col-form-label col-form-label-sm">Relationship to Child</label>
                                 <div class="col-sm-12">
                                     <input type="text" class="form-control form-control-sm" autocomplete="off"
-                                        id="input-legal-gaurdian-relationship" name="legalGaurdianRelationship">
+                                        id="input-legal-gaurdian-relationship" name="legalGuardianRelationship">
                                 </div>
                             </div>
 
@@ -828,12 +828,12 @@
                                             for="input-out-of-home-placement-type"><span class="font-weight-bold">Is CP&P involved in litigation with this family? </span></label>
                                 <div class="form-check form-check-inline  form-control-sm">
                                     <input class="form-check-input" type="radio" id="input-yes" value="yes"
-                                        name="litigationYes">
+                                        name="litigation">
                                     <label class="form-check-label" for="input-yes">Yes</label>
                                 </div>
                                 <div class="form-check form-check-inline  form-control-sm">
                                     <input class="form-check-input" type="radio" id="input-no" value="no"
-                                    name="litigationNo">
+                                    name="litigation">
                                     <label class="form-check-label" for="input-no">No</label>
                                 </div>
                             </div>
@@ -843,22 +843,22 @@
                                             for="input-out-of-home-placement-type"><span class="font-weight-bold">Have parental rights been terminated and DCP&P has legal gaurdianship? </span></label>
                                 <div class="form-check form-check-inline  form-control-sm">
                                     <input class="form-check-input" type="radio" id="input-yes-mother" value="yesMother"
-                                        name="parentalRightsYesMother">
+                                        name="parentalRights">
                                     <label class="form-check-label" for="input-yes-mother">Yes (mother)</label>
                                 </div>
                                 <div class="form-check form-check-inline  form-control-sm">
                                     <input class="form-check-input" type="radio" id="input-yes-father" value="yesFather"
-                                    name="parentalRightsYesFather">
+                                    name="parentalRights">
                                     <label class="form-check-label" for="input-yes-father">Yes (father)</label>
                                 </div>
                                 <div class="form-check form-check-inline  form-control-sm">
                                     <input class="form-check-input" type="radio" id="input-yes-both" value="yesBoth"
-                                        name="parentalRightsYesBoth">
+                                        name="parentalRights">
                                     <label class="form-check-label" for="input-yes-both">Yes (both)</label>
                                 </div>
                                 <div class="form-check form-check-inline  form-control-sm">
                                     <input class="form-check-input" type="radio" id="input-no" value="no"
-                                    name="parentalRightsNo">
+                                    name="parentalRights">
                                     <label class="form-check-label" for="input-no">No</label>
                                 </div>
                             </div>
@@ -868,7 +868,7 @@
                                     class="col-sm-12 col-form-label col-form-label-sm">Additional Comments/Notes:</label>
                                 <div class="col-sm-12">
                                     <textarea type="text" class="form-control form-control-sm" autocomplete="off"
-                                        id="input-litigation-comments" name="legalGaurdianRelationship"></textarea>
+                                        id="input-litigation-comments" name="legalGuardianNotes"></textarea>
                                 </div>
                             </div>
                         </div>
