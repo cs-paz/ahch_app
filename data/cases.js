@@ -70,6 +70,6 @@ async function getCase(id) {
 
 module.exports = {
     add,
-    getUser,
-    getAllUsers
+    getCase,
+    getAllCases
 }
