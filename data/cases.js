@@ -47,7 +47,7 @@ async function add(formRequestBody) {
     const caseCollection = await cases();
     let insertInfo = await caseCollection.insertOne(newCase);
     if (insertInfo.insertedCount == 0) throw 'Error: could not add case.';
-    return await getUser(insertInfo.insertedId.toString());
+    return await getCase(insertInfo.insertedId.toString());
 }
 
 async function getAllCases() {

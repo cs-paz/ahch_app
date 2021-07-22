@@ -7,7 +7,7 @@ const patient = require('./patient/patient').schema;
 const worker = require('./worker').schema;
 const referral = require('./referral').schema;
 const suspect = require('./suspect').schema;
-const service = require('./service/service').schema;
+const service = require('./services/service').schema;
 const recommendation = require ('./recommendation/recommendation').schema;
 
 // Case Schema
@@ -84,7 +84,7 @@ let caseSchema = mongoose.Schema({
     caseStatus: caseStatus,
     caseType: caseType,
     recommendations: [recommendation],
-    recommendationFactorKeys: [recommendationFactorKey],
+    //recommendationFactorKeys: [recommendationFactorKey],
     services: [service],
     referrals: [referral],
     worker: worker,

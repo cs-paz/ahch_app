@@ -44,7 +44,9 @@ router.post('/submitIntake', async (req, res) => {
   try {
     let newCase = await caseData.add(caseBody);
   } catch (e) {
+    console.log(e);
     res.status(500).render('error');
+    return;
   }
 
   let caseId = newCase._id.toString();
