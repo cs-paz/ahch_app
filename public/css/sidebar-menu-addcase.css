@@ -1,5 +1,5 @@
 #wrapper {
-  margin-top: 56px;
+  margin-top: 50px;
   padding-left: 0;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -25,15 +25,15 @@
 .sidebar-nav {
   position: absolute;
   top: 0;
-  width: 150px;
+  width: 325px; /*changes width of sidebar buttons */
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .sidebar-nav li {
-  text-indent: 20px;
-  line-height: 40px;
+  text-indent: 5px;
+  line-height: 60px;
 }
 
 .sidebar-nav li a {
@@ -75,6 +75,7 @@
 
 @media (min-width:768px) {
   #sidebar-wrapper {
-    width: 150px;
+    padding-right: 330px;
+  
   }
 }
