@@ -16,7 +16,7 @@ async function main() {
   let testPatient3 = await data.patients.add({caseID: testCase._id, firstName: "cael", lastName: "burkhardt", gender: "NB"})
   console.log(await data.patients.getAllPatients(testCase._id.toString()))
   console.log(await data.patients.getPatient(testPatient2._id.toString()))
-  testPatient1 = await data.patients.update(testPatient2._id.toString(), {firstName: "luke", lastName: "maake"})
+  testPatient2 = await data.patients.update(testPatient2._id.toString(), {firstName: "luke", lastName: "maake"})
   console.log(await data.patients.getAllPatients(testCase._id.toString()))
   await db.serverConfig.close();
 }

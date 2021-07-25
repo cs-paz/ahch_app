@@ -74,7 +74,7 @@ async function update(id, formRequestBody) {
         oldPatient[i] = formRequestBody[i];
     }
 
-    delete oldPatient._id;
+    // delete oldPatient._id;
 
     const caseCollection = await cases();
 
