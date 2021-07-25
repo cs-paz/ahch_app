@@ -1,5 +1,5 @@
 const { ObjectId } = require('mongodb');
-const { get } = require('mongoose');
+const { id } = require('mongoose');
 const { cases } = require('../config/mongoCollections');
 const bcrypt = require('bcryptjs')
 
@@ -12,7 +12,7 @@ async function add(formRequestBody) {
     if (!formRequestBody) throw 'No form body provided'
     let Patient = require('../models/new_chims_models/case/patient/patient');
 
-    let newPatient = new User();
+    let newPatient = new Patient();
 
     newPatient.medicalRef = formRequestBody.medicalRef;
     newPatient.firstName = formRequestBody.firstName;
@@ -56,21 +56,9 @@ async function add(formRequestBody) {
 
     let caseID = ObjectId(formRequestBody.caseID);
 
-    // updateInfo = await caseCollection.update( { _id: caseID, $push : { patients : { newPatient } } } ); maybe better, have to test
+    let updateInfo = await caseCollection.updateOne( { _id: caseID }, {$push : { patients : newPatient } } ); // maybe better, have to test
     
-    let currentCase = null
-
-    try {
-        currentCase = await caseCollection.findOne({ _id: caseID })
-    } catch (e) {
-        throw e;
-    }
-
-    currentCase.patients.push(newPatient)
-
-    const updated = await currentCase.save() // should work without update, if not have to update with caseCollection
-
-    return updated
+    return newPatient;
 }
 
 async function update(id, formRequestBody) {
@@ -130,9 +118,14 @@ async function getPatient(id) {
     if (typeof(id) != "string") throw 'Error: type of id not string.'
     if (id.trim().length == 0) throw 'Error: id is either an empty string or just whitespace.'
     const caseCollection = await cases()
-    const patient = await caseCollection.findOne({ "patients._id": ObjectId(id) })
-    if (patient === null) throw `No patient could be found with the id '${id}'`
-    return patient;
+    const currentCase = await caseCollection.findOne({ "patients._id": ObjectId(id) })
+    if (currentCase === null) throw `No patient could be found with the id '${id}'`
+    for (i of currentCase.patients) {
+        if (i._id == id) {
+            return i;
+        }
+    }
+    throw "shouldn't get here"
 }
 
 
