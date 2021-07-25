@@ -1,5 +1,5 @@
 let mongoose = require('mongoose');
-const recommendationFactorKey = require('./recommendationfacorkey').schema;
+const recommendationFactorKey = require('./recommendationfactorkey').schema;
 
 
 // Recommendation Schema
