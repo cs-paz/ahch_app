@@ -18,6 +18,9 @@ async function main() {
   console.log(await data.patients.getPatient(testPatient2._id.toString()))
   testPatient2 = await data.patients.update(testPatient2._id.toString(), {firstName: "luke", lastName: "maake"})
   console.log(await data.patients.getAllPatients(testCase._id.toString()))
+  let testFamily1 = await data.family.add({caseID: testCase._id, firstName: "shannon", lastName: "madara", gender: "Female", relationship: "Mother"})
+  let testFamily2 = await data.family.add({caseID: testCase._id, firstName: "guy", lastName: "maake", gender: "Male"})
+  
   await db.serverConfig.close();
 }
 
