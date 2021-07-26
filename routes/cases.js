@@ -9,28 +9,24 @@ const router = express.Router();
 
 
 /* GET cases page */
-router.get('/', function (req, res, next) {
-  let Case = require('../models/case');
-  // let caseList = {};
-
-  Case.findOne({}, (err, cases) => {
-    // caseList = JSON.parse(JSON.stringify(cases));
-    // Object.assign(caseList, cases);
-    // console.log(caseList);
-  });
-
-  // console.log(caseList);
+router.get('/', async (req, res, next) => {
+  let caseArr = await data.cases.getAllCases()
 
   res.render('cases/caselist', {
     title: 'Case List',
     layout: 'cases',
+    cases: caseArr,
   });
 });
 
-router.get('/caseinfo', function (req, res, next) {
+router.get('/:caseId/caseinfo', async (req, res, next) => {
+  let caseInfo = await data.cases.getCase(req.params.caseId)
+
   res.render('cases/caseinfo', {
     title: 'Case Info',
-    layout: 'cases'
+    layout: 'cases',
+    caseInfo: caseInfo,
+    caseId: req.params.caseId,
   });
 });
 
@@ -41,19 +37,27 @@ router.get('/referral', async (req, res, next) => {
   });
 });
 
-router.get('/patients', async (req, res, next) => {
-  // caseId = req.params.caseId
-  // patientArr = patientData.getAllPatients(caseId)
+router.get('/:caseId/patients', async (req, res, next) => {
+  let caseId = req.params.caseId;
+  let patientArr = await patientData.getAllPatients(caseId);
+
   res.render('cases/patients', {
     title: 'Case Patients',
-    // patients: patientArr,
-    layout: 'cases'
+    patients: patientArr,
+    layout: 'cases',
+    caseId: caseId,
   });
 });
 
-router.get('/patients/edit/new', async (req, res, next) => {
-  console.log(req.query)
+router.get('/:caseId/patients/edit/new', async (req, res, next) => {
   let form = {};
+  let caseId = await req.params.caseId;
+  let patientArr = await data.patients.getAllPatients(caseId);
+  let familyArr = await data.family.getFamily(caseId);
+  // let languageArr = await data.language.getAllLanguages();
+  // let countyArr = await data.language.getAllCounties();
+  // let stateArr = await data.language.getAllStates();
+
   if (req.query.patientPopSelector || req.query.familyPopSelector) {
     let id;
     if (req.query.patientPopSelector) {
@@ -78,31 +82,38 @@ router.get('/patients/edit/new', async (req, res, next) => {
   res.render('cases/patientForm', {
     title: 'Case Patients',
     layout: 'cases',
-    form: form
+    form: form,
+    patients: patientArr,
+    family: familyArr,
+    // language: languageArr,
+    // county: countyArr,
+    // state: stateArr,
+    caseId: caseId,
   });
 });
 
-router.post('/patients/edit/new', async (req, res, next) => {
+router.post('/:caseId/patients/edit/new', async (req, res, next) => {
   let form = req.body // have to add error checking/xss
+  form.caseId = req.params.caseId;
   let patient;
   try {
     patient = await patientData.add(form)
   } catch (e) {
     res.status(500).render('error');
   }
-  // caseId = req.params.caseId
-  // patientArr = patientData.getAllPatients(caseId)
-  res.redirect("/cases/patients");
-  // res.render('cases/patients', { // may just res.redirect to /cases/${caseId}/patients
-  //   title: 'Case Patients',
-  //   // patients: patientArr,
-  //   layout: 'cases'
-  // });
+  res.redirect(`/cases/${req.params.caseId}/patients`);
   return patient;
 });
 
-router.get('/patients/edit/:id', async (req, res, next) => {
+router.get('/:caseId/patients/edit/:id', async (req, res, next) => {
   let form = {};
+  let caseId = req.params.caseId;
+  let patientArr = await data.patients.getAllPatients(caseId);
+  let familyArr = await data.family.getFamily(caseId);
+  // let languageArr = await data.language.getAllLanguages();
+  // let countyArr = await data.language.getAllCounties();
+  // let stateArr = await data.language.getAllStates();
+
   try {
     form = await patientData.getPatient(req.params.id);
   } catch (e) {
@@ -121,15 +132,22 @@ router.get('/patients/edit/:id', async (req, res, next) => {
       res.status(500).render('error');
     }
   }
+
   res.render('cases/patientForm', {
     title: 'Case Patients',
     layout: 'cases',
     form: form,
-    patientId: req.params.id
+    patientId: req.params.id,
+    patients: patientArr,
+    family: familyArr,
+    // language: languageArr,
+    // county: countyArr,
+    // state: stateArr,
+    caseId: req.params.caseId,
   });
 });
 
-router.post('/patients/edit/:id', async (req, res, next) => {
+router.post('/:caseId/patients/edit/:id', async (req, res, next) => {
   let form = req.body // have to add error checking/xss
   let patient;
   try {
@@ -137,14 +155,7 @@ router.post('/patients/edit/:id', async (req, res, next) => {
   } catch (e) {
     res.status(500).render('error');
   }
-  // caseId = req.params.caseId
-  // patientArr = patientData.getAllPatients(caseId)
-  res.redirect("/cases/patients");
-  // res.render('cases/patients', { // may just res.redirect to /cases/${caseId}/patients
-  //   title: 'Case Patients',
-  //   // patients: patientArr,
-  //   layout: 'cases'
-  // });
+  res.redirect(`/cases/${req.params.caseId}/patients`);
   return patient;
 });
 
@@ -155,18 +166,18 @@ router.get('/medical', async (req, res, next) => {
   });
 });
 
-router.get('/family', async (req, res, next) => {
-  // caseId = req.params.caseId
-  // familyArr = patientData.getFamily(caseId)
+router.get('/:caseId/family', async (req, res, next) => {
+  caseId = req.params.caseId;
+  familyArr = data.family.getFamily(caseId);
   res.render('cases/family', { 
     title: 'Case Family',
-    // family: familyArr,
-    layout: 'cases'
+    family: familyArr,
+    layout: 'cases',
+    caseId: caseId,
   });
 });
 
 router.get('/family/edit/new', async (req, res, next) => {
-  console.log(req.query)
   let form = {};
   if (req.query.patientPopSelector || req.query.familyPopSelector) {
     let id;
@@ -184,7 +195,8 @@ router.get('/family/edit/new', async (req, res, next) => {
   res.render('cases/familyForm', {
     title: 'Case Family',
     layout: 'cases',
-    form: form
+    form: form,
+    caseId: caseId,
   });
 });
 
@@ -280,7 +292,6 @@ router.get('/services/edit/new', async (req, res, next) => {
 });
 
 router.post('/services/edit/new', async (req, res, next) => {
-  console.log("here");
   let form = req.body; // have to add error checking/xss
   // let patients = form.patientOptions; // this is just incase we need to do something with patientOptions before sending it to db
   // let servicesForm = ["scheduler", "referralType", "service", "clinician", "reportSubmitted", "reportSubmittedDate", "notes"]

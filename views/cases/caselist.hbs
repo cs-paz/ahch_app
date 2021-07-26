@@ -16,7 +16,7 @@
         <tbody>
             {{#each cases}}
             <tr>
-                <td scope="row">{{this.familyName}}</td>
+                <td scope="row"><a href="/cases/{{this._id}}/caseinfo">{{this.caseName}}</a></td>
                 <td>{{this.spiritNumber}}</td>
                 <td>{{this.createdDate}}</td>
             </tr>
