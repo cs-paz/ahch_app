@@ -31,7 +31,7 @@ async function add(formRequestBody) {
     newCase.spiritCaseID = formRequestBody.spiritCaseID;
     newCase.referredMemberName = formRequestBody.referredMemberName;
     newCase.spiritPersonID = formRequestBody.spiritPersonID;
-    console.log(newCase);
+    // console.log(newCase);
 
     try {
         Case.create(newCase);
@@ -53,7 +53,7 @@ async function add(formRequestBody) {
 async function getAllCases() {
     const caseCollection = await cases()
     const caseArr = await caseCollection.find({}).toArray()
-    return userArr.map(clean)
+    return caseArr.map(clean)
 }
   
 async function getCase(id) {
@@ -63,9 +63,9 @@ async function getCase(id) {
   
     const caseCollection = await cases()
   
-    const user = await caseCollection.findOne({ _id: ObjectId(id) })
-    if (user === null) throw `No case could be found with the id '${id}'`
-    return clean(user)
+    const currentCase = await caseCollection.findOne({ _id: ObjectId(id) })
+    if (currentCase === null) throw `No case could be found with the id '${id}'`
+    return clean(currentCase)
 }
 
 module.exports = {
