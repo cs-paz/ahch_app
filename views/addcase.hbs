@@ -461,7 +461,7 @@
                                     Document: </label>
                                 <div class="col-sm-12">
                                     <textarea class="form-control form-control-sm"
-                                        aria-label="With textarea"></textarea>
+                                        aria-label="With textarea" id="input-other-document"></textarea>
                                 </div>
                             </div>
 
@@ -585,6 +585,59 @@
                             </div>
 
                             <div class="form-group row">
+                                <label for="input-patient-contact-info"
+                                    class="col-sm-2 col-form-label col-form-label-sm">Contact Info/Phone #:
+                                </label>
+                                <div class="col-sm-10">
+                                    <input type="tel" class="form-control form-control-sm" id="input-patient-contact-info"
+                                        name="patientContactInfo">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="input-eligible-health-insurance"
+                                    class="col-sm-2 col-form-label col-form-label-sm">Medical exam only: <br>Youth has, or is eligible for, health insurance: </label>
+                                <div class="col-sm-10">
+                                    <br>
+                                    <div class="form-check form-check-inline  form-control-sm">
+                                        <input class="form-check-input" type="radio" id="input-yes" value="Yes"
+                                            name="eligibleHealthInsurance">
+                                        <label class="form-check-label" for="input-yes">Yes</label>
+                                    </div>
+                                    <div class="form-check form-check-inline  form-control-sm">
+                                        <input class="form-check-input" type="radio" id="input-no" value="No"
+                                            name="eligibleHealthInsurance">
+                                        <label class="form-check-label" for="input-no">No</label>
+                                    </div>
+                                    <div class="form-check form-check-inline  form-control-sm">
+                                        <input class="form-check-input" type="radio" id="input-unknown" value="Unknown"
+                                            name="eligibleHealthInsurance">
+                                        <label class="form-check-label" for="input-unknown">Unknown</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="input-medicaid-num"
+                                    class="col-sm-2 col-form-label col-form-label-sm">Medicaid #:
+                                </label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control form-control-sm" id="input-medicaid-num"
+                                        name="patientMedicaidNumber">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="input-other-insurance"
+                                    class="col-sm-2 col-form-label col-form-label-sm">Other Insurance:
+                                </label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control form-control-sm" id="input-other-insurance"
+                                        name="patientOtherInsurance">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
                                 <label for="input-abuse-type" class="col-sm-2 col-form-label col-form-label-sm"><span
                                         class="font-weight-bold">Allegations: </span></label>
                                 <div class="col-sm-10">
@@ -623,13 +676,13 @@
 
 
                                     <div class="form-group row">
-                                        <label for="specifyAllegations"
+                                        <label for="input-specify-allegations"
                                             class="col-sm-12 col-form-label col-form-label-sm"><span
                                                 class="font-weight-bold">Specify Type of Allegations:
                                             </span></label>
                                         <div class="col-sm-12">
                                             <textarea class="form-control form-control-sm"
-                                                aria-label="With textarea"></textarea>
+                                                aria-label="With textarea" id="input-specify-allegations" name="specifyAllegations"></textarea>
                                         </div>
 
                                     </div>
@@ -782,7 +835,7 @@
                                     name="residency">
                                 <label class="form-check-label" for="input-home">In Home (custody
                                     remains with legal
-                                    gaurdians)</label>
+                                    guardians)</label>
                             </div>
                             <div class="form-check form-check-inline  form-control-sm">
                                 <input class="form-check-input" type="radio" id="input-out-of-home" value="out-of-home"
@@ -888,44 +941,44 @@
 
 
                     <div class="form-group row col-sm-12" style="margin-bottom: 0.2rem">
-                        <h4>Child's Legal Gaurdian(s) (if different from above): </h4>
+                        <h4>Child's Legal Guardian(s) (if different from above): </h4>
                     </div>
                     <form>
                         <div class="form-row">
                             <div class="col-auto">
-                                <label for="input-legal-gaurdian-name" class="control label col-form-label-sm ">
+                                <label for="input-legal-guardian-name" class="control label col-form-label-sm ">
                                     Name:</label>
 
                                 <input type="text" class="form-control mb-2" autocomplete="off"
-                                    id="input-legal-gaurdian-name" name="legalGuardianName">
+                                    id="input-legal-guardian-name" name="legalGuardianName">
 
                             </div>
 
                             <div class="col-auto">
-                                <label for="input-legal-gaurdian-address" class="control label col-form-label-sm ">
+                                <label for="input-legal-guardian-address" class="control label col-form-label-sm ">
                                     Address:</label>
 
                                 <input type="text" class="form-control mb-2" autocomplete="off"
-                                    id="input-legal-gaurdian-address" name="legalGuardianAddress">
+                                    id="input-legal-guardian-address" name="legalGuardianAddress">
 
                             </div>
 
                             <div class="col-auto">
-                                <label for="input-legal-gaurdian-phone" class="control label col-form-label-sm ">Phone
+                                <label for="input-legal-guardian-phone" class="control label col-form-label-sm ">Phone
                                     Number:</label>
 
                                 <input type="text" class="form-control mb-2" autocomplete="off"
-                                    id="input-legal-gaurdian-phone" name="legalGuardianPhone">
+                                    id="input-legal-guardian-phone" name="legalGuardianPhone">
 
                             </div>
 
                             <div class="col-auto">
-                                <label for="input-legal-gaurdian-relationship"
+                                <label for="input-legal-guardian-relationship"
                                     class="control label col-form-label-sm ">Relationship to
                                     Child:</label>
 
                                 <input type="text" class="form-control mb-2" autocomplete="off"
-                                    id="input-legal-gaurdian-relationship" name="legalGuardianRelationship">
+                                    id="input-legal-guardian-relationship" name="legalGuardianRelationship">
                             </div>
 
                         </div>
@@ -952,7 +1005,7 @@
                         <label class="col-sm-3 col-form-label col-form-label-sm"
                             for="input-out-of-home-placement-type"><span class="font-weight-bold">Have
                                 parental rights
-                                been terminated and DCP&P has legal gaurdianship? </span></label>
+                                been terminated and DCP&P has legal guardianship? </span></label>
                         <div class="form-check form-check-inline  form-control-sm">
                             <input class="form-check-input" type="radio" id="input-yes-mother" value="yesMother"
                                 name="parentalRights">
@@ -1040,7 +1093,7 @@
                         </div>
                         <div class="col-sm-11">
                             <textarea type="text" class="form-control form-control-sm" id="input-referral-question1"
-                                autocomplete="off" aria-label="With textarea" name="referalQeustion1"></textarea>
+                                autocomplete="off" aria-label="With textarea" name="referralQuestion1"></textarea>
                         </div>
                         <div class="col-sm-1">
                             <label for="input-referral-question2" class="col-sm-1 col-form-label">b
@@ -1048,7 +1101,7 @@
                         </div>
                         <div class="col-sm-11">
                             <textarea type="text" class="form-control form-control-sm" id="input-referral-question2"
-                                autocomplete="off" aria-label="With textarea" name="referalQeustion2"></textarea>
+                                autocomplete="off" aria-label="With textarea" name="referralQuestion2"></textarea>
                         </div>
                         <div class="col-sm-1">
                             <label for="input-referral-question3" class="col-sm-1 col-form-label">c
@@ -1056,7 +1109,7 @@
                         </div>
                         <div class="col-sm-11">
                             <textarea type="text" class="form-control form-control-sm" id="input-referral-question3"
-                                autocomplete="off" aria-label="With textarea" name="referalQeustion3"></textarea>
+                                autocomplete="off" aria-label="With textarea" name="referralQuestion3"></textarea>
                         </div>
                         <div class="col-sm-1">
                             <label for="input-referral-question4" class="col-sm-1 col-form-label">d
@@ -1064,13 +1117,13 @@
                         </div>
                         <div class="col-sm-11">
                             <textarea type="text" class="form-control form-control-sm" id="input-referral-question4"
-                                autocomplete="off" aria-label="With textarea" name="referalQeustion4"></textarea>
+                                autocomplete="off" aria-label="With textarea" name="referralQuestion4"></textarea>
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="input-safety-concern" class="col-sm-12 col-form-label col-form-label-sm">
-                            <span class=font-weight-bold>Are there any barriers/safety concerns
+                            <span class="font-weight-bold">Are there any barriers/safety concerns
                                 preventing family
                                 members from
                                 attending evaluation together?</span>
@@ -1160,38 +1213,38 @@
                         </div>
 
                         <div class="col-sm-2">
-                            <label for="input-referral-question1" class="col-form-label-sm">a. Current
+                            <label for="input-referred-question-a" class="col-form-label-sm">a. Current
                                 Diagnosis:
                             </label>
                         </div>
                         <div class="col-sm-10">
-                            <textarea type="text" class="form-control form-control-sm" id="input-referral-question1"
-                                autocomplete="off" aria-label="With textarea" name="referalQeustion1"></textarea>
+                            <textarea type="text" class="form-control form-control-sm" id="input-referred-question-a"
+                                autocomplete="off" aria-label="With textarea" name="referredQuestionA"></textarea>
                         </div>
                         <div class="col-sm-2">
-                            <label for="input-referral-question2" class="col-form-label-sm">b. Current
+                            <label for="input-referred-question-b" class="col-form-label-sm">b. Current
                                 Medications:
                             </label>
                         </div>
                         <div class="col-sm-10">
-                            <textarea type="text" class="form-control form-control-sm" id="input-referral-question2"
-                                autocomplete="off" aria-label="With textarea" name="referalQeustion2"></textarea>
+                            <textarea type="text" class="form-control form-control-sm" id="input-referred-question-b"
+                                autocomplete="off" aria-label="With textarea" name="referredQuestionB"></textarea>
                         </div>
                         <div class="col-sm-2">
-                            <label for="input-referral-question3" class="col-form-label-sm">c. Previous
+                            <label for="input-referred-question-c" class="col-form-label-sm">c. Previous
                                 Diagnosis:</label>
                         </div>
                         <div class="col-sm-10">
-                            <textarea type="text" class="form-control form-control-sm" id="input-referral-question3"
-                                autocomplete="off" aria-label="With textarea" name="referalQeustion3"></textarea>
+                            <textarea type="text" class="form-control form-control-sm" id="input-referred-question-c"
+                                autocomplete="off" aria-label="With textarea" name="referredQuestionC"></textarea>
                         </div>
                         <div class="col-sm-2">
-                            <label for="input-referral-question4" class="col-form-label-sm">d. Previous
+                            <label for="input-referred-question-d" class="col-form-label-sm">d. Previous
                                 Medications:</label>
                         </div>
                         <div class="col-sm-10">
-                            <textarea type="text" class="form-control form-control-sm" id="input-referral-question4"
-                                autocomplete="off" aria-label="With textarea" name="referalQeustion4"></textarea>
+                            <textarea type="text" class="form-control form-control-sm" id="input-referred-question-d"
+                                autocomplete="off" aria-label="With textarea" name="referredQuestionD"></textarea>
                         </div>
                     </div>
                 </div>
@@ -1206,45 +1259,45 @@
 
                     <div class="form-group row ">
                         <label class="col-sm-2 col-form-label-sm font-weight-bold"
-                            for="input-caseworker-signiture">Caseworker Signiture</label>
+                            for="input-caseworker-signature">Caseworker Signature</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control form-control-sm" id="input-caseworker-signiture"
-                                name="caseworkerSigniture" autocomplete="off">
+                            <input type="text" class="form-control form-control-sm" id="input-caseworker-signature"
+                                name="caseworkerSignature" autocomplete="off">
                         </div>
 
                         <label class="col-sm-2 col-form-label-sm font-weight-bold"
-                            for="input-caseworker-signiture-date">Date</label>
+                            for="input-caseworker-signature-date">Date</label>
                         <div class="col-sm-3">
-                            <input type="date" class="form-control form-control-sm" id="input-caseworker-signiture-date"
-                                name="caseworkerSignitureDate">
+                            <input type="date" class="form-control form-control-sm" id="input-caseworker-signature-date"
+                                name="caseworkerSignatureDate">
                         </div>
 
                         <label class="col-sm-2 col-form-label-sm font-weight-bold"
-                            for="input-supervisor-signiture">Supervisor Signiture</label>
+                            for="input-supervisor-signature">Supervisor Signature</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control form-control-sm" id="input-supervisor-signiture"
-                                name="supervisorSigniture" autocomplete="off">
+                            <input type="text" class="form-control form-control-sm" id="input-supervisor-signature"
+                                name="supervisorSignature" autocomplete="off">
                         </div>
 
                         <label class="col-sm-2 col-form-label-sm font-weight-bold"
-                            for="input-supervisor-signiture-date">Date</label>
+                            for="input-supervisor-signature-date">Date</label>
                         <div class="col-sm-3">
                             <input type="date" class="form-control  form-control-sm"
-                                id="input-supervisor-signiture-date" name="supervisorSignitureDate">
+                                id="input-supervisor-signature-date" name="supervisorSignatureDate">
                         </div>
 
                         <label class="col-sm-2 col-form-label-sm font-weight-bold"
-                            for="input-gatekeeper-signiture">Gatekeeper Signiture</label>
+                            for="input-gatekeeper-signature">Gatekeeper Signature</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control form-control-sm" id="input-gatekeeper-signiture"
-                                name="caseworkerSigniture" autocomplete="off">
+                            <input type="text" class="form-control form-control-sm" id="input-gatekeeper-signature"
+                                name="caseworkerSignature" autocomplete="off">
                         </div>
 
                         <label class="col-sm-2 col-form-label-sm font-weight-bold"
-                            for="input-gatekeeper-signiture-date">Date</label>
+                            for="input-gatekeeper-signature-date">Date</label>
                         <div class="col-sm-3">
-                            <input type="date" class="form-control form-control-sm" id="input-gatekeeper-signiture-date"
-                                name="gatekeeperSignitureDate">
+                            <input type="date" class="form-control form-control-sm" id="input-gatekeeper-signature-date"
+                                name="gatekeeperSignatureDate">
                         </div>
                     </div>
 
