@@ -30,10 +30,14 @@ router.get('/:caseId/caseinfo', async (req, res, next) => {
   });
 });
 
-router.get('/referral', async (req, res, next) => {
+router.get('/:caseId/referral', async (req, res, next) => {
+  let caseInfo = await data.cases.getCase(req.params.caseId)
+
   res.render('cases/referral', {
     title: 'Case Referrals',
-    layout: 'cases'
+    layout: 'cases',
+    caseInfo: caseInfo,
+    caseId: req.params.caseId,
   });
 });
 
@@ -46,6 +50,7 @@ router.get('/:caseId/patients', async (req, res, next) => {
     patients: patientArr,
     layout: 'cases',
     caseId: caseId,
+    caseId: req.params.caseId,
   });
 });
 
@@ -159,10 +164,14 @@ router.post('/:caseId/patients/edit/:id', async (req, res, next) => {
   return patient;
 });
 
-router.get('/medical', async (req, res, next) => {
+router.get('/:caseId/medical', async (req, res, next) => {
+  let caseInfo = await data.cases.getCase(req.params.caseId)
+  
   res.render('cases/medical', {
     title: 'Case Medical',
-    layout: 'cases'
+    layout: 'cases',
+    caseInfo: caseInfo,
+    caseId: req.params.caseId,
   });
 });
 
@@ -177,7 +186,7 @@ router.get('/:caseId/family', async (req, res, next) => {
   });
 });
 
-router.get('/family/edit/new', async (req, res, next) => {
+router.get('/:caseId/family/edit/new', async (req, res, next) => {
   let form = {};
   if (req.query.patientPopSelector || req.query.familyPopSelector) {
     let id;
@@ -196,30 +205,24 @@ router.get('/family/edit/new', async (req, res, next) => {
     title: 'Case Family',
     layout: 'cases',
     form: form,
-    caseId: caseId,
+    caseId: req.params.caseId,
   });
 });
 
-router.post('/family/edit/new', async (req, res, next) => {
+router.post('/:caseId/family/edit/new', async (req, res, next) => {
   let form = req.body // have to add error checking/xss
   let familyMember;
+  form.caseId = req.params.caseId;
   try {
     familyMember = await familyData.add(form)
   } catch (e) {
     res.status(500).render('error');
   }
-  // caseId = req.params.caseId
-  // familyArr = patientData.getFamily(caseId)
-  res.redirect("/cases/family");
-  // res.render('cases/family', { // may just res.redirect to /cases/${caseId}/family
-  //   title: 'Case Family',
-  //   // family: familyArr,
-  //   layout: 'cases'
-  // });
+  res.redirect(`/cases/${req.params.caseId}/family`);
   return familyMember;
 });
 
-router.get('/family/edit/:id', async (req, res, next) => {
+router.get('/:caseId/family/edit/:id', async (req, res, next) => {
   let form = {};
   try {
     form = await familyData.getFamilyMember(req.params.id);
@@ -243,11 +246,12 @@ router.get('/family/edit/:id', async (req, res, next) => {
     title: 'Case Family',
     layout: 'cases',
     form: form,
-    familyId: req.params.id
+    familyId: req.params.id,
+    caseId: req.params.caseId,
   });
 });
 
-router.post('/family/edit/:id', async (req, res, next) => {
+router.post('/:caseId/family/edit/:id', async (req, res, next) => {
   let form = req.body // have to add error checking/xss
   let familyMember;
   try {
@@ -255,84 +259,71 @@ router.post('/family/edit/:id', async (req, res, next) => {
   } catch (e) {
     res.status(500).render('error');
   }
-  // caseId = req.params.caseId
-  // familyArr = patientData.getFamily(caseId)
-  res.redirect("/cases/family");
-  // res.render('cases/family', { // may just res.redirect to /cases/${caseId}/family
-  //   title: 'Case Family',
-  //   // family: familyArr,
-  //   layout: 'cases'
-  // });
+  res.redirect(`/cases/${req.params.caseId}/family`);
   return familyMember;
 });
 
 
-router.get('/history', async (req, res, next) => {
+router.get('/:caseId/history', async (req, res, next) => {
+  let caseInfo = await data.cases.getCase(req.params.caseId)
+
   res.render('cases/history', {
     title: 'Case History',
-    layout: 'cases'
+    layout: 'cases',
+    caseInfo: caseInfo,
+    caseId: req.params.caseId,
   });
 });
 
-router.get('/services', async (req, res, next) => {
-  // caseId = req.params.caseId
-  // serviceArr = patientData.getAllServices(caseId)
+router.get('/:caseId/services', async (req, res, next) => {
+  let caseInfo = await data.cases.getCase(req.params.caseId)
+  
   res.render('cases/services', {
     title: 'Case Services',
-    // services: serviceArr,
-    layout: 'cases'
+    caseInfo: caseInfo,
+    layout: 'cases',
+    caseId: req.params.caseId,
   });
 });
 
-router.get('/services/edit/new', async (req, res, next) => {
+router.get('/:caseId/services/edit/new', async (req, res, next) => {
   res.render('cases/servicesForm', {
     title: 'Case Services',
     layout: 'cases',
+    caseId: req.params.caseId,
   });
 });
 
-router.post('/services/edit/new', async (req, res, next) => {
+router.post('/:caseId/services/edit/new', async (req, res, next) => {
   let form = req.body; // have to add error checking/xss
-  // let patients = form.patientOptions; // this is just incase we need to do something with patientOptions before sending it to db
-  // let servicesForm = ["scheduler", "referralType", "service", "clinician", "reportSubmitted", "reportSubmittedDate", "notes"]
-  // for (i in form) {
-  //   console.log(i)
-  //   if (!servicesForm.includes(i)) {
-  //     console.log("this!")
-  //   }
-  // }
   let service;
+  form.caseId = req.params.caseId;
   try {
     service = await serviceData.add(form)
   } catch (e) {
     res.status(500).render('error');
   }
-  // caseId = req.params.caseId
-  // serviceArr = patientData.getServices(caseId)
-  res.redirect("/cases/services");
-  // res.render('cases/services', { // may just res.redirect to /cases/${caseId}/service
-  //   title: 'Case Services',
-  //   // service: serviceArr,
-  //   layout: 'cases'
-  // });
+
+  res.redirect(`/cases/${req.params.caseId}/services`);
   return service;
 });
 
-router.get('/services/edit/:id', async (req, res, next) => {
+router.get('/:caseId/services/edit/:id', async (req, res, next) => {
   let form = {};
   try {
-    form = await familyData.getFamilyMember(req.params.id);
+    form = await data.services.getService(req.params.id);
   } catch (e) {
     res.status(500).render('error');
   }
   res.render('cases/servicesForm', {
     title: 'Case Patients',
     layout: 'cases',
-    form: form
+    form: form,
+    caseId: req.params.caseId,
   });
 });
 
-router.post('/services/edit/:id', async (req, res, next) => {
+router.post('/:caseId/services/edit/:id', async (req, res, next) => {
   let form = req.body // have to add error checking/xss
   let service;
   try {
@@ -340,50 +331,62 @@ router.post('/services/edit/:id', async (req, res, next) => {
   } catch (e) {
     res.status(500).render('error');
   }
-  // caseId = req.params.caseId
-  // serviceArr = patientData.getServices(caseId)
-  res.redirect("/cases/services");
-  // res.render('cases/family', { // may just res.redirect to /cases/${caseId}/service
-  //   title: 'Case Family',
-  //   // service: serviceArr,
-  //   layout: 'cases'
-  // });
-  // res.redirect("/cases/service")
+  res.redirect(`/cases/${req.params.caseId}/services`);
   return service;
 });
 
-router.get('/staff', async (req, res, next) => {
+router.get('/:caseId/staff', async (req, res, next) => {
+  let caseInfo = await data.cases.getCase(req.params.caseId)
+
   res.render('cases/staff', {
     title: 'Case Staff',
-    layout: 'cases'
+    layout: 'cases',
+    caseInfo: caseInfo,
+    caseId: req.params.caseId,
   });
 });
 
-router.get('/mentalhealth', async (req, res, next) => {
+router.get('/:caseId/mentalhealth', async (req, res, next) => {
+  let caseInfo = await data.cases.getCase(req.params.caseId)
+
   res.render('cases/mentalhealth', {
     title: 'Case Mental Health',
-    layout: 'cases'
+    layout: 'cases',
+    caseInfo: caseInfo,
+    caseId: req.params.caseId,
   });
 });
 
-router.get('/recommendation', async (req, res, next) => {
+router.get('/:caseId/recommendation', async (req, res, next) => {
+  let caseInfo = await data.cases.getCase(req.params.caseId)
+
   res.render('cases/recommendation', {
     title: 'Case Recommendation',
-    layout: 'cases'
+    layout: 'cases',
+    caseInfo: caseInfo,
+    caseId: req.params.caseId,
   });
 });
 
-router.get('/familyrecommendation', async (req, res, next) => {
+router.get('/:caseId/familyrecommendation', async (req, res, next) => {
+  let caseInfo = await data.cases.getCase(req.params.caseId)
+
   res.render('cases/familyrecommendation', {
     title: 'Case Family Recommendation',
-    layout: 'cases'
+    layout: 'cases',
+    caseInfo: caseInfo,
+    caseId: req.params.caseId,
   });
 });
 
-router.get('/notes', async (req, res, next) => {
+router.get('/:caseId/notes', async (req, res, next) => {
+  let caseInfo = await data.cases.getCase(req.params.caseId)
+
   res.render('cases/notes', {
     title: 'Case Notes',
-    layout: 'cases'
+    layout: 'cases',
+    caseInfo: caseInfo,
+    caseId: req.params.caseId,
   });
 });
 

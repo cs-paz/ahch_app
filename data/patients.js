@@ -54,9 +54,9 @@ async function add(formRequestBody) {
 
     const caseCollection = await cases();
 
-    let caseID = ObjectId(formRequestBody.caseID);
+    let caseId = ObjectId(formRequestBody.caseId);
 
-    let updateInfo = await caseCollection.updateOne( { _id: caseID }, {$push : { patients : newPatient } } ); // maybe better, have to test
+    let updateInfo = await caseCollection.updateOne( { _id: caseId }, {$push : { patients : newPatient } } ); // maybe better, have to test
     
     return newPatient;
 }
