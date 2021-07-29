@@ -14,6 +14,7 @@
   width: 0;
   height: 100%;
   margin-left: -150px;
+  overflow-x: hidden;
   overflow-y: auto;
   background: #343a40;
   -webkit-transition: all 0.5s ease;
@@ -69,7 +70,7 @@
 
 @media (min-width:768px) {
   #wrapper {
-    padding-left: 150px;
+    padding-left: 330px;
   }
 }
 
