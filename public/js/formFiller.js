@@ -1,3 +1,15 @@
+let fs = require('fs'),
+PDFParser = require("pdf2json");
+
+let pdfParser = new PDFParser(); // pdf parsing stuff
+
+pdfParser.on("pdfParser_dataError", errData => console.error(errData.parserError) );
+pdfParser.on("pdfParser_dataReady", pdfData => {
+fs.writeFile("./AHCHFormFilled.fields.json", JSON.stringify(pdfParser.getAllFieldsTypes()), ()=>{console.log("Done.");});
+});
+
+pdfParser.loadPDF("./AHCHFormFilled.pdf");
+
 ($(document).on('click','#form-filler-button',function(e){
     e.preventDefault();
 
