@@ -63,8 +63,8 @@ app.use('/jquery', jquery);
 
 
 // Middleware to Recognize JSON in Requests
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json({limit: '50mb', extended: true, parameterLimit: 50000}));
+app.use(express.urlencoded({limit: '50mb', extended: true}));
 
 // View Engine Setup: Handlebars (extension .hbs)
 app.engine('hbs', exphbs({ extname: 'hbs', defaultLayout: 'main', layoutsDir: __dirname + '/views/layouts' }));

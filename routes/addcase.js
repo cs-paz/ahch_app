@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const caseData = require('../data/cases');
+const fs = require('fs');
+const PDFParser = require("pdf2json");
 
 const scripts = [
   { script: '/public/js/setCurrentDate.js' }];
@@ -17,6 +19,24 @@ router.get('/', async (req, res, next) => {
     scripts: scripts,
     stylesheets: stylesheets
   });
+});
+
+router.post('/fillIntake', async (req, res) => {
+  console.log("here")
+  let pdfParser = new PDFParser(); // pdf parsing stuff
+  for (i in req) {
+    console.log(i)
+  }
+  fs.writeFile("./AHCHFormFilled.pdf", req.body.data, ()=>{console.log("Done.");});
+
+  pdfParser.on("pdfParser_dataError", errData => console.error(errData.parserError) );
+  pdfParser.on("pdfParser_dataReady", pdfData => {
+  fs.writeFile("./AHCHFormFilled.fields.json", JSON.stringify(pdfParser.getAllFieldsTypes()), ()=>{console.log("Done.");});
+  });
+
+  pdfParser.loadPDF("./AHCHFormFilled.pdf");
+
+  console.log(req)
 });
 
 router.post('/submitIntake', async (req, res) => {

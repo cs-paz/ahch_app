@@ -23,6 +23,54 @@
                     <form action="/addcase/submitIntake" method="POST">
                         <div>
 
+                        <div class="form-row">
+                        {{!-- <label for="input-file" class="control label col-form-label-sm">
+                                        Input file:</label>
+                        <input type="file" name="input-file" id="input-file">
+                        <button type="button" id="form-filler-button">Autofill</button> --}}
+                        
+                        <script>
+                            function onUpload(input) {  
+                                let originalFile = input.files[0];
+                                let reader = new FileReader();
+                                reader.readAsDataURL(originalFile);
+                                reader.onload = () => {
+                                    let json = JSON.stringify({ dataURL: reader.result });
+
+                                    // View the file
+                                    let fileURL = JSON.parse(json).dataURL;
+                                    $("#display-pdf").empty();
+                                    $("#display-pdf").append(`<object data="${fileURL}"
+                                    type="application/pdf" width="400px" height="200px">
+                                    </object>`);
+
+                                    // View the original file
+                                    let originalFileURL = URL.createObjectURL(originalFile);
+                                    $("#display-pdf").append(`<object data="${originalFileURL}"
+                                    type="application/pdf" width="400px" height="200px">
+                                    </object>`)
+                                    //.onload(() => {
+                                    //URL.revokeObjectURL(originalFileURL);
+                                    //});
+
+                                    console.log(reader.result);
+
+                                    $.ajax({
+                                        url: '/addcase/fillIntake/',
+                                        type: 'POST',
+                                        dataType: "json",
+                                        data: JSON.stringify({ "dataURL": reader.result }),
+                                    });
+                                    
+                                };
+                            }
+                        </script>
+
+                        <input id="file-input" type="file" onchange="onUpload(this)" />
+                        <div id="display-pdf"></div>
+
+                        </div>
+
                         </div>
                         {{!----------------- INITIAL INFO ------------------}}
                         <div id="initial-info">
