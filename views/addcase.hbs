@@ -29,8 +29,40 @@
                         <input type="file" name="input-file" id="input-file">
                         <button type="button" id="form-filler-button">Autofill</button> --}}
                         
+                        {{!-- <script>
+                            function sendFormData(e){
+                                e.preventDefault();
+                                var formData = new FormData($("#form-demo").get(0));
+                                
+                                $.ajax({
+                                    url : '/addcase/fillIntake/',
+                                    type : "POST",
+                                    data : formData,
+                                    // both 'contentType' and 'processData' parameters are
+                                    // required so that all data are correctly transferred
+                                    contentType : false,
+                                    processData : false
+                                }).done(function(response){
+                                    // In this callback you get the AJAX response to check
+                                    // if everything is right...
+                                }).fail(function(){
+                                    // Here you should treat the http errors (e.g., 403, 404)
+                                }).always(function(){
+                                    alert("AJAX request finished!");
+                                });
+                            }
+                        </script>
+
+                        <form id="form-demo" onsubmit="return false" formEnctype="multipart/form-data" formMethod="POST">
+                            <input type="file" id="file-input" name="file-input"><br><br>
+                            <button id="button-send" onsubmit="sendFormData()">Send</button>
+                        </form> --}}
+
+                        <input id="file-input" type="file" onchange="onUpload(this)" accept=".pdf" enctype="multipart/form-data"/>
+                        <div id="display-pdf"></div>
+
                         <script>
-                            function onUpload(input) {  
+                            function onUpload(input) {
                                 let originalFile = input.files[0];
                                 let reader = new FileReader();
                                 reader.readAsDataURL(originalFile);
@@ -49,25 +81,15 @@
                                     $("#display-pdf").append(`<object data="${originalFileURL}"
                                     type="application/pdf" width="400px" height="200px">
                                     </object>`)
-                                    //.onload(() => {
-                                    //URL.revokeObjectURL(originalFileURL);
-                                    //});
-
-                                    console.log(reader.result);
 
                                     $.ajax({
                                         url: '/addcase/fillIntake/',
                                         type: 'POST',
-                                        dataType: "json",
-                                        data: JSON.stringify({ "dataURL": reader.result }),
+                                        data: reader.result,
                                     });
-                                    
                                 };
                             }
                         </script>
-
-                        <input id="file-input" type="file" onchange="onUpload(this)" />
-                        <div id="display-pdf"></div>
 
                         </div>
 
