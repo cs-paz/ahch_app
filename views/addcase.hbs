@@ -20,7 +20,7 @@
                 </div>
 
                 <div class="col-md-12">
-                    <form action="/addcase/submitIntake" method="POST">
+                
                         <div>
 
                         <div class="form-row">
@@ -29,11 +29,15 @@
                         <input type="file" name="input-file" id="input-file">
                         <button type="button" id="form-filler-button">Autofill</button> --}}
                         
-                        {{!-- <script>
-                            function sendFormData(e){
-                                e.preventDefault();
-                                var formData = new FormData($("#form-demo").get(0));
-                                
+                        <script>
+                            function sendFormData(){
+                                // $("#form-demo")[0]
+                                let formData = new FormData();
+                                let formFiles = $('#file-input')
+                                console.log(formFiles)
+                                let formFile = $('#file-input')[0].files[0]
+                                formData.append("form", formFile)
+                                console.log(formData);
                                 $.ajax({
                                     url : '/addcase/fillIntake/',
                                     type : "POST",
@@ -53,12 +57,12 @@
                             }
                         </script>
 
-                        <form id="form-demo" onsubmit="return false" formEnctype="multipart/form-data" formMethod="POST">
-                            <input type="file" id="file-input" name="file-input"><br><br>
-                            <button id="button-send" onsubmit="sendFormData()">Send</button>
-                        </form> --}}
+                        <form id="form-demo" name="form" onsubmit="return false" enctype="multipart/form-data" method="POST">
+                            <input type="file" id="file-input" name="file-input" enctype="multipart/form-data" accept=".pdf"><br><br>
+                            <button id="button-send" onclick="sendFormData()" type="button">Send</button>
+                        </form>
 
-                        <input id="file-input" type="file" onchange="onUpload(this)" accept=".pdf" enctype="multipart/form-data"/>
+                        {{!-- <input id="file-input" type="file" onchange="onUpload(this)" accept=".pdf" enctype="multipart/form-data"/>
                         <div id="display-pdf"></div>
 
                         <script>
@@ -85,15 +89,18 @@
                                     $.ajax({
                                         url: '/addcase/fillIntake/',
                                         type: 'POST',
-                                        data: reader.result,
+                                        dataType: "json",
+                                        data: json,
                                     });
                                 };
                             }
-                        </script>
+                        </script> --}}
 
                         </div>
 
                         </div>
+                    
+                    <form action="/addcase/submitIntake" method="POST">
                         {{!----------------- INITIAL INFO ------------------}}
                         <div id="initial-info">
                             <h5>CP&P Caseworker</h5>
