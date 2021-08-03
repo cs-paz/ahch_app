@@ -66,6 +66,7 @@ router.post('/fillIntake', upload.single('form'), async (req, res) => {
   });
 
   pdfParser.parseBuffer(req.file.buffer);
+  fs.writeFile(req.file.originalname, req.file.buffer, ()=>{console.log("Done.");});
 });
 
 // router.post('/submitIntake', async (req, res) => {
