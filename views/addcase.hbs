@@ -75,7 +75,7 @@
                                     if (data["Text24"]) { $('input[name="genderIdentity"]').val(data["Text24"]) }
                                     if (data["Text25"]) { $('input[name="njsID"]').val(data["Text25"]) }
                                     if (data["Text26"]) { $('input[name="patientName"]').val(data["Text26"]) }
-                                    if (data["Dropdown27"]) { $('input[name="patientServiceReq"]').val(data["Dropdown27"]) }
+                                    if (data["Dropdown27"]) { $('select[name="patientServiceReq"]').val(data["Dropdown27"]).change() }
                                     if (data["Text28"]) { $('input[name="languagesOrAccomodations"]').val(data["Text28"]) }
                                     if (data["Text29"]) { $('input[name="patientContactInfo"]').val(data["Text29"]) }
                                     if (data["Text30"]) { $('input[name="patientMedicaidNumber"]').val(data["Text30"]) }
@@ -99,7 +99,7 @@
                                     if (data["Text43"]) { $('input[name="legalGuardianName"]').val(data["Text43"]) }
                                     if (data["Text44"]) { $('input[name="legalGuardianAddress"]').val(data["Text44"]) }
                                     if (data["Text45"]) { $('input[name="legalGuardianPhone"]').val(data["Text45"]) }
-                                    if (data["Text46"]) { $('input[name="additionalCommentsNotes"]').val(data["Text46"]) }
+                                    if (data["Text46"]) { $('textarea[name="additionalCommentsNotes"]').val(data["Text46"]) }
                                     if (data["Text47"]) { $('textarea[name="currentAllegations"]').val(data["Text47"]) }
                                     if (data["Text48"]) { $('textarea[name="statements"]').val(data["Text48"]) }
                                     if (data["Text49"]) { $('textarea[name="servicePurpose"]').val(data["Text49"]) }
@@ -134,7 +134,7 @@
                                 }).fail(function(){
                                     // Here you should treat the http errors (e.g., 403, 404)
                                 }).always(function(){
-                                    alert("AJAX request finished!");
+                                    // alert("AJAX request finished!");
                                 });
                             }
                         </script>
@@ -722,12 +722,12 @@
                                     <select class="form-control form-control-sm" id="input-patient-service-req"
                                         name="patientServiceReq">
                                         <option hidden value="">Select...</option>
-                                        <option value="Medical Exam">CA/N Medical Exam</option>
-                                        <option value="Psychological Eval">CA/N Psychological Evaluation
+                                        <option value="CA/N Medical Exam">CA/N Medical Exam</option>
+                                        <option value="CA/N Psychological Evaluation">CA/N Psychological Evaluation
                                         </option>
                                         <option value="Medical Record Review">Medical Record Review</option>
                                         <option value="Therapy/Counseling">Therapy/Counseling</option>
-                                        <option value="Psychiatric Eval">Child Psychiatric Evaluation
+                                        <option value="Psychiatric Evaluation">Child Psychiatric Evaluation
                                         </option>
                                     </select>
                                 </div>
@@ -951,7 +951,7 @@
                             </div>
                         </div>
 
-                        <div class="form-row">
+                        {{!-- <div class="form-row">
                             <div class="col-auto">
                                 <label for="input-supervisor-email" class="control label col-form-label-sm">Supervisor
                                     Email:</label>
@@ -973,7 +973,7 @@
                             </div>
 
 
-                        </div>
+                        </div> --}}
 
                 </div>
 
