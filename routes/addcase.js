@@ -6,6 +6,9 @@ const PDFParser = require("pdf2json");
 const Base64 = require('js-base64');
 const multer = require('multer');
 const upload = multer();
+const hummus = require('hummus');
+const PDFDigitalForm = require('./pdf-digital-form');
+var pdfFiller = require('pdffiller');
 
 var BASE64_MARKER = ';base64,';
 
@@ -59,63 +62,88 @@ router.post('/fillIntake', upload.single('form'), async (req, res) => {
 
   console.log(req.file);
 
+  let jsonPdfFields;
+  let returnJson = {};
+
   pdfParser.on("pdfParser_dataError", errData => console.error(errData.parserError) );
   pdfParser.on("pdfParser_dataReady", pdfData => {
   // fs.writeFile("./AHCHFormFilled.fields.json", JSON.stringify(pdfParser.getAllFieldsTypes()), ()=>{console.log("Done.");});
-    console.log(JSON.stringify(pdfParser.getAllFieldsTypes()));
+    jsonPdfFields = (pdfParser.getAllFieldsTypes());
+    console.log(jsonPdfFields);
+    for (i of jsonPdfFields) {
+      returnJson[i.id] = i.value;
+    }
+    console.log(returnJson)
+    return res.json(returnJson);
   });
 
-  pdfParser.parseBuffer(req.file.buffer);
+  // pdfParser.parseBuffer(req.file.buffer);
   fs.writeFile(req.file.originalname, req.file.buffer, ()=>{console.log("Done.");});
+  pdfParser.loadPDF(req.file.originalname);
+  // let pdfParserHummus = hummus.createReader(req.file.originalname);
+  // let digitalForm = new PDFDigitalForm(pdfParserHummus);
+
+  // if(digitalForm.hasForm()) {
+  //   console.log(digitalForm.fields);
+  //   console.log(digitalForm.createSimpleKeyValue());
+  // }
+
+  // var nameRegex = null;  
+
+  // var FDF_data = pdfFiller.generateFDFTemplate( req.file.originalname, nameRegex, function(err, fdfData) {
+  //     if (err) throw err;
+  //     console.log(fdfData);
+  // });
+
 });
 
-// router.post('/submitIntake', async (req, res) => {
-//   let caseBody = {};
+router.post('/submitIntake', async (req, res) => {
+  let caseBody = {};
 
-//   caseBody.caseworkerNameCPP = req.body.caseworkerNameCPP;
-//   caseBody.caseworkerNumberCPP = req.body.caseworkerNumberCPP;
-//   caseBody.caseworkerEmailCPP = req.body.caseworkerEmailCPP;
-//   caseBody.supervisorNameCPP = req.body.supervisorNameCPP;
-//   caseBody.supervisorNumberCPP = req.body.supervisorNumberCPP;
-//   caseBody.supervisorEmailCPP = req.body.supervisorEmailCPyP;
-//   caseBody.rgName = req.body.rgName;
-//   caseBody.rgNumber = req.body.rgNumber;
-//   caseBody.rgEmail = req.body.rgEmail;
-//   caseBody.officeName = req.body.officeName;
-//   caseBody.officeAddress = req.body.officeAddress;
-//   caseBody.officeFaxNumber = req.body.officeFaxNumber;
-//   caseBody.dateSubmitted = req.body.dateSubmitted;
-//   caseBody.caseName = req.body.caseName;
-//   caseBody.spiritCaseID = req.body.spiritCaseID;
-//   caseBody.referredMemberName = req.body.referredMemberName;
-//   caseBody.spiritPersonID = req.body.spiritPersonID;
+  caseBody.caseworkerNameCPP = req.body.caseworkerNameCPP;
+  caseBody.caseworkerNumberCPP = req.body.caseworkerNumberCPP;
+  caseBody.caseworkerEmailCPP = req.body.caseworkerEmailCPP;
+  caseBody.supervisorNameCPP = req.body.supervisorNameCPP;
+  caseBody.supervisorNumberCPP = req.body.supervisorNumberCPP;
+  caseBody.supervisorEmailCPP = req.body.supervisorEmailCPyP;
+  caseBody.rgName = req.body.rgName;
+  caseBody.rgNumber = req.body.rgNumber;
+  caseBody.rgEmail = req.body.rgEmail;
+  caseBody.officeName = req.body.officeName;
+  caseBody.officeAddress = req.body.officeAddress;
+  caseBody.officeFaxNumber = req.body.officeFaxNumber;
+  caseBody.dateSubmitted = req.body.dateSubmitted;
+  caseBody.caseName = req.body.caseName;
+  caseBody.spiritCaseID = req.body.spiritCaseID;
+  caseBody.referredMemberName = req.body.referredMemberName;
+  caseBody.spiritPersonID = req.body.spiritPersonID;
 
-//   let newCase; 
-//   try {
-//     let newCase = await caseData.add(caseBody);
-//   } catch (e) {
-//     console.log(e);
-//     res.status(500).render('error');
-//     return;
-//   }
+  let newCase; 
+  try {
+    let newCase = await caseData.add(caseBody);
+  } catch (e) {
+    console.log(e);
+    res.status(500).render('error');
+    return;
+  }
 
-//   let caseId = newCase._id.toString();
+  let caseId = newCase._id.toString();
 
-//   if (!Array.isArray(req.body.servicesRequested)) {
-//     req.body.servicesRequested = [req.body.servicesRequested]
-//   }
+  if (!Array.isArray(req.body.servicesRequested)) {
+    req.body.servicesRequested = [req.body.servicesRequested]
+  }
 
-//   for (i of req.body.servicesRequested) {
-//     let serviceBody = { caseId: caseId, service: i };
-//   }
+  for (i of req.body.servicesRequested) {
+    let serviceBody = { caseId: caseId, service: i };
+  }
 
-//   let patientBody = {};
+  let patientBody = {};
 
-//   patientBody.firstName = req.body.patientFirstName;
-//   patientBody.lastName = req.body.patientLastName;
-//   patientBody.middleInitial = req.body.patientMiddleInitial;
+  patientBody.firstName = req.body.patientFirstName;
+  patientBody.lastName = req.body.patientLastName;
+  patientBody.middleInitial = req.body.patientMiddleInitial;
 
-//   console.log(req.body);
-// });
+  console.log(req.body);
+});
 
 module.exports = router;
