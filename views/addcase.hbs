@@ -46,10 +46,91 @@
                                     // required so that all data are correctly transferred
                                     contentType : false,
                                     processData : false
-                                }).done(function(response){
+                                }).done(function(data){
                                     // In this callback you get the AJAX response to check
                                     // if everything is right...
-                                    console.log(response)
+                                    console.log(data)
+                                    if (data["Text2"]) { $('input[name="caseworkerNameCPP"]').val(data["Text2"]) }
+                                    if (data["Text3"]) { $('input[name="supervisorNameCPP"]').val(data["Text3"]) }
+                                    if (data["Text4"]) { $('input[name="rgName"]').val(data["Text4"]) }
+                                    if (data["Text5"]) { $('input[name="caseworkerNumberCPP"]').val(data["Text5"]) }
+                                    if (data["Text6"]) { $('input[name="supervisorNumberCPP"]').val(data["Text6"]) }
+                                    if (data["Text7"]) { $('input[name="rgNumber"]').val(data["Text7"]) }
+                                    if (data["Text8"]) { $('input[name="caseworkerEmailCPP"]').val(data["Text8"]) }
+                                    if (data["Text9"]) { $('input[name="supervisorEmailCPP"]').val(data["Text9"]) }
+                                    if (data["Text10"]) { $('input[name="rgEmail"]').val(data["Text10"]) }
+                                    if (data["Text11"]) { $('input[name="officeName"]').val(data["Text11"]) }
+                                    if (data["Text12"]) { $('input[name="officeAddress"]').val(data["Text12"]) }
+                                    if (data["Text13"]) { $('input[name="officeFaxNumber"]').val(data["Text13"]) }
+                                    if (data["Text14"]) { $('input[name="caseName"]').val(data["Text14"]) }
+                                    if (data["Text15"]) { $('input[name="spiritCaseID"]').val(data["Text15"]) }
+                                    if (data["Text16"]) { $('input[name="referredMemberName"]').val(data["Text16"]) }
+                                    if (data["Text17"]) { $('input[name="spiritPersonID"]').val(data["Text17"]) }
+                                    if (data["Date18_af_date"]) { $('input[name="dateSubmitted"]').val(new Date(data["Date18_af_date"]).toISOString().substr(0, 10)) }
+                                    if (data["Text19"]) { $('textarea[name="descOtherDoc"]').val(data["Text19"]) }
+                                    if (data["Date20_af_date"]) { $('input[name="referralDate"]').val(new Date(data["Date20_af_date"]).toISOString().substr(0, 10)) }
+                                    if (data["Text21"]) { $('input[name="spiritCaseID2"]').val(data["Text21"]) }
+                                    if (data["Text22"]) { $('input[name="caseName2"]').val(data["Text22"]) }
+                                    if (data["Date23_af_date"]) { $('input[name="dateOfBirth"]').val(new Date(data["Date23_af_date"]).toISOString().substr(0, 10)) }
+                                    if (data["Text24"]) { $('input[name="genderIdentity"]').val(data["Text24"]) }
+                                    if (data["Text25"]) { $('input[name="njsID"]').val(data["Text25"]) }
+                                    if (data["Text26"]) { $('input[name="patientName"]').val(data["Text26"]) }
+                                    if (data["Dropdown27"]) { $('input[name="patientServiceReq"]').val(data["Dropdown27"]) }
+                                    if (data["Text28"]) { $('input[name="languagesOrAccomodations"]').val(data["Text28"]) }
+                                    if (data["Text29"]) { $('input[name="patientContactInfo"]').val(data["Text29"]) }
+                                    if (data["Text30"]) { $('input[name="patientMedicaidNumber"]').val(data["Text30"]) }
+                                    if (data["Text31"]) { $('input[name="patientOtherInsurance"]').val(data["Text31"]) }
+                                    if (data["Text32"]) { $('input[name="specifyAllegations"]').val(data["Text32"]) }
+                                    if (data["Text33"]) { $('input[name="perpNameAndRelation"]').val(data["Text33"]) }
+                                    if (data["Text34"]) { 
+                                        let dateStrings = data["Text34"].split("-");
+                                        let date1 = new Date(dateStrings[0]);
+                                        let date2 = new Date(dateStrings[1]);
+                                        $('input[name="datesOfAbuse"]').val(date1.toISOString().substr(0, 10));
+                                    }
+                                    if (data["Text35"]) { $('input[name="disclosureDate"]').val(new Date(data["Text35"]).toISOString().substr(0, 10)) }
+                                    if (data["Date36_af_date"]) { $('input[name="lastKnownContact"]').val(new Date(data["Date36_af_date"]).toISOString().substr(0, 10)) }
+                                    if (data["Text37"]) { $('input[name="outOfHomeEntryDate"]').val(new Date(data["Text37"]).toISOString().substr(0, 10)) }
+                                    if (data["Text38"]) { $('input[name="outOfHomePlacementOther"]').val(data["Text38"]) }
+                                    if (data["Text39"]) { $('input[name="caregiverRelationship"]').val(data["Text39"]) }
+                                    if (data["Text40"]) { $('input[name="caregiverName"]').val(data["Text40"]) }
+                                    if (data["Text41"]) { $('input[name="caregiverAddress"]').val(data["Text41"]) }
+                                    if (data["Text42"]) { $('input[name="caregiverPhone"]').val(data["Text42"]) }
+                                    if (data["Text43"]) { $('input[name="legalGuardianName"]').val(data["Text43"]) }
+                                    if (data["Text44"]) { $('input[name="legalGuardianAddress"]').val(data["Text44"]) }
+                                    if (data["Text45"]) { $('input[name="legalGuardianPhone"]').val(data["Text45"]) }
+                                    if (data["Text46"]) { $('input[name="additionalCommentsNotes"]').val(data["Text46"]) }
+                                    if (data["Text47"]) { $('textarea[name="currentAllegations"]').val(data["Text47"]) }
+                                    if (data["Text48"]) { $('textarea[name="statements"]').val(data["Text48"]) }
+                                    if (data["Text49"]) { $('textarea[name="servicePurpose"]').val(data["Text49"]) }
+                                    if (data["Text50"]) { $('textarea[name="referralQuestion1"]').val(data["Text50"]) }
+                                    if (data["Text51"]) { $('textarea[name="referralQuestion2"]').val(data["Text51"]) }
+                                    if (data["Text52"]) { $('textarea[name="referralQuestion3"]').val(data["Text52"]) }
+                                    if (data["Text53"]) { $('textarea[name="referralQuestion4"]').val(data["Text53"]) }
+                                    if (data["Text54"]) { 
+                                        $('input[name="safetyConcern"][value="Yes"]').prop('checked', true)
+                                        $('textarea[name="safetyConcernInfo"]').val(data["Text54"])
+                                    } else {
+                                        $('input[name="safetyConcern"][value="No"]').prop('checked', true)
+                                    }
+                                    if (data["Text55"]) { $('textarea[name="CPPInvolvement"]').val(data["Text55"]) }
+                                    if (data["Text56"]) { $('textarea[name="previousEvaluation"]').val(data["Text56"]) }
+                                    if (data["Text57"]) { 
+                                        if (data["Text62"]) { $('textarea[name="previousMental"]').val(data["Text57"] + " " + data["Text62"]) }
+                                        else { $('textarea[name="previousMental"]').val(data["Text57"]) }
+                                    }
+                                    let psychDiagnosis = false;
+                                    if (data["Text58"]) { $('textarea[name="currentDiagnosis"]').val(data["Text58"]); psychDiagnosis = true; }
+                                    if (data["Text59"]) { $('textarea[name="currentMeds"]').val(data["Text59"]); psychDiagnosis = true; }
+                                    if (data["Text60"]) { $('textarea[name="prevDiagnosis"]').val(data["Text60"]); psychDiagnosis = true; }
+                                    if (data["Text61"]) { $('textarea[name="prevMeds"]').val(data["Text61"]); psychDiagnosis = true; }
+                                    console.log(psychDiagnosis)
+                                    if (psychDiagnosis) { $('input[name="diagnosed"][value="Yes"]').prop('checked', true) }
+                                    else { $('input[name="diagnosed"][value="No"]').prop('checked', true) }
+                                    if (data["Date"]) { $('input[name="caseworkerSignatureDate"]').val(new Date(data["Date"]).toISOString().substr(0, 10)) }
+                                    if (data["Date_2"]) { $('input[name="supervisorSignatureDate"]').val(new Date(data["Date_2"]).toISOString().substr(0, 10)) }
+                                    if (data["Date_3"]) { $('input[name="gatekeeperSignatureDate"]').val(new Date(data["Date_3"]).toISOString().substr(0, 10)) }
+
                                 }).fail(function(){
                                     // Here you should treat the http errors (e.g., 403, 404)
                                 }).always(function(){
@@ -539,7 +620,7 @@
                                     Document: </label>
                                 <div class="col-sm-12">
                                     <textarea class="form-control form-control-sm"
-                                        aria-label="With textarea" id="input-other-document"></textarea>
+                                        aria-label="With textarea" id="input-other-document" name="descOtherDoc"></textarea>
                                 </div>
                             </div>
 
@@ -634,12 +715,12 @@
 
 
                             <div class="form-group row">
-                                <label for="input-patient-status"
+                                <label for="input-patient-service-req"
                                     class="col-sm-2 col-form-label col-form-label-sm"><span
                                         class="font-weight-bold">Service Requested: </span></label>
                                 <div class="col-sm-10">
-                                    <select class="form-control form-control-sm" id="input-service-requested"
-                                        name="patientStatus">
+                                    <select class="form-control form-control-sm" id="input-patient-service-req"
+                                        name="patientServiceReq">
                                         <option hidden value="">Select...</option>
                                         <option value="Medical Exam">CA/N Medical Exam</option>
                                         <option value="Psychological Eval">CA/N Psychological Evaluation
@@ -820,7 +901,7 @@
                                     Alleged
                                     Abuse: </label>
 
-                                <input type="text" class="form-control mb-2" id="input-dates-of-abuse"
+                                <input type="date" class="form-control mb-2" id="input-dates-of-abuse"
                                     autocomplete="off" name="datesOfAbuse">
 
                             </div>
@@ -1111,7 +1192,7 @@
                             Comments/Notes:</label>
                         <div class="col-sm-12">
                             <textarea type="text" class="form-control form-control-sm" autocomplete="off"
-                                id="input-litigation-comments" name="legalGuardianNotes"></textarea>
+                                id="input-litigation-comments" name="additionalCommentsNotes"></textarea>
                         </div>
                     </div>
                 </div>
@@ -1279,50 +1360,50 @@
 
                         <div class="col-sm-12">
                             <div class="form-check form-check-inline  form-control-sm">
-                                <input class="form-check-input" type="radio" name="safetyConcern"
+                                <input class="form-check-input" type="radio" name="diagnosed"
                                     id="input-safety-concern-yes" value="Yes">
                                 <label class="form-check-label" for="input-interview-yes">Yes</label>
                             </div>
                             <div class="form-check form-check-inline  form-control-sm">
-                                <input class="form-check-input" type="radio" name="safetyConcern"
+                                <input class="form-check-input" type="radio" name="diagnosed"
                                     id="input-safety-concern-no" value="No">
                                 <label class="form-check-label" for="input-interview-no">No</label>
                             </div>
                         </div>
 
                         <div class="col-sm-2">
-                            <label for="input-referred-question-a" class="col-form-label-sm">a. Current
+                            <label for="input-current-diagnosis" class="col-form-label-sm">a. Current
                                 Diagnosis:
                             </label>
                         </div>
                         <div class="col-sm-10">
-                            <textarea type="text" class="form-control form-control-sm" id="input-referred-question-a"
-                                autocomplete="off" aria-label="With textarea" name="referredQuestionA"></textarea>
+                            <textarea type="text" class="form-control form-control-sm" id="input-current-diagnosis"
+                                autocomplete="off" aria-label="With textarea" name="currentDiagnosis"></textarea>
                         </div>
                         <div class="col-sm-2">
-                            <label for="input-referred-question-b" class="col-form-label-sm">b. Current
+                            <label for="input-current-meds" class="col-form-label-sm">b. Current
                                 Medications:
                             </label>
                         </div>
                         <div class="col-sm-10">
-                            <textarea type="text" class="form-control form-control-sm" id="input-referred-question-b"
-                                autocomplete="off" aria-label="With textarea" name="referredQuestionB"></textarea>
+                            <textarea type="text" class="form-control form-control-sm" id="input-current-meds"
+                                autocomplete="off" aria-label="With textarea" name="currentMeds"></textarea>
                         </div>
                         <div class="col-sm-2">
-                            <label for="input-referred-question-c" class="col-form-label-sm">c. Previous
+                            <label for="input-prev-diagnosis" class="col-form-label-sm">c. Previous
                                 Diagnosis:</label>
                         </div>
                         <div class="col-sm-10">
-                            <textarea type="text" class="form-control form-control-sm" id="input-referred-question-c"
-                                autocomplete="off" aria-label="With textarea" name="referredQuestionC"></textarea>
+                            <textarea type="text" class="form-control form-control-sm" id="input-prev-diagnosis"
+                                autocomplete="off" aria-label="With textarea" name="prevDiagnosis"></textarea>
                         </div>
                         <div class="col-sm-2">
-                            <label for="input-referred-question-d" class="col-form-label-sm">d. Previous
+                            <label for="input-prev-meds" class="col-form-label-sm">d. Previous
                                 Medications:</label>
                         </div>
                         <div class="col-sm-10">
-                            <textarea type="text" class="form-control form-control-sm" id="input-referred-question-d"
-                                autocomplete="off" aria-label="With textarea" name="referredQuestionD"></textarea>
+                            <textarea type="text" class="form-control form-control-sm" id="input-prev-meds"
+                                autocomplete="off" aria-label="With textarea" name="prevMeds"></textarea>
                         </div>
                     </div>
                 </div>
