@@ -5,6 +5,9 @@ let caseNoteSchema = mongoose.Schema({
     createdDate: {
         type: Date
     },
+    editDate: {
+        type: Date
+    },
     username: {
         type: String
     },

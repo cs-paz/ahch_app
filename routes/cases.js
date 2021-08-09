@@ -327,7 +327,7 @@ router.post('/:caseId/services/edit/:id', async (req, res, next) => {
   let form = req.body // have to add error checking/xss
   let service;
   try {
-    service = await serviceData.update(form)
+    service = await data.services.update(form)
   } catch (e) {
     res.status(500).render('error');
   }
@@ -388,6 +388,19 @@ router.get('/:caseId/notes', async (req, res, next) => {
     caseInfo: caseInfo,
     caseId: req.params.caseId,
   });
+});
+
+router.post('/:caseId/notes', async (req, res, next) => {
+  let form = req.body;
+  // form.username = req.session.user.username;
+  let note;
+  try {
+    note = await data.notes.add(form)
+  } catch (e) {
+    res.status(500).render('error');
+  }
+  res.redirect(`cases/${req.params.caseId}/notes`);
+  return;
 });
 
 module.exports = router;
