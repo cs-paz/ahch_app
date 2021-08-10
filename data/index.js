@@ -4,6 +4,7 @@ const intakeData = require('./parseIntake');
 const patientData = require('./patients');
 const familyData = require('./family');
 const serviceData = require('./services');
+const noteData = require('./notes')
 
 module.exports = {
     users: userData,
@@ -11,5 +12,6 @@ module.exports = {
     intake: intakeData,
     patients: patientData,
     family: familyData,
-    services: serviceData
+    services: serviceData,
+    notes: noteData,
 }
