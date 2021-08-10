@@ -4,18 +4,19 @@
 
 <div class='input-form justify-content-center needs-validation' novalidate>
 
-    <form>
+    <form method="POST" action="/cases/{{caseId}}/notes/addnote">
         <div class="form-group row">
             <div class="col-sm-12">
                 <textarea class="form-control form-control-sm" aria-label="With textarea"
-                    placeholder="Type your message here."></textarea>
+                    placeholder="Type your note here." name="comments" id="comments"></textarea>
             </div>
         </div>
-    </form>
 
     <div class="row justify-content-left" style="padding-left: 15px;">
         <button type="submit" class="btn btn-primary btn-sm">Add Note</button>
     </div>
+
+    </form>
 
 </div>
 
@@ -25,19 +26,19 @@
     <h5>Recent Notes</h5>
 </div>
 
-{{#each note}}
+{{#each caseInfo.caseNotes}}
 <div class="row">
     <div class="col-sm-12">
         <textarea class="form-control form-control-sm" aria-label="With textarea" placeholder="Type your message here."
             style="height: 155px;"
-            readonly>{{this.text}}</textarea>
+            readonly>{{this.comments}}</textarea>
     </div>
 </div>
 
 <div class="d-flex">
-  <div class="p-2">{{this.date}}</div>
-  <div class="p-2">{{this.time}}</div>
-  <div class="ml-auto p-2">{{this.poster}}</div>
+  <div class="p-2">{{this.createdDate}}</div>
+  {{!-- <div class="p-2">{{this.time}}</div> --}}
+  <div class="ml-auto p-2">{{this.username}}</div>
 </div>
 {{/each}}
 

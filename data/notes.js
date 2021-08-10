@@ -16,12 +16,12 @@ async function add(formRequestBody) {
 
     newNote.createdDate = new Date();
     newNote.username = formRequestBody.username;
-    newNote.comments = newNote.comments;
+    newNote.comments = formRequestBody.comments;
 
     console.log(newNote);
 
     try {
-        Patient.create(newNote);
+        Note.create(newNote);
     } catch (e) {
         console.log(e);
     }
@@ -32,6 +32,8 @@ async function add(formRequestBody) {
 
     let updateInfo = await caseCollection.updateOne( { _id: caseId }, {$push : { caseNotes : newNote } } ); // maybe better, have to test
     
+    console.log(updateInfo)
+
     return newNote;
 }
 

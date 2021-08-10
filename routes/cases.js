@@ -390,16 +390,20 @@ router.get('/:caseId/notes', async (req, res, next) => {
   });
 });
 
-router.post('/:caseId/notes', async (req, res, next) => {
+router.post('/:caseId/notes/addnote', async (req, res, next) => {
   let form = req.body;
   // form.username = req.session.user.username;
+  form.caseId = req.params.caseId;
   let note;
+  console.log(req.body);
   try {
     note = await data.notes.add(form)
   } catch (e) {
+    console.log(e);
     res.status(500).render('error');
+    return;
   }
-  res.redirect(`cases/${req.params.caseId}/notes`);
+  res.redirect(`/cases/${req.params.caseId}/notes`);
   return;
 });
 
