@@ -381,6 +381,7 @@ router.get('/:caseId/familyrecommendation', async (req, res, next) => {
 
 router.get('/:caseId/notes', async (req, res, next) => {
   let caseInfo = await data.cases.getCase(req.params.caseId)
+  caseInfo.caseNotes.reverse();
 
   res.render('cases/notes', {
     title: 'Case Notes',
@@ -392,10 +393,12 @@ router.get('/:caseId/notes', async (req, res, next) => {
 
 router.post('/:caseId/notes/addnote', async (req, res, next) => {
   let form = req.body;
-  // form.username = req.session.user.username;
+  console.log(req.session)
+  if (req.session.user) {
+    form.username = req.session.user.username;
+  }
   form.caseId = req.params.caseId;
   let note;
-  console.log(req.body);
   try {
     note = await data.notes.add(form)
   } catch (e) {

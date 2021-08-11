@@ -2,6 +2,7 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const mongoose = require('mongoose');
 const session = require('express-session');
+const moment = require('moment')
 require('dotenv').config()
 
 // Connect to Database
@@ -99,6 +100,22 @@ hbs.handlebars.registerHelper('ifCond', function (v1, operator, v2, options) {
             return options.inverse(this);
     }
 });
+
+var DateFormats = {
+    short: "DD MMMM - YYYY",
+    long: "dddd DD.MM.YYYY HH:mm"
+};
+
+hbs.handlebars.registerHelper("formatDate", function(datetime, format) {
+    if (moment) {
+      // can use other formats like 'lll' too
+      format = DateFormats[format] || format;
+      return moment(datetime).format(format);
+    }
+    else {
+      return datetime;
+    }
+  });
 
 // Configure Routing from ./routes
 const configRoutes = require('./routes');
