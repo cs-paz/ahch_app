@@ -103,7 +103,8 @@ hbs.handlebars.registerHelper('ifCond', function (v1, operator, v2, options) {
 
 var DateFormats = {
     short: "DD MMMM - YYYY",
-    long: "dddd DD.MM.YYYY HH:mm"
+    long: "dddd DD.MM.YYYY HH:mm",
+    comments: "DD/MM/YYYY HH:mm"
 };
 
 hbs.handlebars.registerHelper("formatDate", function(datetime, format) {
