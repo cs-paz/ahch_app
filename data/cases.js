@@ -55,7 +55,7 @@ async function getAllCases() {
     const caseArr = await caseCollection.find({}).toArray()
     return caseArr.map(clean)
 }
-  
+
 async function getCase(id) {
     if (!id) throw 'Error: id not given.'
     if (typeof(id) != "string") throw 'Error: type of id not string.'
@@ -68,8 +68,34 @@ async function getCase(id) {
     return clean(currentCase)
 }
 
+async function searchByName(name) {
+    if (!name) throw 'Error: name not given.'
+    if (typeof(name) != "string") throw 'Error: type of name not string.'
+    if (name.trim().length == 0) throw 'Error: name is either an empty string or just whitespace.'
+  
+    const caseCollection = await cases()
+  
+    const currentCase = await caseCollection.find({ caseName: name } ).toArray();
+    if (currentCase === null) throw `No case could be found with the name '${name}'`
+    return currentCase
+}
+
+async function searchByKC(kc) {
+    if (!kc) throw 'Error: kc not given.'
+    if (typeof(kc) != "string") throw 'Error: type of kc not string.'
+    if (kc.trim().length == 0) throw 'Error: kc is either an empty string or just whitespace.'
+  
+    const caseCollection = await cases()
+  
+    const currentCase = await caseCollection.find({ kcNum: kc }).toArray();
+    if (currentCase === null) throw `No case could be found with the kc number '${kc}'`
+    return currentCase
+}
+
 module.exports = {
     add,
     getCase,
-    getAllCases
+    getAllCases,
+    searchByName,
+    searchByKC
 }
