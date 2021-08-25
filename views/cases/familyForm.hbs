@@ -19,9 +19,9 @@
         <button style="margin:5px;" type="button" class="btn btn-secondary">Make Family Member An Actor</button>
     </div>
 
-    <div id="btn-login" class="row justify-content-center">
+    {{!-- <div id="btn-login" class="row justify-content-center">
         <button type="submit" class="btn btn-primary btn-md">Update</button>
-    </div>
+    </div> --}}
 </div>
 
 <div class="card body p-2 text-center" style="border-radius: 1rem; margin-bottom: 15px">
@@ -29,9 +29,9 @@
 
     <div class="form-group row">
         {{#if familyMemberId}}
-        <form action="/cases/family/edit/{{familyMemberId}}" method="GET">
+        <form action="/cases/{{caseId}}/family/edit/{{familyMemberId}}" method="GET">
         {{else}}
-        <form action="/cases/family/edit/new" method="GET">
+        <form action="/cases/{{caseId}}/family/edit/new" method="GET">
         {{/if}}
         <label style="margin:15px;" for="patientPopSelector">Pre-fill form with patient info:</label>
         <select name="patientPopSelector" id="patientPopSelector">
@@ -52,9 +52,9 @@
 
     <div class="form-group row">
         {{#if familyMemberId}}
-        <form action="/cases/family/edit/{{familyMemberId}}" method="GET">
+        <form action="/cases/{{caseId}}/family/edit/{{familyMemberId}}" method="GET">
         {{else}}
-        <form action="/cases/family/edit/new" method="GET">
+        <form action="/cases/{{caseId}}/family/edit/new" method="GET">
         {{/if}}
         <label style="margin:15px;" for="familyPopSelector">Pre-fill form with family member info:</label>
         <select name="familyPopSelector" id="familyPopSelector">
@@ -76,9 +76,9 @@
     <div class="card body p-2 text-center" style="border-radius: 1rem; margin-bottom: 15px">
         
         {{#if familyMemberId}}
-        <form action="/cases/family/edit/{{familyMemberId}}" method="POST">
+        <form action="/cases/{{caseId}}/family/edit/{{familyMemberId}}" method="POST">
         {{else}}
-        <form action="/cases/family/edit/new" method="POST">
+        <form action="/cases/{{caseId}}/family/edit/new" method="POST">
         {{/if}}
         <h4>Patient</h4>
 
@@ -327,6 +327,15 @@
                 <input type="text" class="form-control  form-control-sm" name="specialNeeds" id="specialNeeds" value="{{form.specialNeeds}}">
             </div>
         </div>
+        {{#if familyMemberId}}
+        <div id="btn-login" class="row justify-content-center">
+            <button type="submit" class="btn btn-primary btn-md">Update</button>
+        </div>
+        {{else}}
+        <div id="btn-login" class="row justify-content-center">
+            <button type="submit" class="btn btn-primary btn-md">Add new Family Member</button>
+        </div>
+        {{/if}}
         </form>
     </div>
 </div>

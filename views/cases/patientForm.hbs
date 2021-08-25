@@ -29,9 +29,9 @@
 
     <div class="form-group row">
         {{#if patientId}}
-        <form action="/cases/patients/edit/{{patientId}}" method="GET">
+        <form action="/cases/{{caseId}}/patients/edit/{{patientId}}" method="GET">
         {{else}}
-        <form action="/cases/patients/edit/new" method="GET">
+        <form action="/cases/{{caseId}}/patients/edit/new" method="GET">
         {{/if}}
         <label style="margin:15px;" for="patientPopSelector">Pre-fill form with patient info:</label>
         <select name="patientPopSelector" id="patientPopSelector">
@@ -52,9 +52,9 @@
 
     <div class="form-group row">
         {{#if patientId}}
-        <form action="/cases/patients/edit/{{patientId}}" method="GET">
+        <form action="/cases/{{caseId}}/patients/edit/{{patientId}}" method="GET">
         {{else}}
-        <form action="/cases/patients/edit/new" method="GET">
+        <form action="/cases/{{caseId}}/patients/edit/new" method="GET">
         {{/if}} 
         <label style="margin:15px;" for="familyPopSelector">Pre-fill form with family member info:</label>
         <select name="familyPopSelector" id="familyPopSelector">
@@ -75,9 +75,9 @@
 
     <div class="card body p-2 text-center" style="border-radius: 1rem; margin-bottom: 15px">
         {{#if patientId}}
-        <form action="/cases/patients/edit/{{patientId}}" method="POST">
+        <form action="/cases/{{caseId}}/patients/edit/{{patientId}}" method="POST">
         {{else}}
-        <form action="/cases/patients/edit/new" method="POST">
+        <form action="/cases/{{caseId}}/patients/edit/new" method="POST">
         {{/if}}
         <div class="form-group row">
             <div>
@@ -374,6 +374,15 @@
                 <input type="text" class="form-control  form-control-sm" name="specialNeeds" id="specialNeeds" value="{{form.specialNeeds}}">
             </div>
         </div>
+        {{#if patientId}}
+        <div id="btn-login" class="row justify-content-center">
+            <button type="submit" class="btn btn-primary btn-md">Update</button>
+        </div>
+        {{else}}
+        <div id="btn-login" class="row justify-content-center">
+            <button type="submit" class="btn btn-primary btn-md">Add new Patient</button>
+        </div>
+        {{/if}}
     </form>
     </div>
 </div>

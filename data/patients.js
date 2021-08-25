@@ -39,6 +39,12 @@ async function add(formRequestBody) {
     newPatient.email = formRequestBody.email;
     newPatient.specialNeeds = formRequestBody.specialNeeds;
 
+    for (i in newPatient) {
+        if (newPatient[i] == '-Select-') {
+            newPatient[i] = '';
+        }
+    }
+
     console.log(newPatient);
 
     try {
@@ -75,6 +81,8 @@ async function update(id, formRequestBody) {
     }
 
     // delete oldPatient._id;
+
+    console.log(oldPatient)
 
     const caseCollection = await cases();
 

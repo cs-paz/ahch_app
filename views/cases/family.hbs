@@ -9,7 +9,7 @@
 <div class="row justify-content-center">
 
     {{!-- <table class="table table-hover" style="background-color: silver; width:200%;"> --}}
-    {{#if familyMembers}}
+    {{#if family}}
     <table class="table" style="width:70%;">
         <tr>
             <th>Name</th>
@@ -17,10 +17,10 @@
             <td>Sex</td>
             <td>Relationship</td>
         </tr>
-        {{#each familyMembers}}
+        {{#each family}}
             <tr>
-                {{#if this.name}}
-                    <th>{{this.name}}</th>
+                {{#if this.firstName}}
+                    <th><a href="/cases/{{../caseId}}/family/edit/{{this._id}}">{{this.firstName}} {{this.lastName}}</a></th>
                 {{else}}
                     <th>N/A</th>
                 {{/if}}

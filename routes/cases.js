@@ -50,7 +50,6 @@ router.get('/:caseId/patients', async (req, res, next) => {
     patients: patientArr,
     layout: 'cases',
     caseId: caseId,
-    caseId: req.params.caseId,
   });
 });
 
@@ -101,6 +100,7 @@ router.post('/:caseId/patients/edit/new', async (req, res, next) => {
   let form = req.body // have to add error checking/xss
   form.caseId = req.params.caseId;
   let patient;
+  console.log('caseId working ig')
   try {
     patient = await patientData.add(form)
   } catch (e) {
@@ -115,6 +115,7 @@ router.get('/:caseId/patients/edit/:id', async (req, res, next) => {
   let caseId = req.params.caseId;
   let patientArr = await data.patients.getAllPatients(caseId);
   let familyArr = await data.family.getFamily(caseId);
+
   // let languageArr = await data.language.getAllLanguages();
   // let countyArr = await data.language.getAllCounties();
   // let stateArr = await data.language.getAllStates();
@@ -155,10 +156,14 @@ router.get('/:caseId/patients/edit/:id', async (req, res, next) => {
 router.post('/:caseId/patients/edit/:id', async (req, res, next) => {
   let form = req.body // have to add error checking/xss
   let patient;
+  console.log("correct patient");
+
   try {
-    patient = await patientData.update(form)
+    patient = await patientData.update(req.params.id, form)
   } catch (e) {
+    console.log(e)
     res.status(500).render('error');
+    return;
   }
   res.redirect(`/cases/${req.params.caseId}/patients`);
   return patient;
@@ -177,7 +182,8 @@ router.get('/:caseId/medical', async (req, res, next) => {
 
 router.get('/:caseId/family', async (req, res, next) => {
   caseId = req.params.caseId;
-  familyArr = data.family.getFamily(caseId);
+  familyArr = await data.family.getFamily(caseId);
+  console.log(familyArr);
   res.render('cases/family', { 
     title: 'Case Family',
     family: familyArr,
@@ -224,6 +230,7 @@ router.post('/:caseId/family/edit/new', async (req, res, next) => {
 
 router.get('/:caseId/family/edit/:id', async (req, res, next) => {
   let form = {};
+  console.log("correct family");
   try {
     form = await familyData.getFamilyMember(req.params.id);
   } catch (e) {
@@ -255,7 +262,7 @@ router.post('/:caseId/family/edit/:id', async (req, res, next) => {
   let form = req.body // have to add error checking/xss
   let familyMember;
   try {
-    familyMember = await familyData.update(form)
+    familyMember = await familyData.update(req.params.patientId, form)
   } catch (e) {
     res.status(500).render('error');
   }
@@ -327,7 +334,7 @@ router.post('/:caseId/services/edit/:id', async (req, res, next) => {
   let form = req.body // have to add error checking/xss
   let service;
   try {
-    service = await data.services.update(form)
+    service = await data.services.update(req.params.id, form)
   } catch (e) {
     res.status(500).render('error');
   }
