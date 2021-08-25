@@ -9,7 +9,6 @@ const scripts = [
 const stylesheets = [
   { stylesheet: '/public/css/sidebar-menu-addcase.css' }];
 
-
 /* GET addcase page */
 router.get('/', async (req, res, next) => {
   res.render('addcase', {

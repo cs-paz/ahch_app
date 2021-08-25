@@ -6,8 +6,6 @@ const familyData = data.family;
 const serviceData = data.services;
 const router = express.Router();
 
-
-
 /* GET cases page */
 router.get('/', async (req, res, next) => {
   let caseArr = await data.cases.getAllCases()
