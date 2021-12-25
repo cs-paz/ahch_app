@@ -2,11 +2,19 @@
     <h2> Services </h2>
 </div>
 <div class="card body p-2" id="services-card-ext">
+    {{#if serviceId}}
+    <form action="/cases/services/edit/{{serviceId}}" method="POST">
+    {{else}}
+    <form action="/cases/services/edit/new" method="POST">
+    {{/if}}
+
+    <button type="button" class="btn btn-link"><a href="../">Return to Services List</a></button>
+
     <div class="form-group row">
         <div>
-            <label class="service-label" for="scheduled by">Scheduled by: <abbr title="required"
+            <label class="service-label" for="scheduler">Scheduled by: <abbr title="required"
                     aria-label="required"></abbr></label>
-            <input id="scheduled by" type="text" name="scheduled by">
+            <input id="scheduler" type="text" name="scheduler" value="{{form.serviceSchedule.scheduler}}">
         </div>
     </div>
 
@@ -15,12 +23,18 @@
             Patient:
         </div>
         <div class="col-md-12" style="margin-left: 3px;">
+                {{#each patients}}
                 <div class="form-check form-check-inline  form-control-sm">
-                    <input class="form-check-input" type="radio" name="patientOptions" value="patient1">
+                    <input class="form-check-input" type="checkbox" name="patientOptions" value="{{this._id}}">
+                    <label class="form-check-label checkbox-label" for="{{this._id}}">{{this.firstName}} {{this.lastName}}</label>
+                </div>
+                {{/each}}
+                <div class="form-check form-check-inline  form-control-sm">
+                    <input class="form-check-input" type="checkbox" name="patientOptions" value="patient1">
                     <label class="form-check-label checkbox-label" for="patient1">Patient1</label>
                 </div>
                 <div class="form-check form-check-inline  form-control-sm">
-                    <input class="form-check-input" type="radio" name="patientOptions" value="patient2">
+                    <input class="form-check-input" type="checkbox" name="patientOptions" value="patient2">
                     <label class="form-check-label checkbox-label" for="inputDisclosureNo">Patient2</label>
                 </div>
         </div>
@@ -28,9 +42,16 @@
 
     <div class="form-group row">
         <div class="service-label">
-            Referal Type:
+            Referral Type:
         </div>
-        <select name="referal type" id="referal type" class="services-dropdown">
+        <select name="referralType" id="referralType" class="services-dropdown">
+            {{#each referralTypes}}
+            {{#ifCond this '==' form.serviceSchedule.referralType}}
+            <option value="{{this}}" selected>{{this}}</option>
+            {{else}}
+            <option value="{{this}}">{{this}}</option>
+            {{/ifCond}}
+            {{/each}}
             <option value="data">data</option>
         </select>
     </div>
@@ -40,6 +61,13 @@
             Service:
         </div>
         <select name="service" id="service" class="services-dropdown">
+            {{#each services}}
+            {{#ifCond this '==' form.service}}
+            <option value="{{this}}" selected>{{this}}</option>
+            {{else}}
+            <option value="{{this}}">{{this}}</option>
+            {{/ifCond}}
+            {{/each}}
             <option value="data">data</option>
         </select>
     </div>
@@ -48,7 +76,7 @@
         <div class="service-label">
             Clinician Name:
         </div>
-        <select name="clinician name" id="clinician name" class="services-dropdown">
+        <select name="clinician" id="clinician" class="services-dropdown">
             <option value="data">data</option>
         </select>
     </div>
@@ -57,27 +85,34 @@
         <div class="service-label">
             Report Submitted:
         </div>
-        <select name="report submitted" id="report submitted" class="services-dropdown">
-            <option value="yes">yes</option>
+        <select name="reportSubmitted" id="reportSubmitted" class="services-dropdown">
+            {{#ifCond form.serviceSchedule.reportSubmitted '==' 'yes'}}
+            <option value="yes" selected>yes</option>
             <option value="no">no</option>
+            {{else}}
+            <option value="yes">yes</option>
+            <option value="no" selected>no</option>
+            {{/ifCond}}
         </select>
     </div>
 
     <div class="form-group row">
         <div>
-            <label class="service-label" for="Report Date">Report Date: <abbr title="required"
+            <label class="service-label" for="reportSubmittedDate">Report Date: <abbr title="required"
                     aria-label="required"></abbr></label>
-            <input id="Report Date" type="text" name="Report Date">
+            <input id="reportSubmittedDate" type="date" name="reportSubmittedDate" value="{{form.serviceSchedule.reportSubmittedDate}}">
         </div>
     </div>
 
     <div class="form-group row">
         <div class="service-label">
-            <label class="block" for="Report Date">Notes: <abbr title="required"
+            <label class="block" for="notes">Notes: <abbr title="required"
                     aria-label="required"></abbr></label>
-            <textarea class="block" rows="5" cols="50" for="Report Date"></textarea>
+            <textarea class="block" rows="5" cols="50" for="notes" value="{{form.serviceSchedule.notes}}"></textarea>
         </div>
     </div>
+    <button type="submit" class="btn btn-secondary btn-sm">Submit</button>
+    </form>
 </div>
 <div class="card body p-2" id="services-card-ext" style="margin-top: 8px;">
     <table class="table" style="width:70%;">

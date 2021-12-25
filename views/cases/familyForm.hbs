@@ -12,50 +12,74 @@
 
 <div class="card body p-2 text-center" style="border-radius: 1rem; margin-bottom: 15px;">
 
-    <button type="button" class="btn btn-link"><a href="../family">Return to Family List</a></button>
+    <button type="button" class="btn btn-link"><a href="../">Return to Family List</a></button>
 
     <div class='row justify-content-center'>
         <button style="margin:5px;" type="button" class="btn btn-secondary">Make Family Member A Patient</button>
         <button style="margin:5px;" type="button" class="btn btn-secondary">Make Family Member An Actor</button>
     </div>
 
-    <div id="btn-login" class="row justify-content-center">
+    {{!-- <div id="btn-login" class="row justify-content-center">
         <button type="submit" class="btn btn-primary btn-md">Update</button>
-    </div>
+    </div> --}}
 </div>
 
 <div class="card body p-2 text-center" style="border-radius: 1rem; margin-bottom: 15px">
     <h4> Family Members</h4>
 
     <div class="form-group row">
-        <label style="margin:15px;" for="family members">Pre-fill form with patient info:</label>
-        <select name="family" id="family members">
+        {{#if familyMemberId}}
+        <form action="/cases/{{caseId}}/family/edit/{{familyMemberId}}" method="GET">
+        {{else}}
+        <form action="/cases/{{caseId}}/family/edit/new" method="GET">
+        {{/if}}
+        <label style="margin:15px;" for="patientPopSelector">Pre-fill form with patient info:</label>
+        <select name="patientPopSelector" id="patientPopSelector">
             <option value="-Select-">-Select-</option>
+            {{#each patients}}
+                <option value="{{this._id}}">{{this.firstName}} {{this.lastName}}</option>
+            {{/each}}
             <option value="name1">First Last1</option>
             <option value="name2">First Last2</option>
             <option value="name3">First Last3</option>
             <option value="name4">First Last4</option>
         </select>
         <div class="row justify-content-center" style="margin: 15px;">
-            <button type="button" class="btn btn-secondary">Populate</button>
+            <button type="submit" class="btn btn-secondary">Populate</button>
         </div>
+        </form>
     </div>
 
     <div class="form-group row">
-        <label style="margin:15px;" for="family members">Pre-fill form with family member info:</label>
-        <select name="family" id="family members">
+        {{#if familyMemberId}}
+        <form action="/cases/{{caseId}}/family/edit/{{familyMemberId}}" method="GET">
+        {{else}}
+        <form action="/cases/{{caseId}}/family/edit/new" method="GET">
+        {{/if}}
+        <label style="margin:15px;" for="familyPopSelector">Pre-fill form with family member info:</label>
+        <select name="familyPopSelector" id="familyPopSelector">
             <option value="-Select-">-Select-</option>
+            {{#each family}}
+                <option value="{{this._id}}">{{this.firstName}} {{this.lastName}}</option>
+            {{/each}}
             <option value="name1">First Last1</option>
             <option value="name2">First Last2</option>
             <option value="name3">First Last3</option>
             <option value="name4">First Last4</option>
         </select>
         <div class="row justify-content-center" style="margin: 15px;">
-            <button type="button" class="btn btn-secondary">Populate</button>
+            <button type="submit" class="btn btn-secondary">Populate</button>
         </div>
+        </form>
     </div>
 
     <div class="card body p-2 text-center" style="border-radius: 1rem; margin-bottom: 15px">
+        
+        {{#if familyMemberId}}
+        <form action="/cases/{{caseId}}/family/edit/{{familyMemberId}}" method="POST">
+        {{else}}
+        <form action="/cases/{{caseId}}/family/edit/new" method="POST">
+        {{/if}}
         <h4>Patient</h4>
 
         <div class="form-check">
@@ -74,18 +98,18 @@
         <h4>Member Info</h4>
         <div class="form-group row">
             <div>
-                <label style="margin:15px;" for="first name">First Name: <abbr title="required"
-                        aria-label="required"></abbr></label>
-                <input id="first name" type="text" name="first name">
+                <label style="margin:15px;" for="firstName">First Name: <abbr title="required"
+                        aria-label="required">*</abbr></label>
+                <input id="firstName" type="text" name="firstName" value="{{form.firstName}}">
             </div>
             <div>
-                <label style="margin:15px;" for="last name">Last Name: <abbr title="required"
-                        aria-label="required"></abbr></label>
-                <input id="last name" type="text" name="last name">
+                <label style="margin:15px;" for="lastName">Last Name: <abbr title="required"
+                        aria-label="required">*</abbr></label>
+                <input id="lastName" type="text" name="lastName" value="{{form.lastName}}">
             </div>
             <div>
-                <label style="margin:15px;" for="middle name">MI:</label>
-                <input id="middle name" type="text" name="middle name">
+                <label style="margin:15px;" for="middleInitial">MI:</label>
+                <input id="middleInitial" type="text" name="middleInitial" value="{{form.middleInitial}}">
             </div>
         </div>
         <div class="form-group row">
@@ -93,25 +117,41 @@
                     aria-label="required"></abbr></label>
             <select name="relationship" id="relationship">
                 <option value="-Select-">-Select-</option>
+                {{#ifCond form.relationship '==' "mother"}}
+                <option value="mother" selected>Mother</option>
+                {{else}}
                 <option value="mother">Mother</option>
+                {{/ifCond}}
+                {{#ifCond form.relationship '==' "father"}}
+                <option value="father" selected>Father</option>
+                {{else}}
                 <option value="father">Father</option>
+                {{/ifCond}}
+                {{#ifCond form.relationship '==' "guardian"}}
+                <option value="guardian" selected>Guardian</option>
+                {{else}}
                 <option value="guardian">Guardian</option>
+                {{/ifCond}}
+                {{#ifCond form.relationship '==' "other"}}
+                <option value="other" selected>Other</option>
+                {{else}}
                 <option value="other">Other</option>
+                {{/ifCond}}
             </select>
         </div>
 
         <div class="form-group row">
             <div>
-                <label style="margin:15px;" for="social security">Social Security:<abbr title="required"
-                        aria-label="required"></abbr></label>
-                <input id="social security" type="text" name="social security">
+                <label style="margin:15px;" for="SSN">Social Security:<abbr title="required"
+                        aria-label="required">*</abbr></label>
+                <input id="SSN" type="text" name="SSN" value="{{form.SSN}}">
             </div>
         </div>
 
         <div class="form-group row">
             <div>
-                <label style="margin:15px;" for="dob">DOB:<abbr title="required" aria-label="required"></abbr></label>
-                <input id="dob" type="text" name="dob">
+                <label style="margin:15px;" for="DOB">DOB:<abbr title="required" aria-label="required">*</abbr></label>
+                <input id="DOB" type="text" name="DOB" value="{{form.DOB}}">
             </div>
         </div>
 
@@ -120,30 +160,69 @@
                     aria-label="required"></abbr></label>
             <select name="gender" id="gender">
                 <option value="-Select-">-Select-</option>
+                {{#ifCond form.gender '==' "female"}}
+                <option value="female" selected>Female</option>
+                {{else}}
                 <option value="female">Female</option>
+                {{/ifCond}}
+                {{#ifCond form.gender '==' "male"}}
+                <option value="male" selected>Male</option>
+                {{else}}
                 <option value="male">Male</option>
-                <option value="guardian">Non-Binary</option>
+                {{/ifCond}}
+                {{#ifCond form.gender '==' "nb"}}
+                <option value="nb" selected>Non-Binary</option>
+                {{else}}
+                <option value="nb">Non-Binary</option>
+                {{/ifCond}}
+                {{#ifCond form.gender '==' "other"}}
+                <option value="other" selected>Other</option>
+                {{else}}
                 <option value="other">Other</option>
+                {{/ifCond}}
             </select>
         </div>
 
         <div class="form-group row">
-            <label style="margin:15px;" for="legal status">Legal Status:<abbr title="required"
-                    aria-label="required"></abbr></label>
-            <select name="legal status" id="legal status">
+            <label style="margin:15px;" for="legalStatus">Legal Status:<abbr title="required"
+                    aria-label="required">*</abbr></label>
+            <select name="legalStatus" id="legalStatus">
                 <option value="-Select-">-Select-</option>
+                {{#ifCond form.legalStatus '==' "citizen"}}
+                <option value="citizen" selected>Citizen</option>
+                {{else}}
                 <option value="citizen">Citizen</option>
+                {{/ifCond}}
+                {{#ifCond form.legalStatus '==' "resident"}}
+                <option value="resident" selected>Resident</option>
+                {{else}}
                 <option value="resident">Resident</option>
+                {{/ifCond}}
+                {{#ifCond form.legalStatus '==' "non-immigrant"}}
+                <option value="non-immigrant" selected>Non-Immigrant</option>
+                {{else}}
                 <option value="non-immigrant">Non-Immigrant</option>
+                {{/ifCond}}
+                {{#ifCond form.legalStatus '==' "other"}}
+                <option value="other" selected>Other</option>
+                {{else}}
                 <option value="other">Other</option>
+                {{/ifCond}}
             </select>
         </div>
 
         <div class="form-group row">
-            <label style="margin:15px;" for="primary language spoken">Primary Language Spoken:<abbr title="required"
-                    aria-label="required"></abbr></label>
-            <select name="primary language spoken" id="primary language spoken">
+            <label style="margin:15px;" for="primaryLanguage">Primary Language Spoken:<abbr title="required"
+                    aria-label="required">*</abbr></label>
+            <select name="primaryLanguage" id="primaryLanguage">
                 <option value="-Select-">-Select-</option>
+                {{#each language}}
+                {{#ifCond this '==' form.primaryLanguage}}
+                    <option value="{{this}}" selected>{{this}}</option>
+                {{else}}
+                    <option value="{{this}}">{{this}}</option>
+                {{/ifCond}}
+                {{/each}}
                 <option value="english">English</option>
                 <option value="spanish">Spanish</option>
                 <option value="chinese">Chinese</option>
@@ -155,85 +234,109 @@
         <div class="form-group row">
             <div>
                 <label style="margin:15px;" for="address">Address:<abbr title="required"
-                        aria-label="required"></abbr></label>
-                <input id="address" type="address" name="address">
+                        aria-label="required">*</abbr></label>
+                <input id="address" type="address" name="address" value="{{form.address}}">
             </div>
         </div>
         <div class="form-group row">
             <div>
                 <label style="margin:15px;" for="address2">Address 2:</label>
-                <input id="address2" type="address2" name="address2">
+                <input id="address2" type="address2" name="address2" value="{{form.address2}}">
             </div>
         </div>
         <div class="form-group row">
             <div>
                 <label style="margin:15px;" for="city">City:<abbr title="required"
-                        aria-label="required"></abbr></label>
-                <input id="city" type="text" name="city">
+                        aria-label="required">*</abbr></label>
+                <input id="city" type="text" name="city" value="{{form.city}}">
             </div>
         </div>
 
         <div class="form-group row">
-            <label style="margin:15px;" for="county">County:<abbr title="required"
-                    aria-label="required"></abbr></label>
-            <select name="county" id="county">
+            <label style="margin:15px;" for="countyID">County:<abbr title="required"
+                    aria-label="required">*</abbr></label>
+            <select name="countyID" id="countyID">
                 <option value="-Select-">-Select-</option>
+                {{#each county}}
+                {{#ifCond this._id '==' form.countyID}}
+                    <option value="{{this._id}}" selected>{{this.name}}</option>
+                {{else}}
+                    <option value="{{this._id}}">{{this.name}}</option>
+                {{/ifCond}}
+                {{/each}}
                 <option value="essex">Essex</option> {{!--need to get all counties--}}
                 <option value="other">Other</option>
             </select>
         </div>
 
         <div class="form-group row">
-            <label style="margin:15px;" for="state">State:<abbr title="required" aria-label="required"></abbr></label>
-            <select name="state" id="state">
+            <label style="margin:15px;" for="stateID">State:<abbr title="required" aria-label="required">*</abbr></label>
+            <select name="stateID" id="stateID">
                 <option value="-Select-">-Select-</option>
+                {{#each state}}
+                {{#ifCond this._id '==' form.stateID}}
+                    <option value="{{this._id}}" selected>{{this.name}}</option>
+                {{else}}
+                    <option value="{{this._id}}">{{this.name}}</option>
+                {{/ifCond}}
+                {{/each}}
                 <option value="new jersey">New Jersey</option> {{!--need to get all states--}}
                 <option value="other">Other</option>
             </select>
         </div>
         <div class="form-group row">
             <div>
-                <label style="margin:15px;" for="zip code">Zip Code:<abbr title="required"
-                        aria-label="required"></abbr></label>
-                <input id="zip code" type="text" name="zip code">
+                <label style="margin:15px;" for="zipCode">Zip Code:<abbr title="required"
+                        aria-label="required">*</abbr></label>
+                <input id="zipCode" type="text" name="zipCode" value="{{form.zipCode}}">
             </div>
         </div>
 
         <div class="form-group row">
             <div>
                 <label style="margin:15px;" for="phone">Phone:<abbr title="required"
-                        aria-label="required"></abbr></label>
-                <input id="phone" type="text" name="phone">
+                        aria-label="required">*</abbr></label>
+                <input id="phone" type="text" name="phone" value="{{form.phone}}">
             </div>
         </div>
 
         <div class="form-group row">
             <div>
                 <label style="margin:15px;" for="phone2">Phone 2:</label>
-                <input id="phone2" type="text" name="phone2">
+                <input id="phone2" type="text" name="phone2" value="{{form.phone2}}">
             </div>
         </div>
 
         <div class="form-group row">
             <div>
                 <label style="margin:15px;" for="mobile">Mobile:</label>
-                <input id="mobile" type="text" name="mobile">
+                <input id="mobile" type="text" name="mobile" value="{{form.mobile}}">
             </div>
         </div>
 
         <div class="form-group row">
             <div>
                 <label style="margin:15px;" for="email">Email:</label>
-                <input id="email" type="text" name="email">
+                <input id="email" type="text" name="email" value="{{form.email}}">
             </div>
         </div>
 
         <div class="form-group row">
-            <label for="special needs" class="col-sm-2 col-form-label">Special Needs/ Disabilities:</label>
+            <label for="specialNeeds" class="col-sm-2 col-form-label">Special Needs/ Disabilities:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control  form-control-sm" id="special needs">
+                <input type="text" class="form-control  form-control-sm" name="specialNeeds" id="specialNeeds" value="{{form.specialNeeds}}">
             </div>
         </div>
+        {{#if familyMemberId}}
+        <div id="btn-login" class="row justify-content-center">
+            <button type="submit" class="btn btn-primary btn-md">Update</button>
+        </div>
+        {{else}}
+        <div id="btn-login" class="row justify-content-center">
+            <button type="submit" class="btn btn-primary btn-md">Add new Family Member</button>
+        </div>
+        {{/if}}
+        </form>
     </div>
 </div>
 </div>

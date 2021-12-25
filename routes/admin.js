@@ -8,4 +8,22 @@ router.get('/', async (req, res, next) => {
   });
 });
 
+router.get('/users/', async (req, res, next) => {
+  res.render('admin/users', {
+    title: 'Users'
+  });
+});
+
+router.get('/users/edit/new/', async (req, res, next) => {
+  res.render('admin/userForm', {
+    title: 'Add New User'
+  });
+});
+
+router.get('/users/edit/:id/', async (req, res, next) => {
+  res.render('admin/userForm', {
+    title: 'Edit user'
+  });
+});
+
 module.exports = router;

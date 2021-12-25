@@ -57,7 +57,7 @@ let patientSchema = mongoose.Schema({
     countryID: {
         type: Number
     },
-    zipcode: {
+    zipCode: {
         type: String
     },
     phone: {

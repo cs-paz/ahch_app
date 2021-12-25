@@ -24,24 +24,26 @@
             <tr>
                 <th>Patient Name</th>
                 <td>DOB</td>
-                <td>Sex</td>
+                <td>Gender</td>
             </tr>
             {{#each patients}}
-                {{#if this.name}}
-                    <th>{{this.name}}</th>
+                <tr>
+                {{#if this.firstName}}
+                    <th><a href="/cases/{{../caseId}}/patients/edit/{{this._id}}">{{this.firstName}} {{this.lastName}}</a></th>
                 {{else}}
                     <th>N/A</th>
                 {{/if}}
-                {{#if this.dob}}
-                    <th>{{this.dob}}</th>
+                {{#if this.DOB}}
+                    <th>{{this.DOB}}</th>
                 {{else}}
                     <th>N/A</th>
                 {{/if}}
-                {{#if this.sex}}
-                    <th>{{this.sex}}</th>
+                {{#if this.gender}}
+                    <th>{{this.gender}}</th>
                 {{else}}
                     <th>N/A</th>
                 {{/if}}
+                </tr>
             {{/each}}
         </table>
     {{else}}
@@ -51,5 +53,5 @@
 
 
 <div class='row justify-content-center'>
-    <button type="button" class="btn btn-secondary btn-sm"><a href="patients/edit">Add Patient</a></button>
+    <button type="button" class="btn btn-secondary btn-sm"><a href="/cases/{{caseId}}/patients/edit/new">Add Patient</a></button>
 </div>

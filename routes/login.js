@@ -15,6 +15,8 @@ router.post('/submitLogin/', async (req, res) => {
   let username = req.body.username
   const password = req.body.password
 
+  console.log(req.body);
+
   if (!username || username.trim().length == 0) {
     return res.status(400).render('login', {
       title: 'Log In',
@@ -36,7 +38,7 @@ router.post('/submitLogin/', async (req, res) => {
     username = username.toLowerCase();
 
     for (i of users) { // search through all users for username
-      if (i.Username.toLowerCase() == username) {
+      if (i.username.toLowerCase() == username) {
         user = i;
         break;
       }
@@ -49,7 +51,7 @@ router.post('/submitLogin/', async (req, res) => {
       });
     }
 
-    const comparison = await bcrypt.compare(password, user.Password);
+    const comparison = await bcrypt.compare(password, user.password);
 
     if (!comparison) {
       console.log('incorrect password')
@@ -60,6 +62,7 @@ router.post('/submitLogin/', async (req, res) => {
     }
 
     req.session.user = user; // have to change to make cookie secure
+    console.log(req.session)
 
     return res.redirect('/home'); 
   } catch (e) {

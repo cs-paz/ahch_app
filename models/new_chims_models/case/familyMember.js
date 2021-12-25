@@ -5,7 +5,7 @@ let familyMemberSchema = mongoose.Schema({
     firstName: {
         type: String
     },
-    MI: {
+    middleInitial: {
         type: String
     },
     lastName: {
